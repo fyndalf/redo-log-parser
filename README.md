@@ -6,7 +6,7 @@ Does nothing useful (yet!)
 
 Run by calling
 ```bash
-$ sbt run
+$ sbt run <path to log>
 or
 $ sbt run --someParam
 ```
