@@ -13,6 +13,7 @@ object LogExtractor extends CommandApp(
 
     val filePath = Opts.argument[Path](metavar = "file")
 
+    // todo: remove this example data
     val userOpt =
       Opts
         .option[String]("target", help = "Person to greet.")
@@ -31,9 +32,10 @@ object LogExtractor extends CommandApp(
         // todo: make block separator a parameter
         // todo: make date time format a parameter
         val logEntries = FileParser.getAndParseLogFile(path)
-        if (verbose)
+        if (verbose) {
           println(s"Read following log entries from ${path.toAbsolutePath.toString}:")
           println(logEntries.toList)
+        }
     }
   }
 )

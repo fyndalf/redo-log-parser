@@ -14,7 +14,6 @@ object FileParser {
 
   // todo: make pattern a parameter
   def parseLogFileChunks(chunks: Seq[Seq[String]]): Seq[ExtractedLogEntry] = {
-
     chunks.map(entry => ExtractedLogEntry(LocalDateTime.parse(entry.head, formatter), entry(1), entry(2)))
   }
 }
