@@ -31,7 +31,9 @@ object LogExtractor extends CommandApp(
         // todo: make block separator a parameter
         // todo: make date time format a parameter
         val logEntries = FileParser.getAndParseLogFile(path)
-        print(logEntries)
+        if (verbose)
+          println(s"Read following log entries from ${path.toAbsolutePath.toString}:")
+          println(logEntries.toList)
     }
   }
 )
