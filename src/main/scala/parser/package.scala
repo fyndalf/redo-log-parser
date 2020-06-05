@@ -10,7 +10,7 @@ package object parser {
     .toFormatter
 
   // todo: make redoStatement own case class and parse String into it
-  case class LogEntry(
+  case class ExtractedLogEntry(
                        timestamp: LocalDateTime,
                        tableIdentifier: String,
                        redoStatement: String
