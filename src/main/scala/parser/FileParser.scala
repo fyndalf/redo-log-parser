@@ -16,4 +16,16 @@ object FileParser {
   def parseLogFileChunks(chunks: Seq[Seq[String]]): Seq[ExtractedLogEntry] = {
     chunks.map(entry => ExtractedLogEntry(LocalDateTime.parse(entry.head, formatter), entry(1), entry(2)))
   }
+
+  def pareseLogEntries(entries: Seq[ExtractedLogEntry]): Seq[LogEntryWithRedoStatement] = {
+    entries.map(entry => LogEntryWithRedoStatement(
+      entry.timestamp,
+      entry.tableIdentifier,
+      parseLogStatement(entry.redoStatement))
+    )
+  }
+
+  def parseLogStatement(statement: String): ParsedStatement = {
+    ???
+  }
 }
