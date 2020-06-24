@@ -35,7 +35,7 @@ package object parser {
                                     )
 
     final case class InsertStatement(
-                                      updatedAttributesAndValues: mutable.HashMap[String, String]
+                                      insertedAttributesAndValues: mutable.HashMap[String, String]
                                     )
 
     final case class DeleteStatement(
