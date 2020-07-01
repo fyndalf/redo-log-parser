@@ -24,7 +24,7 @@ package object parser {
                                         timestamp: LocalDateTime,
                                       )
 
-  sealed abstract case class ParsedStatement()
+  sealed abstract class ParsedStatement()
 
   object ParsedStatement {
 
@@ -32,15 +32,15 @@ package object parser {
                                       affectedAttribute: String,
                                       newAttributeValue: String,
                                       oldAttributeValue: String,
-                                    )
+                                    ) extends ParsedStatement()
 
     final case class InsertStatement(
                                       insertedAttributesAndValues: mutable.HashMap[String, String]
-                                    )
+                                    ) extends ParsedStatement()
 
     final case class DeleteStatement(
                                       identifyingAttributesAndValues: mutable.HashMap[String, String],
-                                    )
+                                    ) extends ParsedStatement()
 
   }
 
