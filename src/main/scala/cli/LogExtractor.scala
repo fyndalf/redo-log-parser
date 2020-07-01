@@ -34,7 +34,7 @@ object LogExtractor extends CommandApp(
         val logEntries = FileParser.getAndParseLogFile(path)
         if (verbose) {
           println(s"Read following log entries from ${path.toAbsolutePath.toString}:")
-          println(logEntries.toList)
+          logEntries.toList.map(println)
         }
     }
   }

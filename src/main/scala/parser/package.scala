@@ -12,15 +12,16 @@ package object parser {
     .toFormatter
 
   case class ExtractedLogEntry(
-                                timestamp: LocalDateTime,
-                                tableIdentifier: String,
-                                redoStatement: String
+                                redoStatement: String,
+                                rowID: String,
+                                timestamp: LocalDateTime
                               )
 
   case class LogEntryWithRedoStatement(
-                                        timestamp: LocalDateTime,
-                                        tableIdentifier: String,
                                         statement: ParsedStatement,
+                                        rowID: String,
+                                        tableID: String,
+                                        timestamp: LocalDateTime,
                                       )
 
   sealed abstract case class ParsedStatement()
@@ -31,7 +32,6 @@ package object parser {
                                       affectedAttribute: String,
                                       newAttributeValue: String,
                                       oldAttributeValue: String,
-                                      rowId: String
                                     )
 
     final case class InsertStatement(
@@ -40,7 +40,6 @@ package object parser {
 
     final case class DeleteStatement(
                                       identifyingAttributesAndValues: mutable.HashMap[String, String],
-                                      rowId: String
                                     )
 
   }
