@@ -45,6 +45,15 @@ object LogExtractor extends CommandApp(
         //todo: derive unique row ids for each lifetime of a row id
         // new row id for insert and updates until we see delete or new insert
 
+        /**
+         * TODO: Add table and column class
+         * A table contains several columns that are discovered in the process
+         * A column contains a flag indicating whether it could be a primary key, 
+         * a list of all distinct values found, 
+         * and a list of all columns that could be a foreign key that refers to this column
+         */
+
+        //TODO: Replay the log events and find tables, columns and the relation between them
     }
   }
 )
