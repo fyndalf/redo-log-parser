@@ -27,7 +27,7 @@ object FileParser {
     ExtractedLogEntry(statement, rowID, timestamp)
   }
 
-  def pareseLogEntries(entries: Seq[ExtractedLogEntry]): Seq[LogEntryWithRedoStatement] = {
+  def parseLogEntries(entries: Seq[ExtractedLogEntry]): Seq[LogEntryWithRedoStatement] = {
     entries.map(entry => LogEntryWithRedoStatement(
       parseLogStatement(entry.redoStatement),
       entry.rowID,

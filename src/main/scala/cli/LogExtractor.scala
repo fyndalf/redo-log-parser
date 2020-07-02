@@ -36,6 +36,15 @@ object LogExtractor extends CommandApp(
           println(s"Read following log entries from ${path.toAbsolutePath.toString}:")
           logEntries.toList.map(println)
         }
+        val parsedLogEntries = FileParser.parseLogEntries(logEntries)
+        if (verbose) {
+          println("Extracted the following statements out of the log entries:")
+          parsedLogEntries.toList.map(println)
+        }
+
+        //todo: derive unique row ids for each lifetime of a row id
+        // new row id for insert and updates until we see delete or new insert
+
     }
   }
 )
