@@ -8,6 +8,7 @@ package object eventExtractor {
 
   /**
    * Transforms all log entries to ensure that now row id is reused across records
+   *
    * @param logEntries
    * @return
    */
@@ -48,13 +49,13 @@ package object eventExtractor {
     } else {
       logEntry.statement match {
         case _: InsertStatement =>
-          val newRowID = generateNewRowID(oldRowID)
+          val newRowID = generateNewRowID(oldRowID, rowIDLookup)
           rowIDLookup(oldRowID) = newRowID
           newRowID
         case _: UpdateStatement | _: DeleteStatement if !knownRowIDs(rowIDLookup(oldRowID)).exists(_.isInstanceOf[DeleteStatement]) =>
           rowIDLookup(oldRowID)
         case _ => if (knownRowIDs(rowIDLookup(oldRowID)).exists(_.isInstanceOf[DeleteStatement])) {
-          val newRowID = generateNewRowID(oldRowID)
+          val newRowID = generateNewRowID(oldRowID, rowIDLookup)
           rowIDLookup(oldRowID) = newRowID
           newRowID
         } else {
@@ -64,7 +65,11 @@ package object eventExtractor {
     }
   }
 
-  private def generateNewRowID(rowID: String): String = {
-    rowID + "_" + Random.alphanumeric.filter(_.isLetterOrDigit).take(4).mkString
+  private def generateNewRowID(oldRowID: String, rowIDLookup: mutable.HashMap[String, String]): String = {
+    var newRowID = oldRowID
+    while (rowIDLookup.values.exists(_.equals(newRowID))) {
+      newRowID = newRowID + "_" + Random.alphanumeric.filter(_.isLetterOrDigit).take(4).mkString
+    }
+    newRowID
   }
 }
