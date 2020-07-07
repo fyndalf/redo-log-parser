@@ -39,6 +39,11 @@ object LogExtractor extends CommandApp(
           println("Transformed the following log entries and their row identifiers:")
           transformedLogEntries.toList.foreach(println)
         }
+        val databaseSchema = schemaExtractor.extractDatabaseSchema(transformedLogEntries)
+        if (verbose) {
+          println("Exctracted the following database schema from transformed log entries:")
+          databaseSchema.toList.foreach(println)
+        }
 
       /**
        * TODO: Add table and column class
