@@ -9,6 +9,20 @@ import scala.collection.mutable
 
 package object schemaExtractor {
 
+  class Column(
+      columnName: String,
+      columnTable: Table,
+      columnIsPrimaryKey: Boolean,
+      columnForeignKeyTargetNames: Seq[Column],
+      columnValues: mutable.HashMap[String, String] // ROWID -> VALUE
+  ) {
+    val name = columnName
+    val table = columnTable
+    var isPrimaryKey = columnIsPrimaryKey
+    val foreignKeyTargetNames = columnForeignKeyTargetNames
+    val values = columnValues
+  }
+
   class Table(
       tableName: String,
       tableColumns: mutable.HashMap[String, Column] = mutable.HashMap()
@@ -19,10 +33,10 @@ package object schemaExtractor {
 
     def addValue(columnId: String, value: String, rowId: String) {
       if (!columns.contains(columnId)) {
-        columns += (columnId -> Column(
+        columns += (columnId -> new Column(
           columnId,
           this,
-          isPrimaryKey = true,
+          columnIsPrimaryKey = true,
           Seq(),
           mutable.HashMap(rowId -> value)
         ))
@@ -32,20 +46,22 @@ package object schemaExtractor {
     }
   }
 
-  case class Column(
-      name: String,
-      table: Table,
-      isPrimaryKey: Boolean,
-      foreignKeyTargetNames: Seq[Column],
-      values: mutable.HashMap[String, String] // ROWID -> VALUE
-  )
+  def checkPrimaryKeyDuplicates(column: Column): Unit = {
+    val values = column.values.map(_._2).toList
+    if (values.size > values.distinct.size) {
+      column.isPrimaryKey = false
+    }
+  }
 
   def updateSchemaProperties(
       schema: mutable.HashMap[String, Table],
-      affectedTableId: String,
+      table: Table,
       affectedColumnIds: Seq[String]
   ): Unit = {
-    ???
+    // Add rules
+    affectedColumnIds.foreach(columnId => {
+      checkPrimaryKeyDuplicates(table.columns(columnId))
+    })
   }
 
   /**
@@ -67,7 +83,6 @@ package object schemaExtractor {
 
       val table = schema(logEntry.tableID)
       val rowId = logEntry.rowID
-      val affectedTableId = logEntry.tableID
       val affectedColumnIds = extractColumnIDs(logEntry.statement)
 
       logEntry.statement match {
@@ -75,7 +90,7 @@ package object schemaExtractor {
         case update: UpdateStatement => extractFromUpdate(update, rowId, table)
         case delete: DeleteStatement => extractFromDelete(delete, rowId, table)
       }
-      updateSchemaProperties(schema, affectedTableId, affectedColumnIds)
+      updateSchemaProperties(schema, table, affectedColumnIds)
     })
     schema
   }
@@ -84,7 +99,8 @@ package object schemaExtractor {
     (statement match {
       case insert: InsertStatement => insert.insertedAttributesAndValues.keys
       case update: UpdateStatement => Seq(update.affectedAttribute)
-      case delete: DeleteStatement => delete.identifyingAttributesAndValues.keys
+      case delete: DeleteStatement =>
+        delete.identifyingAttributesAndValues.keys.filter(key => key != "ROWID")
     }).toSeq
   }
 
@@ -96,10 +112,10 @@ package object schemaExtractor {
     statement.insertedAttributesAndValues.foreach(entry => {
       val (attribute, value) = entry
       if (!table.columns.contains(attribute)) {
-        table.columns += (attribute -> Column(
+        table.columns += (attribute -> new Column(
           attribute,
           table,
-          isPrimaryKey = true,
+          columnIsPrimaryKey = true,
           Seq(),
           mutable.HashMap(rowID -> value)
         ))
@@ -115,10 +131,10 @@ package object schemaExtractor {
       table: Table
   ): Unit = {
     if (!table.columns.contains(statement.affectedAttribute)) {
-      table.columns += (statement.affectedAttribute -> Column(
+      table.columns += (statement.affectedAttribute -> new Column(
         statement.affectedAttribute,
         table,
-        isPrimaryKey = true,
+        columnIsPrimaryKey = true,
         Seq(),
         mutable.HashMap(rowID -> statement.newAttributeValue)
       ))
@@ -134,14 +150,14 @@ package object schemaExtractor {
       table: Table
   ): Unit = {
     statement.identifyingAttributesAndValues
-      .filter(entry => entry._1 == "ROWID")
+      .filter(entry => entry._1 != "ROWID")
       .keys
       .foreach(attribute => {
         if (!table.columns.contains(attribute)) {
-          table.columns += (attribute -> Column(
+          table.columns += (attribute -> new Column(
             attribute,
             table,
-            isPrimaryKey = true,
+            columnIsPrimaryKey = true,
             Seq(),
             mutable.HashMap[String, String]()
           ))
