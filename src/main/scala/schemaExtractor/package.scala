@@ -13,14 +13,29 @@ package object schemaExtractor {
       columnName: String,
       columnTable: Table,
       columnIsPrimaryKey: Boolean,
-      columnForeignKeyTargetNames: Seq[Column],
+      columnIsSubsetOf: Seq[Column],
       columnValues: mutable.HashMap[String, String] // ROWID -> VALUE
   ) {
     val name = columnName
     val table = columnTable
     var isPrimaryKey = columnIsPrimaryKey
-    val foreignKeyTargetNames = columnForeignKeyTargetNames
+    var isSubsetOf = columnIsSubsetOf
     val values = columnValues
+
+    override def toString(): String = {
+      val primaryKey = isPrimaryKey match {
+        case true  => " (PRIMARY KEY)"
+        case false => ""
+      }
+      val foreignKeyTargets = isSubsetOf.map(column => {
+        column.table.name + "." + column.name
+      })
+      val foreignKeyString = foreignKeyTargets.size match {
+        case 0 => ""
+        case _ => "FK CANDIDATE FOR: " + foreignKeyTargets.mkString(" AND ")
+      }
+      s"$name$primaryKey $foreignKeyString"
+    }
   }
 
   class Table(
@@ -44,12 +59,60 @@ package object schemaExtractor {
         columns(columnId).values += (rowId -> value)
       }
     }
+
+    override def toString(): String = {
+      val columnsString =
+        columns.map(column => column._2.toString()).mkString("\n")
+      s"TABLE $name\n$columnsString"
+    }
   }
 
-  def checkPrimaryKeyDuplicates(column: Column): Unit = {
+  def checkForPrimaryKeyDuplicates(column: Column): Unit = {
     val values = column.values.map(_._2).toList
     if (values.size > values.distinct.size) {
       column.isPrimaryKey = false
+    }
+  }
+
+  /**
+    * Check for every column in a table whether all its values are included
+    * in another column in another table
+    *
+    * @param schema
+    */
+  def updateColumnRelations(schema: mutable.HashMap[String, Table]): Unit = {
+    if (schema.toList.size > 1) {
+      // TODO: Make this algorithm nice
+      schema.toList
+        .map(_._2)
+        .permutations
+        .map(tables => (tables(0), tables.tail))
+        .foreach(permutation => {
+          val (table, otherTables) = permutation
+          val tableName = table.name
+          val otherTableNames = otherTables.map(_.name).mkString(", ")
+          table.columns
+            .map(_._2)
+            .foreach(column => {
+              var isSubsetOf = Seq[Column]()
+              val distinctValues = column.values.map(_._2).toList.distinct
+              otherTables.foreach(otherTable => {
+                val otn = otherTable.name
+                otherTable.columns
+                  .map(_._2)
+                  .foreach(otherColumn => {
+                    val on = otherColumn.name
+                    val cn = column.name
+                    val otherDistinctValues =
+                      otherColumn.values.map(_._2).toList.distinct
+                    if (distinctValues.forall(otherDistinctValues.contains)) {
+                      isSubsetOf = isSubsetOf :+ otherColumn
+                    }
+                  })
+              })
+              column.isSubsetOf = isSubsetOf
+            })
+        })
     }
   }
 
@@ -60,8 +123,10 @@ package object schemaExtractor {
   ): Unit = {
     // Add rules
     affectedColumnIds.foreach(columnId => {
-      checkPrimaryKeyDuplicates(table.columns(columnId))
+      checkForPrimaryKeyDuplicates(table.columns(columnId))
     })
+
+    updateColumnRelations(schema)
   }
 
   /**
