@@ -10,18 +10,21 @@ import scala.collection.mutable
 package object schemaExtractor {
 
   class Table(
-      name: String,
-      columns: mutable.HashMap[String, Column] = mutable.HashMap()
+      tableName: String,
+      tableColumns: mutable.HashMap[String, Column] = mutable.HashMap()
   ) {
+
+    val columns: mutable.Map[String, Column] = tableColumns
+    val name: String = tableName
 
     def addValue(columnId: String, value: String, rowId: String) {
       if (!columns.contains(columnId)) {
         columns += (columnId -> Column(
           columnId,
           this,
-          true,
+          isPrimaryKey = true,
           Seq(),
-          mutable.HashMap((rowId -> value))
+          mutable.HashMap(rowId -> value)
         ))
       } else {
         columns(columnId).values += (rowId -> value)
@@ -59,7 +62,7 @@ package object schemaExtractor {
     logEntries.foreach(logEntry => {
 
       if (!schema.contains(logEntry.tableID)) {
-        schema += (logEntry.tableID -> Table(name))
+        schema += (logEntry.tableID -> new Table(logEntry.tableID))
       }
 
       val table = schema(logEntry.tableID)
