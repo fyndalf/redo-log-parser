@@ -1,50 +1,71 @@
-import parser.ParsedStatement.{DeleteStatement, InsertStatement, UpdateStatement}
+import parser.ParsedStatement.{
+  DeleteStatement,
+  InsertStatement,
+  UpdateStatement
+}
 import parser.{LogEntryWithRedoStatement, ParsedStatement}
 
 import scala.collection.mutable
 
 package object schemaExtractor {
 
-  case class Table(
-                    name: String,
-                    columns: Seq[Column]
-                  )
+  class Table(
+      name: String,
+      columns: mutable.HashMap[String, Column] = mutable.HashMap()
+  ) {
+
+    def addValue(columnId: String, value: String, rowId: String) {
+      if (!columns.contains(columnId)) {
+        columns += (columnId -> Column(
+          columnId,
+          this,
+          true,
+          Seq(),
+          mutable.HashMap((rowId -> value))
+        ))
+      } else {
+        columns(columnId).values += (rowId -> value)
+      }
+    }
+  }
 
   case class Column(
-                     isPrimaryKey: Boolean,
-                     foreignKeyTargetNames: Seq[String], // Column names
-                     values: mutable.HashMap[String, String] // ROWID -> VALUE
-                   )
+      name: String,
+      table: Table,
+      isPrimaryKey: Boolean,
+      foreignKeyTargetNames: Seq[Column],
+      values: mutable.HashMap[String, String] // ROWID -> VALUE
+  )
 
   def updateSchemaProperties(
-                              schema: mutable.HashMap[String, mutable.HashMap[String, Column]],
-                              affectedTableId: String,
-                              affectedColumnIds: Seq[String]
-                            ): Unit = {
+      schema: mutable.HashMap[String, Table],
+      affectedTableId: String,
+      affectedColumnIds: Seq[String]
+  ): Unit = {
     ???
   }
 
   /**
-   * Extract the database schema from the events
-   *
-   * @param logEntries
-   * @return
-   */
+    * Extract the database schema from the events
+    *
+    * @param logEntries
+    * @return
+    */
   def extractDatabaseSchema(
-                             logEntries: Seq[LogEntryWithRedoStatement]
-                           ): mutable.HashMap[String, mutable.HashMap[String, Column]] = {
-    val schema = mutable.HashMap[String, mutable.HashMap[String, Column]]()
+      logEntries: Seq[LogEntryWithRedoStatement]
+  ): mutable.HashMap[String, Table] = {
+    val schema = mutable.HashMap[String, Table]()
 
     logEntries.foreach(logEntry => {
 
       if (!schema.contains(logEntry.tableID)) {
-        schema += (logEntry.tableID -> mutable.HashMap[String, Column]())
+        schema += (logEntry.tableID -> Table(name))
       }
 
       val table = schema(logEntry.tableID)
       val rowId = logEntry.rowID
       val affectedTableId = logEntry.tableID
-      val affectedColumnIds = generateColumnIDs(logEntry.statement)
+      val affectedColumnIds = extractColumnIDs(logEntry.statement)
 
       logEntry.statement match {
         case insert: InsertStatement => extractFromInsert(insert, rowId, table)
@@ -56,7 +77,7 @@ package object schemaExtractor {
     schema
   }
 
-  private def generateColumnIDs(statement: ParsedStatement): Seq[String] = {
+  private def extractColumnIDs(statement: ParsedStatement): Seq[String] = {
     (statement match {
       case insert: InsertStatement => insert.insertedAttributesAndValues.keys
       case update: UpdateStatement => Seq(update.affectedAttribute)
@@ -65,56 +86,65 @@ package object schemaExtractor {
   }
 
   private def extractFromInsert(
-                                 statement: InsertStatement,
-                                 rowID: String,
-                                 table: mutable.HashMap[String, Column]): mutable.HashMap[String, Column] = {
+      statement: InsertStatement,
+      rowID: String,
+      table: Table
+  ): Unit = {
     statement.insertedAttributesAndValues.foreach(entry => {
       val (attribute, value) = entry
-      if (!table.contains(attribute)) {
-        table += (attribute -> Column(
+      if (!table.columns.contains(attribute)) {
+        table.columns += (attribute -> Column(
+          attribute,
+          table,
           isPrimaryKey = true,
           Seq(),
           mutable.HashMap(rowID -> value)
         ))
       } else {
-        table(attribute).values += (rowID -> value)
+        table.columns(attribute).values += (rowID -> value)
       }
     })
-    table
   }
 
-  private def extractFromUpdate(statement: UpdateStatement,
-                                rowID: String,
-                                table: mutable.HashMap[String, Column]): mutable.HashMap[String, Column] = {
-    if (!table.contains(statement.affectedAttribute)) {
-      table += (statement.affectedAttribute -> Column(
+  private def extractFromUpdate(
+      statement: UpdateStatement,
+      rowID: String,
+      table: Table
+  ): Unit = {
+    if (!table.columns.contains(statement.affectedAttribute)) {
+      table.columns += (statement.affectedAttribute -> Column(
+        statement.affectedAttribute,
+        table,
         isPrimaryKey = true,
         Seq(),
-        mutable.HashMap(rowID -> statement.oldAttributeValue)
+        mutable.HashMap(rowID -> statement.newAttributeValue)
       ))
+    } else {
+      table.columns(statement.affectedAttribute).values(rowID) =
+        statement.newAttributeValue
     }
-    table(statement.affectedAttribute).values(rowID) =
-      statement.newAttributeValue
-    table
   }
 
-  private def extractFromDelete(statement: DeleteStatement,
-                                rowID: String,
-                                table: mutable.HashMap[String, Column]): mutable.HashMap[String, Column] = {
+  private def extractFromDelete(
+      statement: DeleteStatement,
+      rowID: String,
+      table: Table
+  ): Unit = {
     statement.identifyingAttributesAndValues
-      .filter(entry => entry._1 == "ROWID").keys
+      .filter(entry => entry._1 == "ROWID")
+      .keys
       .foreach(attribute => {
-        if (!table.contains(attribute)) {
-          table += (attribute -> Column(
+        if (!table.columns.contains(attribute)) {
+          table.columns += (attribute -> Column(
+            attribute,
+            table,
             isPrimaryKey = true,
             Seq(),
             mutable.HashMap[String, String]()
           ))
         } else {
-          table(attribute).values -= rowID
+          table.columns(attribute).values -= rowID
         }
       })
-    table
   }
 }
-
