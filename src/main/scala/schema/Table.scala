@@ -24,6 +24,10 @@ class Table(
     }
   }
 
+  override def clone(): Table = {
+    return new Table(name, columns.clone());
+  }
+
   override def toString: String = {
     val columnsString =
       columns.map(column => column._2.toString).mkString("\n")

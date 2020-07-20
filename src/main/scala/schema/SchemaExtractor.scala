@@ -25,6 +25,7 @@ object SchemaExtractor {
     val schema: DatabaseSchema = mutable.HashMap[String, Table]()
 
     logEntries.foreach(logEntry => {
+      val previousSchema = schema.clone();
 
       if (!schema.contains(logEntry.tableID)) {
         schema += (logEntry.tableID -> new Table(logEntry.tableID))
@@ -39,7 +40,7 @@ object SchemaExtractor {
         case update: UpdateStatement => extractFromUpdate(update, rowId, table)
         case delete: DeleteStatement => extractFromDelete(delete, rowId, table)
       }
-      updateSchemaProperties(schema, table, affectedColumnIds)
+      updateSchemaProperties(schema, previousSchema, table, affectedColumnIds)
     })
     schema
   }

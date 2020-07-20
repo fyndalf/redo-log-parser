@@ -13,7 +13,11 @@ class Column(
   val table: Table = columnTable
   var isPrimaryKey: Boolean = columnIsPrimaryKey
   var isSubsetOf: Seq[Column] = columnIsSubsetOf
-  val values: mutable.Map[String, String] = columnValues
+  val values: mutable.HashMap[String, String] = columnValues
+
+  override def clone(): Column = {
+    return new Column(name, table, isPrimaryKey, isSubsetOf, values.clone());
+  }
 
   override def toString: String = {
     val primaryKey = if (isPrimaryKey) {
