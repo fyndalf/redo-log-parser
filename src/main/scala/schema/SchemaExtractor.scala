@@ -1,6 +1,10 @@
 package schema
 
-import parser.ParsedStatement.{DeleteStatement, InsertStatement, UpdateStatement}
+import parser.ParsedStatement.{
+  DeleteStatement,
+  InsertStatement,
+  UpdateStatement
+}
 import parser.{LogEntryWithRedoStatement, ParsedStatement}
 import schema.SchemaDeriver.updateSchemaProperties
 
@@ -16,10 +20,9 @@ object SchemaExtractor {
     */
   def extractDatabaseSchema(
       logEntries: Seq[LogEntryWithRedoStatement]
-  ): mutable.HashMap[String, Table] = {
+  ): DatabaseSchema = {
 
-    //todo: make this a case class
-    val schema = mutable.HashMap[String, Table]()
+    val schema: DatabaseSchema = mutable.HashMap[String, Table]()
 
     logEntries.foreach(logEntry => {
 

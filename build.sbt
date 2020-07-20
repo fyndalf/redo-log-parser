@@ -8,6 +8,7 @@ lazy val root = (project in file("."))
     name := "redo-log-parser",
     libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.5" % Test,
     libraryDependencies += "com.monovore" %% "decline" % "1.0.0",
+    libraryDependencies += "org.scala-lang.modules" %% "scala-xml" % "1.3.0"
   )
 
 // Uncomment the following for publishing to Sonatype.

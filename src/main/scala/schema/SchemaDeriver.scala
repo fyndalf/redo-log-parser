@@ -5,7 +5,7 @@ import scala.collection.mutable
 object SchemaDeriver {
 
   def updateSchemaProperties(
-      schema: mutable.HashMap[String, Table],
+      schema: DatabaseSchema,
       table: Table,
       affectedColumnIds: Seq[String]
   ): Unit = {
@@ -30,7 +30,7 @@ object SchemaDeriver {
     * @param schema
     */
   private def updateColumnRelations(
-      schema: mutable.HashMap[String, Table]
+      schema: DatabaseSchema
   ): Unit = {
     if (schema.toList.size > 1) {
       // TODO: Make this algorithm nice

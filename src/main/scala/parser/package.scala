@@ -55,4 +55,13 @@ package object parser {
 
   }
 
+  case class TraceIDPatternPart(
+      tableID: String,
+      attribute: String
+  )
+
+  type TraceIDPattern = Seq[TraceIDPatternPart]
+
+  type LogEntriesForTrace = Seq[LogEntryWithRedoStatement]
+
 }

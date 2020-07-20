@@ -1,7 +1,7 @@
 import java.nio.file.Path
 
 import parser.{ExtractedLogEntry, LogEntryWithRedoStatement}
-import schema.Table
+import schema.{DatabaseSchema, Table}
 
 import scala.collection.mutable
 
@@ -38,7 +38,7 @@ package object cli {
   }
 
   def printDatabaseSchema(
-      databaseSchema: mutable.HashMap[String, Table]
+      databaseSchema: DatabaseSchema
   )(implicit path: Path, verbose: Boolean): Unit = {
     if (verbose) {
       println(

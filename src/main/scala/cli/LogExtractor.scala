@@ -4,7 +4,7 @@ import java.nio.file.Path
 
 import cats.implicits._
 import com.monovore.decline._
-import parser.{EventExtractor, FileParser}
+import parser.{EventExtractor, FileParser, TraceIDParser}
 import schema.SchemaExtractor
 
 object LogExtractor
@@ -38,7 +38,18 @@ object LogExtractor
               SchemaExtractor.extractDatabaseSchema(transformedLogEntries)
             printDatabaseSchema(databaseSchema)
 
-          // TODO: Implement log generator according to paper
+            val traceIDPatternInput =
+              scala.io.StdIn.readLine("Please enter a trace id pattern:")
+            val traceIDPattern =
+              TraceIDParser.parseTraceIDPatternFromInput(traceIDPatternInput)
+            val traces = TraceIDParser.createTracesForPattern(
+              traceIDPattern,
+              databaseSchema,
+              transformedLogEntries
+            )
+            val xmlTraces: Seq[scala.xml.Node] =
+              traces.map(TraceIDParser.parseTraceToXML)
+            TraceIDParser.serializeLogToDisk(xmlTraces, path.toString)
         }
       }
     )

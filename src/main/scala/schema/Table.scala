@@ -4,10 +4,10 @@ import scala.collection.mutable
 
 class Table(
     tableName: String,
-    tableColumns: mutable.HashMap[String, Column] = mutable.HashMap()
+    tableColumns: TableColumns = mutable.HashMap()
 ) {
 
-  val columns: mutable.Map[String, Column] = tableColumns
+  val columns: TableColumns = tableColumns
   val name: String = tableName
 
   def addValue(columnId: String, value: String, rowId: String) {
