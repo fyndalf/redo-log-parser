@@ -6,6 +6,7 @@ object SchemaDeriver {
 
   def updateSchemaProperties(
       schema: DatabaseSchema,
+      previousSchema: DatabaseSchema,
       table: Table,
       affectedColumnIds: Seq[String]
   ): Unit = {
@@ -13,7 +14,7 @@ object SchemaDeriver {
     affectedColumnIds.foreach(columnId => {
       checkForPrimaryKeyDuplicates(table.columns(columnId))
     })
-    updateColumnRelations(schema)
+    updateColumnRelations(schema, previousSchema);
   }
 
   private def checkForPrimaryKeyDuplicates(column: Column): Unit = {
@@ -30,7 +31,8 @@ object SchemaDeriver {
     * @param schema
     */
   private def updateColumnRelations(
-      schema: DatabaseSchema
+      schema: DatabaseSchema,
+      previousSchema: DatabaseSchema
   ): Unit = {
     if (schema.toList.size > 1) {
       // TODO: Make this algorithm nice
@@ -38,12 +40,15 @@ object SchemaDeriver {
         .map(_._2)
         .permutations
         .map(tables => (tables.head, tables.tail))
-        .foreach(determineColumnRelation)
+        .foreach(permutation =>
+          determineColumnRelation(permutation, previousSchema)
+        )
     }
   }
 
   private def determineColumnRelation(
-      permutation: (Table, Seq[Table])
+      permutation: (Table, Seq[Table]),
+      previousSchema: DatabaseSchema
   ): Unit = {
     val (table, otherTables) = permutation
     table.columns.values
@@ -60,7 +65,32 @@ object SchemaDeriver {
               }
             })
         })
-        column.isSubsetOf = isSubsetOf
+
+        if (column.isSubsetOf != isSubsetOf) {
+          val similarColumns = isSubsetOf.filter(newColumn =>
+            column.isSubsetOf.contains(newColumn)
+          );
+
+          val newColumns = isSubsetOf
+            .filter(targetColumn =>
+              // Target column is not included in previous subset of considered column
+              !column.isSubsetOf.contains(targetColumn)
+            )
+            .filter(targetColumn =>
+              // Table of target column did not exist in the previous step
+              !previousSchema.contains(targetColumn.table.name) ||
+                // Table of considered column did not exist in the previous step
+                !previousSchema.contains(table.name) ||
+                // Target column did not exist in previous step
+                !previousSchema(targetColumn.table.name).columns
+                  .contains(targetColumn.name) ||
+                // Considered column did not exist in previous step
+                !previousSchema(table.name).columns
+                  .contains(column.name)
+            )
+
+          column.isSubsetOf = similarColumns ++ newColumns
+        }
       })
   }
 }

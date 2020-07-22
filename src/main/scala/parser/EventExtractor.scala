@@ -91,7 +91,7 @@ object EventExtractor {
       rowIDLookup: mutable.HashMap[String, String]
   ): String = {
     var newRowID = oldRowID
-    while (rowIDLookup.values.exists(_.equals(newRowID))) {
+    while (rowIDLookup.values.exists(_.equals(newRowID)) || rowIDLookup.keys.exists(_.equals(newRowID))) {
       newRowID = newRowID + "_" + Random.alphanumeric
         .filter(_.isLetterOrDigit)
         .take(4)
