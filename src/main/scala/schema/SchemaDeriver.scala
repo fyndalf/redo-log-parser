@@ -48,7 +48,7 @@ object SchemaDeriver {
 
   private def determineColumnRelation(
       permutation: (Table, Seq[Table]),
-      previousSchema: mutable.HashMap[String, Table]
+      previousSchema: DatabaseSchema
   ): Unit = {
     val (table, otherTables) = permutation
     table.columns.values
