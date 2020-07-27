@@ -1,6 +1,8 @@
 import java.time._
 import java.time.format.{DateTimeFormatter, DateTimeFormatterBuilder}
 
+import schema.Table
+
 import scala.collection.mutable
 import scala.util.matching.Regex
 
@@ -63,5 +65,7 @@ package object parser {
   type TraceIDPattern = Seq[TraceIDPatternPart]
 
   type LogEntriesForTrace = Seq[LogEntryWithRedoStatement]
+
+  case class TableEntityRelation(leftTable: Table, rightTable: Table, relatingEntities: Seq[(String, String)])
 
 }
