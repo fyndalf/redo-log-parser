@@ -19,9 +19,6 @@ object TraceIDParser {
       (x._1, x._2.groupBy(_.rowID))
     })
 
-    println(logEntriesForEntity)
-    logEntriesForEntity.foreach(println(_))
-
     // extract referenced tables for each table
     val tableRelations = schema.values.map(table => {
       var referencedTables = Set[Table]()
@@ -30,9 +27,6 @@ object TraceIDParser {
       })
       (table, referencedTables)
     })
-
-    println("")
-    println(tableRelations)
 
     // identify all unique binary relations
     val allBinaryRelations =
@@ -46,9 +40,6 @@ object TraceIDParser {
         uniqueRelations = uniqueRelations + relation
       }
     })
-
-    println("")
-    println(uniqueRelations)
 
     // find all relevant attributes mapping to other table
     // for each of relation: look at both columns and take matching values
@@ -77,9 +68,6 @@ object TraceIDParser {
         })
         .toSet
       val allReferences = rightReferences ++ leftReferences
-
-      println("")
-      println(allReferences)
 
       var currentTableEntityRelation =
         TableEntityRelation(leftTable, rightTable, Seq())
@@ -132,12 +120,8 @@ object TraceIDParser {
           }
         })
       })
-      println(currentTableEntityRelation)
       currentTableEntityRelation
     })
-
-    println(tableEntityRelations)
-    println(rootElement)
 
     var logBuckets: Seq[Seq[LogEntryWithRedoStatement]] = Seq()
     val rootLogEntries = logEntriesForEntity
@@ -157,8 +141,24 @@ object TraceIDParser {
 
     val bucketMapping =
       traverse(rootTable, Set(rootTable), tableEntityRelations, relevantRows)
-    println(bucketMapping.toList.sortBy(_._3))
-    ???
+
+    val bucketSize = relevantRows.length
+
+    val logEntryBuckets =
+      new Array[Seq[LogEntryWithRedoStatement]](bucketSize).map(x =>
+        Seq[LogEntryWithRedoStatement]()
+      )
+
+    val rowIDs = bucketMapping.groupBy(_._2)
+    logEntries.foreach(entry => {
+      rowIDs(entry.rowID)
+        .filter(_._1.equals(entry.tableID))
+        .foreach(b => {
+          logEntryBuckets(b._3) = logEntryBuckets(b._3) :+ entry
+        })
+    })
+
+    logEntryBuckets.toSeq
   }
 
   def traverse(
