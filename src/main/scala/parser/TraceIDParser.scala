@@ -7,19 +7,9 @@ import scala.xml.XML;
 
 object TraceIDParser {
 
-  def parseTraceIDPatternFromInput(input: String): TraceIDPattern = {
-    val splitTables = input.split(",")
-
-    val splitAttibutes = splitTables.map(s => {
-      val lastInstance = s.lastIndexOf(".")
-      s.splitAt(lastInstance)
-    })
-    splitAttibutes.map(entry => TraceIDPatternPart(entry._1, entry._2)).toSeq
-  }
-
   // assumes: primary keys and foreign keys are not updated
   def createTracesForPattern(
-      pattern: TraceIDPattern,
+      rootElement: RootElement,
       schema: DatabaseSchema,
       logEntries: Seq[LogEntryWithRedoStatement]
   ): Seq[LogEntriesForTrace] = {
@@ -64,7 +54,7 @@ object TraceIDParser {
     // for each of relation: look at both columns and take matching values
     // save combination of row id
 
-    uniqueRelations.map(relation => {
+    val tableEntityRelations = uniqueRelations.map(relation => {
       val (leftTable, rightTable) = relation
       val rightReferences = schema(leftTable.name).columns.values
         .flatMap(col => {
@@ -119,26 +109,107 @@ object TraceIDParser {
               )
               rightInsertStatements.foreach(s => {
                 val rightStatement = s.statement.asInstanceOf[InsertStatement]
-                if (rightStatement.insertedAttributesAndValues.contains(
-                  rightColumn.name
-                ) &&
+                if (
+                  rightStatement.insertedAttributesAndValues.contains(
+                    rightColumn.name
+                  ) &&
                   rightStatement
                     .insertedAttributesAndValues(rightColumn.name)
-                    .equals(leftValue)) {
-                  val existingEntities = currentTableEntityRelation.relatingEntities
-                  val newRelatingEntities = existingEntities :+ (insertStatement.rowID, s.rowID)
-                  currentTableEntityRelation = currentTableEntityRelation.copy(relatingEntities =  newRelatingEntities)
+                    .equals(leftValue)
+                ) {
+                  val existingEntities =
+                    currentTableEntityRelation.relatingEntities
+                  val newRelatingEntities =
+                    existingEntities :+ (insertStatement.rowID, s.rowID)
+                  currentTableEntityRelation =
+                    currentTableEntityRelation.copy(relatingEntities =
+                      newRelatingEntities
+                    )
 
                 }
               })
             }
-        }})
+          }
+        })
       })
       println(currentTableEntityRelation)
       currentTableEntityRelation
     })
 
+    println(tableEntityRelations)
+    println(rootElement)
+
+    var logBuckets: Seq[Seq[LogEntryWithRedoStatement]] = Seq()
+    val rootLogEntries = logEntriesForEntity
+      .filter(_._1.equalsIgnoreCase(rootElement.tableID))
+      .values
+    rootLogEntries.foreach(x => {
+      logBuckets = logBuckets ++ x.values
+    })
+
+    val relevantRows = logBuckets.zipWithIndex.map(bucket => {
+      val tableID = bucket._1.head.tableID
+      val rowID = bucket._1.head.rowID
+      (tableID, rowID, bucket._2)
+    })
+
+    val rootTable = schema(rootElement.tableID)
+
+    val bucketMapping =
+      traverse(rootTable, Set(rootTable), tableEntityRelations, relevantRows)
+    println(bucketMapping.toList.sortBy(_._3))
     ???
+  }
+
+  def traverse(
+      currentEntity: Table,
+      path: Set[Table],
+      tableEntityRelations: Set[TableEntityRelation],
+      relevantRows: Seq[(String, String, Int)]
+  ): Set[(String, String, Int)] = {
+    // todo: make tuples case classes
+    val leftEntityRelations = tableEntityRelations.filter(x =>
+      x.leftTable.name.equals(currentEntity.name) && !path.contains(
+        x.rightTable
+      )
+    )
+    val rightEntityRelations = tableEntityRelations.filter(y =>
+      y.rightTable.name.equals(currentEntity.name) && !path.contains(
+        y.leftTable
+      )
+    )
+
+    val leftResult = leftEntityRelations.flatMap(x => {
+      val newPath = path + x.leftTable
+      val newIntermediateRowIDs =
+        relevantRows.filter(rr => x.relatingEntities.map(_._1).contains(rr._2))
+      var newRelevantRowIDs = Seq[(String, String, Int)]()
+      newIntermediateRowIDs.foreach(rr => {
+        val newRowIDs = x.relatingEntities.filter(xr => xr._1.equals(rr._2))
+        newRowIDs.foreach(newRowID => {
+          newRelevantRowIDs =
+            newRelevantRowIDs :+ (x.rightTable.name, newRowID._2, rr._3)
+        })
+      })
+      traverse(x.rightTable, newPath, tableEntityRelations, newRelevantRowIDs)
+    })
+
+    val rightResult = rightEntityRelations.flatMap(y => {
+      val newPath = path + y.rightTable
+      val newIntermediateRowIDs =
+        relevantRows.filter(rr => y.relatingEntities.map(_._2).contains(rr._2))
+      var newRelevantRowIDs = Seq[(String, String, Int)]()
+      newIntermediateRowIDs.foreach(rr => {
+        val newRowIDs = y.relatingEntities.filter(yr => yr._2.equals(rr._2))
+        newRowIDs.foreach(newRowID => {
+          newRelevantRowIDs =
+            newRelevantRowIDs :+ (y.leftTable.name, newRowID._1, rr._3)
+        })
+      })
+      traverse(y.leftTable, newPath, tableEntityRelations, newRelevantRowIDs)
+    })
+
+    leftResult ++ relevantRows ++ rightResult
   }
 
   def parseTraceToXML(events: LogEntriesForTrace): scala.xml.Node = {

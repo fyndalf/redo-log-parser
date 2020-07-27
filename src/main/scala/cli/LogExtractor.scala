@@ -4,7 +4,7 @@ import java.nio.file.Path
 
 import cats.implicits._
 import com.monovore.decline._
-import parser.{EventExtractor, FileParser, TraceIDParser}
+import parser.{EventExtractor, FileParser, RootElement, TraceIDParser}
 import schema.SchemaExtractor
 
 object LogExtractor
@@ -38,12 +38,11 @@ object LogExtractor
               SchemaExtractor.extractDatabaseSchema(transformedLogEntries)
             printDatabaseSchema(databaseSchema)
 
-            val traceIDPatternInput =
-              scala.io.StdIn.readLine("Please enter a trace id pattern:")
-            val traceIDPattern =
-              TraceIDParser.parseTraceIDPatternFromInput(traceIDPatternInput)
+            val rootElementInput =
+              scala.io.StdIn.readLine("Please enter a root element:")
+            val rootElement = RootElement(rootElementInput)
             val traces = TraceIDParser.createTracesForPattern(
-              traceIDPattern,
+              rootElement,
               databaseSchema,
               transformedLogEntries
             )

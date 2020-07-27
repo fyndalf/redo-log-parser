@@ -57,15 +57,16 @@ package object parser {
 
   }
 
-  case class TraceIDPatternPart(
-      tableID: String,
-      attribute: String
+  case class RootElement(
+      tableID: String
   )
-
-  type TraceIDPattern = Seq[TraceIDPatternPart]
 
   type LogEntriesForTrace = Seq[LogEntryWithRedoStatement]
 
-  case class TableEntityRelation(leftTable: Table, rightTable: Table, relatingEntities: Seq[(String, String)])
+  case class TableEntityRelation(
+      leftTable: Table,
+      rightTable: Table,
+      relatingEntities: Seq[(String, String)]
+  )
 
 }

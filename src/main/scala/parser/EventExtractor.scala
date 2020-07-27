@@ -36,6 +36,7 @@ object EventExtractor {
     })
   }
 
+  // todo: ensure uniqueness across entities
   /**
     * Translates row IDs of log entries to new ones,
     * based on what kind of statements have already been seen for that row
@@ -91,7 +92,11 @@ object EventExtractor {
       rowIDLookup: mutable.HashMap[String, String]
   ): String = {
     var newRowID = oldRowID
-    while (rowIDLookup.values.exists(_.equals(newRowID)) || rowIDLookup.keys.exists(_.equals(newRowID))) {
+    while (
+      rowIDLookup.values.exists(_.equals(newRowID)) || rowIDLookup.keys.exists(
+        _.equals(newRowID)
+      )
+    ) {
       newRowID = newRowID + "_" + Random.alphanumeric
         .filter(_.isLetterOrDigit)
         .take(4)
