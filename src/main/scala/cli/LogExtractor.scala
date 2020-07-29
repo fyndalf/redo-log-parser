@@ -48,7 +48,10 @@ object LogExtractor
             )
             val xmlTraces: Seq[scala.xml.Node] =
               traces.map(TraceIDParser.parseTraceToXML)
-            TraceIDParser.serializeLogToDisk(xmlTraces, path.toString)
+            TraceIDParser.serializeLogToDisk(
+              xmlTraces,
+              path.toString + "result.xes"
+            )
         }
       }
     )

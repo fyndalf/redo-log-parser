@@ -1,6 +1,10 @@
 package parser
 
-import parser.ParsedStatement.InsertStatement
+import parser.ParsedStatement.{
+  InsertStatement,
+  UpdateStatement,
+  DeleteStatement
+}
 import schema.{DatabaseSchema, Table}
 
 import scala.xml.XML;
@@ -213,7 +217,25 @@ object TraceIDParser {
   }
 
   def parseTraceToXML(events: LogEntriesForTrace): scala.xml.Node = {
-    ???
+    val eventNodes = events.map(e => {
+      val table = e.tableID
+      val eventName = e.statement match {
+        case insert: InsertStatement => s"Insert into $table"
+        case update: UpdateStatement => {
+          val affectedAttribute = update.affectedAttribute
+          s"Update $affectedAttribute from $table"
+        }
+        case delete: DeleteStatement => s"Delete $table"
+      }
+      <event>
+        <string key="concept:name" value={eventName}/>
+        <date key="time:timestamp" value={e.timestamp.toString}/>
+      </event>
+    })
+
+    <trace>
+      {eventNodes}
+    </trace>
   }
 
   def serializeLogToDisk(
