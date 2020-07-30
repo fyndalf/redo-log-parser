@@ -4,7 +4,9 @@ import java.nio.file.Path
 
 import cats.implicits._
 import com.monovore.decline._
-import parser.{EventExtractor, FileParser, RootElement, TraceIDParser}
+import parser.file.{EventExtractor, FileParser}
+import parser.trace.TraceIDParser
+import parser.RootElement
 import schema.SchemaExtractor
 
 object LogExtractor

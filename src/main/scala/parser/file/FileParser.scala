@@ -1,7 +1,9 @@
-package parser
+package parser.file
 
 import java.nio.file.Path
 import java.time.LocalDateTime
+
+import parser._
 
 import scala.collection.mutable
 

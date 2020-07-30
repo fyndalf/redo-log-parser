@@ -3,6 +3,7 @@ package parser
 import java.time.LocalDateTime
 
 import org.scalatest._
+import parser.file.FileParser
 
 class FileParserSpec extends FlatSpec with Matchers {
   private val entryA = Seq("some statement", "firstIdentifier 27-MAY-2020 14:50:03")

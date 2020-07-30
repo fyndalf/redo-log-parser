@@ -4,3 +4,4 @@ target
 project/project
 .idea
 .metals/*
+*.xes

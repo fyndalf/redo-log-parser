@@ -1,7 +1,7 @@
 import java.time._
 import java.time.format.{DateTimeFormatter, DateTimeFormatterBuilder}
 
-import schema.Table
+import schema.{Column, Table}
 
 import scala.collection.mutable
 import scala.util.matching.Regex
@@ -63,10 +63,55 @@ package object parser {
 
   type LogEntriesForTrace = Seq[LogEntryWithRedoStatement]
 
+
+  case class Relation(
+      table: Table,
+      relatingTables: Set[Table]
+  )
+  case class BinaryRelation(
+      leftTable: Table,
+      rightTable: Table
+  ) {
+    def swap(): BinaryRelation = {
+      BinaryRelation(rightTable, leftTable)
+    }
+  }
+
+  case class ColumnRelation(
+      leftColumn: Column,
+      rightColumn: Column
+  )
+
+  case class LogEntriesForTable(
+      tableID: String,
+      logEntries: Seq[LogEntryWithRedoStatement]
+  )
+
+  case class LogEntriesForTableAndEntity(
+      tableID: String,
+      entriesForEntities: Seq[LogEntriesForEntity]
+  )
+
+  case class LogEntriesForEntity(
+      rowID: String,
+      logEntries: Seq[LogEntryWithRedoStatement]
+  )
+
+  case class RowWithBucketIdentifier(
+      tableID: String,
+      rowID: String,
+      bucketID: Int
+  )
+
   case class TableEntityRelation(
       leftTable: Table,
       rightTable: Table,
-      relatingEntities: Seq[(String, String)]
+      relatingEntities: Seq[EntityRelation]
+  )
+
+  case class EntityRelation(
+      leftEntityID: String,
+      rightEntityID: String
   )
 
 }

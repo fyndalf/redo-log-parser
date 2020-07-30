@@ -25,7 +25,7 @@ class Table(
   }
 
   override def clone(): Table = {
-    return new Table(name, columns.clone());
+    new Table(name, columns.clone())
   }
 
   override def toString: String = {

@@ -16,7 +16,7 @@ class Column(
   val values: mutable.HashMap[String, String] = columnValues
 
   override def clone(): Column = {
-    return new Column(name, table, isPrimaryKey, isSubsetOf, values.clone());
+    new Column(name, table, isPrimaryKey, isSubsetOf, values.clone())
   }
 
   override def toString: String = {

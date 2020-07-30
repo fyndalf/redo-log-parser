@@ -1,9 +1,7 @@
 import java.nio.file.Path
 
 import parser.{ExtractedLogEntry, LogEntryWithRedoStatement}
-import schema.{DatabaseSchema, Table}
-
-import scala.collection.mutable
+import schema.DatabaseSchema
 
 package object cli {
   def printEntries(
