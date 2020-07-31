@@ -23,8 +23,8 @@ object LogExtractor
           .orFalse
 
         (filePath, verboseOpt).mapN {
-          (pathParam, veboseParam) =>
-            implicit val verbose: Boolean = veboseParam
+          (pathParam, verboseParam) =>
+            implicit val verbose: Boolean = verboseParam
             implicit val path: Path = pathParam
 
             printPath()
@@ -54,7 +54,7 @@ object LogExtractor
 
             TraceIDParser.serializeLogToDisk(
               log,
-              path.toString + "result.xes"
+              path.toString + "_result.xes"
             )
         }
       }
