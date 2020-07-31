@@ -7,6 +7,7 @@ import com.monovore.decline._
 import parser.file.{EventExtractor, FileParser}
 import parser.trace.TraceIDParser
 import parser.RootElement
+import parser.trace.TraceIDParser.generateXMLLog
 import schema.SchemaExtractor
 
 object LogExtractor
@@ -48,10 +49,11 @@ object LogExtractor
               databaseSchema,
               transformedLogEntries
             )
-            val xmlTraces: Seq[scala.xml.Node] =
-              traces.map(TraceIDParser.parseTraceToXML)
+
+            val log = generateXMLLog(traces)
+
             TraceIDParser.serializeLogToDisk(
-              xmlTraces,
+              log,
               path.toString + "result.xes"
             )
         }

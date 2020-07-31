@@ -20,7 +20,7 @@ import parser.trace.TraceIDParserHelper.{
 }
 import schema.DatabaseSchema
 
-import scala.xml.XML
+import scala.xml.{Elem, XML}
 
 object TraceIDParser {
 
@@ -75,7 +75,16 @@ object TraceIDParser {
     assignLogEntriesToBuckets(logEntryBuckets, logEntries, rowIDsWithBuckets)
   }
 
-  def parseTraceToXML(events: LogEntriesForTrace): scala.xml.Node = {
+  def generateXMLLog(traces: Seq[LogEntriesForTrace]): Elem = {
+    val xmlTraces = traces
+      .map(parseTraceEventsToXML)
+
+    <log xes.version="2.0" xmlns="http://www.xes-standard.org/">
+      {xmlTraces.map(t => <trace>{t}</trace>)}
+    </log>
+  }
+
+  private def parseTraceEventsToXML(events: LogEntriesForTrace): Seq[Elem] = {
     val eventNodes = events.map(e => {
       val table = e.tableID
       val eventName = e.statement match {
@@ -85,23 +94,20 @@ object TraceIDParser {
           s"Update $affectedAttribute from $table"
         case _: DeleteStatement => s"Delete $table"
       }
-      <event>
-        <string key="concept:name" value={eventName}/>
+      <string key="concept:name" value={eventName}/>
         <date key="time:timestamp" value={e.timestamp.toString}/>
-      </event>
     })
 
-    <trace>
-      {eventNodes}
-    </trace>
+    { eventNodes.map(e => <event>{e}</event>) }
   }
 
   def serializeLogToDisk(
-      traces: Seq[scala.xml.Node],
+      traces: Elem,
       filename: String
   ): Unit = {
-    val logContent = traces.flatten[scala.xml.Node].head
-    XML.save(filename, logContent, "UTF-8", xmlDecl = true, null)
+    val prettyPrinter = new scala.xml.PrettyPrinter(200, 2)
+    val prettyXml = prettyPrinter.format(traces)
+    XML.save(filename, XML.loadString(prettyXml), "UTF-8", xmlDecl = true, null)
   }
 
 }
