@@ -44,11 +44,16 @@ object LogExtractor
             val rootElementInput =
               scala.io.StdIn.readLine("Please enter a root element:")
             val rootElement = RootElement(rootElementInput)
+
+            println("Start creating traces from the redo log ...")
+
             val traces = TraceIDParser.createTracesForPattern(
               rootElement,
               databaseSchema,
               transformedLogEntries
             )
+
+            println("Done.\nGenerating XES log and serialising it to disk ...")
 
             val log = generateXMLLog(traces)
 
@@ -56,6 +61,8 @@ object LogExtractor
               log,
               path.toString + "_result.xes"
             )
+
+            println("Done.")
         }
       }
     )
