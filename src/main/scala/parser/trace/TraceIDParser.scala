@@ -80,26 +80,23 @@ object TraceIDParser {
       .map(parseTraceEventsToXML)
 
     <log xes.version="2.0" xmlns="http://www.xes-standard.org/">
-      {xmlTraces.map(t => <trace>{t}</trace>)}
+      {xmlTraces.map(traceNode => <trace>{traceNode}</trace>)}
     </log>
   }
 
   private def parseTraceEventsToXML(events: LogEntriesForTrace): Seq[Elem] = {
-    val eventNodes = events.map(e => {
-      val table = e.tableID
-      val eventName = e.statement match {
-        case _: InsertStatement => s"Add $table entity"
+    val eventNodes = events.map(event => {
+      val eventName = event.statement match {
+        case _: InsertStatement => s"Add ${event.tableID} entity"
         case update: UpdateStatement =>
-          val affectedAttribute = update.affectedAttribute
-          val newAttributeValue = update.newAttributeValue
-          s"Update $affectedAttribute value of $table entity to $newAttributeValue"
-        case _: DeleteStatement => s"Delete entity from $table"
+          s"Update ${update.affectedAttribute} value of ${event.tableID} entity to ${update.newAttributeValue}"
+        case _: DeleteStatement => s"Delete entity from ${event.tableID}"
       }
       <string key="concept:name" value={eventName}/>
-        <date key="time:timestamp" value={e.timestamp.toString}/>
+        <date key="time:timestamp" value={event.timestamp.toString}/>
     })
 
-    { eventNodes.map(e => <event>{e}</event>) }
+    { eventNodes.map(eventNode => <event>{eventNode}</event>) }
   }
 
   def serializeLogToDisk(

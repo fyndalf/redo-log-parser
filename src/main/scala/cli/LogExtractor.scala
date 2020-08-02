@@ -59,7 +59,7 @@ object LogExtractor
 
             TraceIDParser.serializeLogToDisk(
               log,
-              path.toString + "_result.xes"
+              path.toString + s"_${rootElement.tableID}_result.xes"
             )
 
             println("Done.")
