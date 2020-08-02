@@ -25,7 +25,7 @@ object SchemaExtractor {
     val schema: DatabaseSchema = mutable.HashMap[String, Table]()
 
     logEntries.foreach(logEntry => {
-      val previousSchema = schema.clone();
+      val previousSchema = schema.clone()
 
       if (!schema.contains(logEntry.tableID)) {
         schema += (logEntry.tableID -> new Table(logEntry.tableID))

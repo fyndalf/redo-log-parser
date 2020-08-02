@@ -1,7 +1,5 @@
 package schema
 
-import scala.collection.mutable
-
 object SchemaDeriver {
 
   def updateSchemaProperties(
@@ -14,7 +12,7 @@ object SchemaDeriver {
     affectedColumnIds.foreach(columnId => {
       checkForPrimaryKeyDuplicates(table.columns(columnId))
     })
-    updateColumnRelations(schema, previousSchema);
+    updateColumnRelations(schema, previousSchema)
   }
 
   private def checkForPrimaryKeyDuplicates(column: Column): Unit = {
@@ -69,7 +67,7 @@ object SchemaDeriver {
         if (column.isSubsetOf != isSubsetOf) {
           val similarColumns = isSubsetOf.filter(newColumn =>
             column.isSubsetOf.contains(newColumn)
-          );
+          )
 
           val newColumns = isSubsetOf
             .filter(targetColumn =>

@@ -4,7 +4,10 @@ import java.nio.file.Path
 
 import cats.implicits._
 import com.monovore.decline._
-import parser.{EventExtractor, FileParser, RootElement, TraceIDParser}
+import parser.file.{EventExtractor, FileParser}
+import parser.trace.TraceIDParser
+import parser.RootElement
+import parser.trace.TraceIDParser.generateXMLLog
 import schema.SchemaExtractor
 
 object LogExtractor
@@ -20,8 +23,8 @@ object LogExtractor
           .orFalse
 
         (filePath, verboseOpt).mapN {
-          (pathParam, veboseParam) =>
-            implicit val verbose: Boolean = veboseParam
+          (pathParam, verboseParam) =>
+            implicit val verbose: Boolean = verboseParam
             implicit val path: Path = pathParam
 
             printPath()
@@ -41,17 +44,25 @@ object LogExtractor
             val rootElementInput =
               scala.io.StdIn.readLine("Please enter a root element:")
             val rootElement = RootElement(rootElementInput)
+
+            println("Start creating traces from the redo log ...")
+
             val traces = TraceIDParser.createTracesForPattern(
               rootElement,
               databaseSchema,
               transformedLogEntries
             )
-            val xmlTraces: Seq[scala.xml.Node] =
-              traces.map(TraceIDParser.parseTraceToXML)
+
+            println("Done.\nGenerating XES log and serialising it to disk ...")
+
+            val log = generateXMLLog(traces)
+
             TraceIDParser.serializeLogToDisk(
-              xmlTraces,
-              path.toString + "result.xes"
+              log,
+              path.toString + s"_${rootElement.tableID}_result.xes"
             )
+
+            println("Done.")
         }
       }
     )
