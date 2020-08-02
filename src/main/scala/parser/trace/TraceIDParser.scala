@@ -88,11 +88,12 @@ object TraceIDParser {
     val eventNodes = events.map(e => {
       val table = e.tableID
       val eventName = e.statement match {
-        case _: InsertStatement => s"Insert into $table"
+        case _: InsertStatement => s"Add $table entity"
         case update: UpdateStatement =>
           val affectedAttribute = update.affectedAttribute
-          s"Update $affectedAttribute from $table"
-        case _: DeleteStatement => s"Delete $table"
+          val newAttributeValue = update.newAttributeValue
+          s"Update $affectedAttribute value of $table entity to $newAttributeValue"
+        case _: DeleteStatement => s"Delete entity from $table"
       }
       <string key="concept:name" value={eventName}/>
         <date key="time:timestamp" value={e.timestamp.toString}/>
