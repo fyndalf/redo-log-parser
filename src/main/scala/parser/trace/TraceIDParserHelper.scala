@@ -35,11 +35,13 @@ object TraceIDParserHelper {
       rowIDsWithBuckets: Map[String, Set[RowWithBucketIdentifier]]
   ): Seq[Seq[LogEntryWithRedoStatement]] = {
     logEntries.foreach(entry => {
-      rowIDsWithBuckets(entry.rowID)
-        .filter(_.tableID.equals(entry.tableID))
-        .foreach(b => {
-          logEntryBuckets(b.bucketID) = logEntryBuckets(b.bucketID) :+ entry
-        })
+      if (rowIDsWithBuckets.contains(entry.rowID)) {
+        rowIDsWithBuckets(entry.rowID)
+          .filter(_.tableID.equals(entry.tableID))
+          .foreach(b => {
+            logEntryBuckets(b.bucketID) = logEntryBuckets(b.bucketID) :+ entry
+          })
+      }
     })
 
     logEntryBuckets.toSeq
