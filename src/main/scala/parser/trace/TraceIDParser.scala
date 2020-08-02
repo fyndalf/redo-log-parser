@@ -33,14 +33,14 @@ object TraceIDParser {
     // group entries by table and row id
     val logEntriesForTable = logEntries
       .groupBy(_.tableID)
-      .map(e => LogEntriesForTable(e._1, e._2))
+      .map(table => LogEntriesForTable(table._1, table._2))
     val logEntriesForEntity = logEntriesForTable
-      .map(x => {
+      .map(logEntriesForTable => {
         LogEntriesForTableAndEntity(
-          x.tableID,
-          x.logEntries
+          logEntriesForTable.tableID,
+          logEntriesForTable.logEntries
             .groupBy(_.rowID)
-            .map(e => LogEntriesForEntity(e._1, e._2))
+            .map(row => LogEntriesForEntity(row._1, row._2))
             .toSeq
         )
       })
