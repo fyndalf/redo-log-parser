@@ -7,10 +7,14 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
-
+  scalafmt-lint:
     runs-on: ubuntu-latest
-
+    steps:
+      - uses: actions/checkout@v2
+      - name: Check for scalafmt conformance
+        uses: openlawteam/scalafmt-ci@v2
+  build:
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 11
