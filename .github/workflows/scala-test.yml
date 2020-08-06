@@ -12,12 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Check for scalafmt conformance
-      - run: |
-          VERSION=2.6.1
-          INSTALL_LOCATION=/usr/local/bin/scalafmt-native
-          curl https://raw.githubusercontent.com/scalameta/scalafmt/master/bin/install-scalafmt-native.sh | \
+      - run: VERSION=2.6.1
+      - run: INSTALL_LOCATION=/usr/local/bin/scalafmt-native
+      - run: curl https://raw.githubusercontent.com/scalameta/scalafmt/master/bin/install-scalafmt-native.sh | \
           bash -s -- $VERSION $INSTALL_LOCATION
-      - run: scalafmt-native --help # should show version 2.6.4
+      - run: scalafmt-native --help # should show version 2.6.1
   build:
     runs-on: ubuntu-latest
     steps:
