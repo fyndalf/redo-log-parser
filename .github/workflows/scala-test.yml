@@ -14,7 +14,7 @@ jobs:
       - name: Install scalaftm 2.6.1
         run: |
           VERSION=2.6.1
-          INSTALL_LOCATION=/usr/local/bin/scalafmt-native
+          INSTALL_LOCATION=/var/tmp/scalafmt-native
           curl https://raw.githubusercontent.com/scalameta/scalafmt/master/bin/install-scalafmt-native.sh | \
           bash -s -- $VERSION $INSTALL_LOCATION
       - name: Check for scalafmt conformance
