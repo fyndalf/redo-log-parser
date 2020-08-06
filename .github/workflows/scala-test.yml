@@ -18,7 +18,7 @@ jobs:
           curl https://raw.githubusercontent.com/scalameta/scalafmt/master/bin/install-scalafmt-native.sh | \
           bash -s -- $VERSION $INSTALL_LOCATION
       - name: Check for scalafmt conformance
-        run: scalafmt-native --help
+        run: /var/tmp/scalafmt-native --help
   build:
     runs-on: ubuntu-latest
     steps:
