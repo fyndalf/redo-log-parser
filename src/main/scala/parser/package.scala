@@ -63,7 +63,6 @@ package object parser {
 
   type LogEntriesForTrace = Seq[LogEntryWithRedoStatement]
 
-
   case class Relation(
       table: Table,
       relatingTables: Set[Table]

@@ -47,7 +47,9 @@ object TraceIDParserHelper {
     logEntryBuckets.toSeq
   }
 
-  def initializeLogEntryBucketsForRows(rows: Seq[RowWithBucketIdentifier]): Array[Seq[LogEntryWithRedoStatement]] = {
+  def initializeLogEntryBucketsForRows(
+      rows: Seq[RowWithBucketIdentifier]
+  ): Array[Seq[LogEntryWithRedoStatement]] = {
     val bucketSize = rows.length
     new Array[Seq[LogEntryWithRedoStatement]](bucketSize).map(_ =>
       Seq[LogEntryWithRedoStatement]()
