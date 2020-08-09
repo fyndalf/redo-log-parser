@@ -98,7 +98,7 @@ object TraceIDParser {
         case _: DeleteStatement => s"Delete entity from ${event.tableID}"
       }
       <string key="concept:name" value={eventName}/>
-        <date key="time:timestamp" value={event.timestamp.toString}/>
+        <date key="time:timestamp" value={event.timestamp.toString + ":000+00:00"}/>
     })
 
     { eventNodes.map(eventNode => <event>{eventNode}</event>) }
