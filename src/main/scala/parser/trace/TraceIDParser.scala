@@ -75,14 +75,16 @@ object TraceIDParser {
     assignLogEntriesToBuckets(logEntryBuckets, logEntries, rowIDsWithBuckets)
   }
 
-  def generateXMLLog(traces: Seq[LogEntriesForTrace]): Elem = {
+  def generateXMLLog(traces: Seq[LogEntriesForTrace], rootElement: RootElement): Elem = {
     val xmlTraces = traces
       .map(parseTraceEventsToXML)
+
+    val logName = s"${rootElement.tableID}_XES_Log"
 
     <log xes.version="2.0" xmlns="http://www.xes-standard.org/">
       <extension name="Time" prefix="time" uri="http://www.xes-standard.org/time.xesext"/>
       <extension name="Concept" prefix="concept" uri="http://www.xes-standard.org/concept.xesext"/>
-      <string key="concept:name" value="" />
+      <string key="concept:name" value={logName} />
       {xmlTraces.map(traceNode => <trace>{traceNode}</trace>)}
     </log>
   }

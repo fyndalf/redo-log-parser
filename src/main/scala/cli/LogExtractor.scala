@@ -55,7 +55,7 @@ object LogExtractor
 
             println("Done.\nGenerating XES log and serialising it to disk ...")
 
-            val log = generateXMLLog(traces)
+            val log = generateXMLLog(traces, rootElement)
 
             TraceIDParser.serializeLogToDisk(
               log,
