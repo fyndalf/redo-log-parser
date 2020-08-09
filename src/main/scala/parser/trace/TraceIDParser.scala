@@ -80,6 +80,9 @@ object TraceIDParser {
       .map(parseTraceEventsToXML)
 
     <log xes.version="2.0" xmlns="http://www.xes-standard.org/">
+      <extension name="Time" prefix="time" uri="http://www.xes-standard.org/time.xesext"/>
+      <extension name="Concept" prefix="concept" uri="http://www.xes-standard.org/concept.xesext"/>
+      <string key="concept:name" value="" />
       {xmlTraces.map(traceNode => <trace>{traceNode}</trace>)}
     </log>
   }
