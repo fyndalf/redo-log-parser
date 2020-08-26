@@ -11,8 +11,8 @@ import parser.trace.TraceIDParser.generateXMLLog
 import schema.SchemaExtractor
 
 /**
- * The main object of the CLI tool - it is used to run the tool.
- */
+  * The main object of the CLI tool - it is used to run the tool.
+  */
 object Main
     extends CommandApp(
       name = "redo-log-extractor",
@@ -33,6 +33,9 @@ object Main
             printPath()
             // todo: make block separator a parameter
             // todo: make date time format a parameter
+
+            println("Reading and parsing redo log...")
+
             val logEntries = FileParser.getAndParseLogFile(path)
             printEntries(logEntries)
             val parsedLogEntries = FileParser.parseLogEntries(logEntries)
@@ -40,12 +43,18 @@ object Main
             val transformedLogEntries =
               EventExtractor.transformRowIdentifiers(parsedLogEntries)
             printTransformedLogEntries(transformedLogEntries)
+
+            println("Done.\nExtracting database schema...")
+
             val databaseSchema =
               SchemaExtractor.extractDatabaseSchema(transformedLogEntries)
+
+            println("Done.")
+
             printDatabaseSchema(databaseSchema)
 
             val rootClassInput =
-              scala.io.StdIn.readLine("Please enter a root class:")
+              scala.io.StdIn.readLine("\nPlease enter a root class:")
             val rootClass = RootClass(rootClassInput)
 
             println("Start creating traces from the redo log ...")
