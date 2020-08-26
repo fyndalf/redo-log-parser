@@ -4,6 +4,15 @@ import parser.{RowWithBucketIdentifier, TableEntityRelation}
 import schema.Table
 
 object TraceBinningAssigner {
+
+  /**
+   * Determines the trace bucket for each row (i.e., entity) of the redo log
+   * @param currentEntity The currently considered entity
+   * @param path All entities that have already been considered
+   * @param tableEntityRelations All relating entities that have been discovered
+   * @param relevantRows All relevant rows and bucket identifiers
+   * @return All rows and their bucket identifiers
+   */
   def determineRowBuckets(
       currentEntity: Table,
       path: Set[Table],
@@ -68,6 +77,9 @@ object TraceBinningAssigner {
     leftResult ++ relevantRows ++ rightResult
   }
 
+  /**
+   * Determines all relevant row ids for the left-hand side of the relation
+   */
   private def determineRelevantRowIDsForLeftResult(
       newIntermediateRows: Seq[RowWithBucketIdentifier],
       tableEntityRelation: TableEntityRelation
@@ -87,6 +99,9 @@ object TraceBinningAssigner {
     })
   }
 
+  /**
+   * Determines all relevant row ids for the right-hand side of the relation
+   */
   private def determineRelevantRowIDsForRightResult(
       newIntermediateRows: Seq[RowWithBucketIdentifier],
       tableEntityRelation: TableEntityRelation

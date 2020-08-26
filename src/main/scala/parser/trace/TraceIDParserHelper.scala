@@ -3,7 +3,7 @@ package parser.trace
 import parser.{
   LogEntriesForTableAndEntity,
   LogEntryWithRedoStatement,
-  RootElement,
+  RootClass,
   RowWithBucketIdentifier
 }
 
@@ -11,11 +11,11 @@ object TraceIDParserHelper {
 
   // assign entries to root element buckets
   def gatherRootLogBuckets(
-      rootElement: RootElement,
-      logEntriesForEntity: Seq[LogEntriesForTableAndEntity]
+                            rootClass: RootClass,
+                            logEntriesForEntity: Seq[LogEntriesForTableAndEntity]
   ): Seq[Seq[LogEntryWithRedoStatement]] = {
     logEntriesForEntity
-      .filter(_.tableID.equalsIgnoreCase(rootElement.tableID))
+      .filter(_.tableID.equalsIgnoreCase(rootClass.tableID))
       .flatMap(_.entriesForEntities.map(_.logEntries))
   }
 

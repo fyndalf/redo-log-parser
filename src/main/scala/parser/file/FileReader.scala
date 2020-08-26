@@ -9,8 +9,7 @@ object FileReader {
   /**
     * Read a logfile from disk given by a path and properly close the file handle.
     *
-    * @param path
-    * @return
+    * @param path The file to the path
     */
   def readLogFile(path: Path): Seq[String] = {
     val bufferedSource = Source.fromFile(path.toFile)

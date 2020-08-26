@@ -6,10 +6,13 @@ import cats.implicits._
 import com.monovore.decline._
 import parser.file.{EventExtractor, FileParser}
 import parser.trace.TraceIDParser
-import parser.RootElement
+import parser.RootClass
 import parser.trace.TraceIDParser.generateXMLLog
 import schema.SchemaExtractor
 
+/**
+ * The main object of the CLI tool - it is used to run the tool.
+ */
 object LogExtractor
     extends CommandApp(
       name = "redo-log-extractor",
@@ -41,25 +44,25 @@ object LogExtractor
               SchemaExtractor.extractDatabaseSchema(transformedLogEntries)
             printDatabaseSchema(databaseSchema)
 
-            val rootElementInput =
+            val rootClassInput =
               scala.io.StdIn.readLine("Please enter a root element:")
-            val rootElement = RootElement(rootElementInput)
+            val rootClass = RootClass(rootClassInput)
 
             println("Start creating traces from the redo log ...")
 
             val traces = TraceIDParser.createTracesForPattern(
-              rootElement,
+              rootClass,
               databaseSchema,
               transformedLogEntries
             )
 
             println("Done.\nGenerating XES log and serialising it to disk ...")
 
-            val log = generateXMLLog(traces, rootElement)
+            val log = generateXMLLog(traces, rootClass)
 
             TraceIDParser.serializeLogToDisk(
               log,
-              path.toString + s"_${rootElement.tableID}_result.xes"
+              path.toString + s"_${rootClass.tableID}_result.xes"
             )
 
             println("Done.")

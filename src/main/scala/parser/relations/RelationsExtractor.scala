@@ -5,9 +5,10 @@ import parser._
 import schema.DatabaseSchema
 
 object RelationsExtractor {
-  // todo: improve naming
 
-  // extract referenced tables for each table
+  /**
+   * Extracts referenced tables for each table
+   */
   def extractRelations(schema: DatabaseSchema): Seq[Relation] = {
     schema.values
       .map(table => {
@@ -21,7 +22,9 @@ object RelationsExtractor {
       .toSeq
   }
 
-  // identify all unique binary relations
+  /**
+   * Identifies all unique binary relations
+   */
   def extractUniqueBinaryRelations(
       relations: Seq[Relation]
   ): Set[BinaryRelation] = {
@@ -46,9 +49,11 @@ object RelationsExtractor {
     uniqueRelations
   }
 
-  // find all relevant attributes mapping to other table
-  // for each of relation: look at both columns and take matching values
-  // save combination of row id
+  /**
+   * Finds all relevant attributes mapping to other table.
+   * For each relation, it looks at both columns and takes matching values.
+   * Saves the combination of row ids
+   */
   def extractTableEntityRelations(
       uniqueRelations: Set[BinaryRelation],
       schema: DatabaseSchema,
@@ -64,6 +69,9 @@ object RelationsExtractor {
     })
   }
 
+  /**
+   * Extracts all entity relations for a binary relation
+   */
   private def extractEntityRelationsForRelation(
       relation: BinaryRelation,
       allReferences: Set[ColumnRelation],
@@ -94,6 +102,9 @@ object RelationsExtractor {
     currentTableEntityRelation
   }
 
+  /**
+   * Determines the relations for an entity.
+   */
   private def determineRelationForEntity(
       entriesForEntity: LogEntriesForEntity,
       columnRelation: ColumnRelation,
@@ -132,6 +143,10 @@ object RelationsExtractor {
     updatedTableEntityRelation
   }
 
+  /**
+   * Updates the entity relation based on insert statements of the left column
+   * of a relation
+   */
   private def updateEntityRelationForRightStatements(
       logEntry: LogEntryWithRedoStatement,
       columnRelation: ColumnRelation,
@@ -162,6 +177,9 @@ object RelationsExtractor {
     updatedTableEntityRelation
   }
 
+  /**
+   * Extract all references of a relation
+   */
   private def extractReferencesOfRelation(
       relation: BinaryRelation,
       schema: DatabaseSchema
@@ -171,6 +189,9 @@ object RelationsExtractor {
     rightReferences ++ leftReferences
   }
 
+  /**
+   * Extracts all left-side references of a relation
+   */
   private def extractLeftReferencesOfRelation(
       schema: DatabaseSchema,
       relation: BinaryRelation
@@ -190,6 +211,9 @@ object RelationsExtractor {
     leftReferences
   }
 
+  /**
+   * Extracts all left-side references of a relation
+   */
   private def extractRightReferencesOfRelation(
       schema: DatabaseSchema,
       relation: BinaryRelation

@@ -57,7 +57,7 @@ package object parser {
 
   }
 
-  case class RootElement(
+  case class RootClass(
       tableID: String
   )
 

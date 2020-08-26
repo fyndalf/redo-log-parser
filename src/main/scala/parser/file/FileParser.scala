@@ -11,17 +11,25 @@ import scala.collection.mutable
 // todo: take variable separator into account
 object FileParser {
 
+  /**
+   * Reads and parses the log file from disk, by grouping the log based on empty lines
+   */
   def getAndParseLogFile(path: Path): Seq[ExtractedLogEntry] = {
     val logFileContents = FileReader.readLogFile(path)
     val splitLogFile = logFileContents.filterNot(_.isBlank).grouped(2).toSeq
     parseLogFileChunks(splitLogFile)
   }
 
-  // todo: make pattern a parameter
+  /**
+   * For each chunk of the read log, a single log entry is extracted
+   */
   def parseLogFileChunks(chunks: Seq[Seq[String]]): Seq[ExtractedLogEntry] = {
     chunks.map(entry => translateChunkToLogEntry(entry))
   }
 
+  /**
+   * Takes extracted log entries and parses them to extract more information
+   */
   def parseLogEntries(
       entries: Seq[ExtractedLogEntry]
   ): Seq[LogEntryWithRedoStatement] = {
@@ -35,6 +43,9 @@ object FileParser {
     )
   }
 
+  /**
+   * Translates a chunk of the log into a single extracted log entry
+   */
   private def translateChunkToLogEntry(
       chunk: Seq[String]
   ): ExtractedLogEntry = {
@@ -46,6 +57,9 @@ object FileParser {
     ExtractedLogEntry(statement, rowID, timestamp)
   }
 
+  /**
+   * Extracts a more detailed statement out of the parsed log entry statement based on the statement type
+   */
   private def parseLogStatement(statement: String): ParsedStatement = {
     val statementTypePattern(statementType) = statement
     statementType match {
@@ -62,6 +76,9 @@ object FileParser {
     }
   }
 
+  /**
+   * Extracts an insert statement and its inserted attributes and values
+   */
   private def extractInsert(
       statement: String
   ): ParsedStatement.InsertStatement = {
@@ -84,6 +101,9 @@ object FileParser {
     ParsedStatement.InsertStatement(inserts)
   }
 
+  /**
+   * Extracts an update statement, its affected attribute, and the old and new values.
+   */
   private def extractUpdate(
       statement: String
   ): ParsedStatement.UpdateStatement = {
@@ -100,6 +120,9 @@ object FileParser {
     )
   }
 
+  /**
+   * Extracts a delete statement and the attributes and values used for identifying the entity to be deleted.
+   */
   private def extractDeleteStatement(
       statement: String
   ): ParsedStatement.DeleteStatement = {
@@ -120,6 +143,9 @@ object FileParser {
     ParsedStatement.DeleteStatement(identifiers)
   }
 
+  /**
+   * Parses the table identifier out of a redo log statement
+   */
   private def parseTableIdentifier(statement: String): String = {
     val tablePattern(_, _, table, _) = statement
     table

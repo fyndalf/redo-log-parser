@@ -14,9 +14,6 @@ object EventExtractor {
 
   /**
     * Transforms all log entries to ensure that now row id is reused across records
-    *
-    * @param logEntries
-    * @return
     */
   def transformRowIdentifiers(
       logEntries: Seq[LogEntryWithRedoStatement]
@@ -50,11 +47,6 @@ object EventExtractor {
     *     if current statement is insert: use new id and add to lookup
     *     if current statement is update or delete, and known does not contain delete: use lookup
     *     if known contains delete: use new id and add to lookup
-    *
-    * @param logEntry
-    * @param knownRowIDs
-    * @param rowIDLookup
-    * @return
     */
   private def determineNewRowID(
       logEntry: LogEntryWithRedoStatement,
@@ -92,6 +84,12 @@ object EventExtractor {
     }
   }
 
+  /**
+    * Generates a new row id and ensures that it has not already been used
+    * @param oldRowID
+    * @param rowIDLookup
+    * @return
+    */
   private def generateNewRowID(
       oldRowID: String,
       rowIDLookup: mutable.HashMap[String, String]
