@@ -41,7 +41,41 @@ a running Oracle DB 19c EE, which can be dowloaded [here](https://www.oracle.com
 [This article](https://docs.oracle.com/en/database/oracle/oracle-database/18/sutil/oracle-logminer-utility.html#GUID-3417B738-374C-4EE3-B15C-3A66E01AE2B5)
 provides information on how to extract the REDO log file. The database should be configured to archive the redo log prior to the process simulation. The output should be stored as a plain text file next to the cli tool.
 
-TODO: Tom - how to extract redo log from oracle in our format?
+To export the redo log in the correct format using sqlplus, the following formatting options must be set first:
+
+```sql
+column operation format a30
+column username format a30
+column sql_redo format a50
+column timestamp format a25
+column os_username format a20
+set linesize 200
+```
+
+Additionally, the time format must be adapted:
+
+```sql
+ALTER SESSION SET NLS_DATE_FORMAT = 'DD-MON-YYYY HH24:MI:SS';
+```
+
+Also the running headers must be removed:
+
+```sql
+SET HEADING OFF
+```
+
+For the redo log the information from the columns SQL_REDO, ROW_ID and TIMESTAMP is needed.
+To generate the log directly from sqlplus, spool can be used. Spool stores the output of a query into a file.
+Spool can be used as follows:
+
+```sql
+spool on;
+spool ###target path###;
+SELECT SQL_REDO, ROW_ID, TIMESTAMP FROM v$logmnr_contents WHERE TABLE_NAME='###table name###';
+spool off;
+```
+
+Due to the formatting of sqlplus, line breaks may still have to be removed in the result.
 
 ## Packaging
 
