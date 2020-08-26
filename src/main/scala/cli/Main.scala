@@ -13,7 +13,7 @@ import schema.SchemaExtractor
 /**
  * The main object of the CLI tool - it is used to run the tool.
  */
-object LogExtractor
+object Main
     extends CommandApp(
       name = "redo-log-extractor",
       header = "Extract Event logs from redo logs",
@@ -45,7 +45,7 @@ object LogExtractor
             printDatabaseSchema(databaseSchema)
 
             val rootClassInput =
-              scala.io.StdIn.readLine("Please enter a root element:")
+              scala.io.StdIn.readLine("Please enter a root class:")
             val rootClass = RootClass(rootClassInput)
 
             println("Start creating traces from the redo log ...")

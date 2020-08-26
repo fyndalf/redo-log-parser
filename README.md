@@ -42,3 +42,14 @@ a running Oracle DB 19c EE, which can be dowloaded [here](https://www.oracle.com
 provides information on how to extract the REDO log file. The database should be configured to archive the redo log prior to the process simulation. The output should be stored as a plain text file next to the cli tool.
 
 TODO: Tom - how to extract redo log from oracle in our format?
+
+## Packaging
+
+A .jar file can be built by calling
+
+```bash
+$ sbt package
+```
+
+The binary will reside inside the `target` folder, and can be used instead of explicitly using SBT.
+For this, only `Java 11` is required.
