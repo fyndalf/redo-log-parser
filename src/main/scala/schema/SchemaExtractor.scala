@@ -46,10 +46,10 @@ object SchemaExtractor {
   }
 
   /**
-   * Extracts all referenced column ids out of a parsed statement
-   * @param statement
-   * @return
-   */
+    * Extracts all referenced column ids out of a parsed statement
+    * @param statement
+    * @return
+    */
   private def extractColumnIDs(statement: ParsedStatement): Seq[String] = {
     (statement match {
       case insert: InsertStatement => insert.insertedAttributesAndValues.keys
@@ -60,8 +60,8 @@ object SchemaExtractor {
   }
 
   /**
-   * Extract data out of an insert statement
-   */
+    * Extract data out of an insert statement
+    */
   private def extractFromInsert(
       statement: InsertStatement,
       rowID: String,
@@ -84,8 +84,8 @@ object SchemaExtractor {
   }
 
   /**
-   * Extracts data out of an update statement
-   */
+    * Extracts data out of an update statement
+    */
   private def extractFromUpdate(
       statement: UpdateStatement,
       rowID: String,
@@ -106,8 +106,8 @@ object SchemaExtractor {
   }
 
   /**
-   * Extracts data out of a delete statement
-   */
+    * Extracts data out of a delete statement
+    */
   private def extractFromDelete(
       statement: DeleteStatement,
       rowID: String,

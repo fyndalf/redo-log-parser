@@ -11,8 +11,8 @@ object TraceIDParserHelper {
 
   // assign entries to root element buckets
   def gatherRootLogBuckets(
-                            rootClass: RootClass,
-                            logEntriesForEntity: Seq[LogEntriesForTableAndEntity]
+      rootClass: RootClass,
+      logEntriesForEntity: Seq[LogEntriesForTableAndEntity]
   ): Seq[Seq[LogEntryWithRedoStatement]] = {
     logEntriesForEntity
       .filter(_.tableID.equalsIgnoreCase(rootClass.tableID))

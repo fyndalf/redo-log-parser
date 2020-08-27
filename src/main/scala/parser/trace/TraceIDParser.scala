@@ -26,17 +26,17 @@ object TraceIDParser {
 
   // assumes: primary keys and foreign keys are not updated
   /**
-   * Generates a sequence of sequences, where each sequence holds redo log entries for a trace
-   * based on the selected root class and schema
-   * @param rootClass The root class selected by the user
-   * @param schema The schema discovered from the redo log
-   * @param logEntries All log entries parsed out of the redo log
-   * @return
-   */
+    * Generates a sequence of sequences, where each sequence holds redo log entries for a trace
+    * based on the selected root class and schema
+    * @param rootClass The root class selected by the user
+    * @param schema The schema discovered from the redo log
+    * @param logEntries All log entries parsed out of the redo log
+    * @return
+    */
   def createTracesForPattern(
-                              rootClass: RootClass,
-                              schema: DatabaseSchema,
-                              logEntries: Seq[LogEntryWithRedoStatement]
+      rootClass: RootClass,
+      schema: DatabaseSchema,
+      logEntries: Seq[LogEntryWithRedoStatement]
   ): Seq[LogEntriesForTrace] = {
     // group entries by table and row id
     val logEntriesForTable = logEntries
@@ -85,12 +85,15 @@ object TraceIDParser {
   }
 
   /**
-   * Takes all traces and their log entries and generates an XML Element containing the whole event log
-   * @param traces A Sequence containing Sequences of Log Entries, each Seq being a single trace
-   * @param rootClass The root class selected by the user
-   * @return An XML Element containing the event log
-   */
-  def generateXMLLog(traces: Seq[LogEntriesForTrace], rootClass: RootClass): Elem = {
+    * Takes all traces and their log entries and generates an XML Element containing the whole event log
+    * @param traces A Sequence containing Sequences of Log Entries, each Seq being a single trace
+    * @param rootClass The root class selected by the user
+    * @return An XML Element containing the event log
+    */
+  def generateXMLLog(
+      traces: Seq[LogEntriesForTrace],
+      rootClass: RootClass
+  ): Elem = {
     val xmlTraces = traces
       .map(parseTraceEventsToXML)
 
@@ -105,10 +108,10 @@ object TraceIDParser {
   }
 
   /**
-   * Parses a Sequence of Log Entries to a Sequence containing XML Events
-   * @param events A list of Log Entries to be transformed to Events
-   * @return A Sequence containing the translated XML Events
-   */
+    * Parses a Sequence of Log Entries to a Sequence containing XML Events
+    * @param events A list of Log Entries to be transformed to Events
+    * @return A Sequence containing the translated XML Events
+    */
   private def parseTraceEventsToXML(events: LogEntriesForTrace): Seq[Elem] = {
     val eventNodes = events.map(event => {
       val eventName = event.statement match {
@@ -118,17 +121,19 @@ object TraceIDParser {
         case _: DeleteStatement => s"Delete entity from ${event.tableID}"
       }
       <string key="concept:name" value={eventName}/>
-        <date key="time:timestamp" value={event.timestamp.toString + ":000+00:00"}/>
+        <date key="time:timestamp" value={
+        event.timestamp.toString + ":000+00:00"
+      }/>
     })
 
     { eventNodes.map(eventNode => <event>{eventNode}</event>) }
   }
 
   /**
-   * Serializes the Event Log XML to disk
-   * @param traces The Event Log XML
-   * @param filename The File Name with which the Log should be stored
-   */
+    * Serializes the Event Log XML to disk
+    * @param traces The Event Log XML
+    * @param filename The File Name with which the Log should be stored
+    */
   def serializeLogToDisk(
       traces: Elem,
       filename: String

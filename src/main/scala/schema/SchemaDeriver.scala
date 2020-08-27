@@ -3,8 +3,8 @@ package schema
 object SchemaDeriver {
 
   /**
-   * Takes a schema and tables and checks for primary and foreign key relations
-   */
+    * Takes a schema and tables and checks for primary and foreign key relations
+    */
   def updateSchemaProperties(
       schema: DatabaseSchema,
       previousSchema: DatabaseSchema,
@@ -19,8 +19,8 @@ object SchemaDeriver {
   }
 
   /**
-   * Checks whether a column contains duplicate values or not, and determines whether it can be a primary key or not
-   */
+    * Checks whether a column contains duplicate values or not, and determines whether it can be a primary key or not
+    */
   private def checkForPrimaryKeyDuplicates(column: Column): Unit = {
     val values = column.values.values.toList
     if (values.size > values.distinct.size) {
@@ -31,7 +31,6 @@ object SchemaDeriver {
   /**
     * Check for every column in a table whether all its values are included
     * in another column in another table
-    *
     */
   private def updateColumnRelations(
       schema: DatabaseSchema,
@@ -50,8 +49,8 @@ object SchemaDeriver {
   }
 
   /**
-   * Determines the relation between a table and all other tables
-   */
+    * Determines the relation between a table and all other tables
+    */
   private def determineColumnRelation(
       permutation: (Table, Seq[Table]),
       previousSchema: DatabaseSchema
