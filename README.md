@@ -24,6 +24,9 @@ The tool will ask for a root class, which can be entered using the terminal.
 
 Afterwards, a new .xes log file will be generated next to the input log file.
 
+The `artifacts` folder contains an example redo log, as well as a more verbose one, 
+and an overview of the state the example database was in after process execution.
+
 ## Requirements
 
 In order for the tool to run, a working installation of `Java 11` is required,
