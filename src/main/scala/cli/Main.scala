@@ -68,13 +68,14 @@ object Main
             println("Done.\nGenerating XES log and serialising it to disk ...")
 
             val log = generateXMLLog(traces, rootClass)
+            val resultPath = path.toString + s"_${rootClass.tableID}_result.xes"
 
             TraceIDParser.serializeLogToDisk(
               log,
-              path.toString + s"_${rootClass.tableID}_result.xes"
+              resultPath
             )
 
-            println("Done.")
+            println(s"Done.\nThe event log is stored in $resultPath ")
         }
       }
     )
