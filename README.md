@@ -21,6 +21,8 @@ The redo log file should be a plain text file.
 The required format is described in the .pdf file provided in this repository.
 
 The tool will ask for a root class, which can be entered using the terminal.
+The root class must be one of the discovered tables. 
+For this purpose the discovered schema is displayed in the terminal.
 
 Afterwards, a new .xes log file will be generated next to the input log file.
 
