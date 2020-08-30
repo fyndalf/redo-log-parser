@@ -1,0 +1,118 @@
+PRINT USERS TABLE
+'ID (PK)' 'NAME'
+0   Liam
+1   Emma
+2   Noah
+3   Olivia
+4   William
+5   Ava
+6   James
+7   Isabella
+8   Oliver
+9   Liam
+10   Emma
+11   Noah
+12   Olivia
+13   William
+14   Ava
+15   James
+16   Isabella
+17   Oliver
+18   Liam
+19   Emma
+20   Noah
+21   Olivia
+22   William
+23   Ava
+24   James
+25   Isabella
+26   Oliver
+27   Liam
+28   Emma
+29   Noah
+30   Olivia
+31   William
+32   Ava
+33   James
+34   Isabella
+35   Oliver
+36   Liam
+37   Emma
+38   Noah
+39   Olivia
+40   William
+41   Ava
+42   James
+43   Isabella
+44   Oliver
+45   Liam
+46   Emma
+47   Noah
+48   Olivia
+
+PRINT ORDERS TABLE
+'ID (PK)' 'USER_ID (FK)' 'STATE'
+480   48   finished
+410   41   finished
+100   10   finished
+452   45   finished
+270   27   finished
+450   45   finished
+190   19   finished
+40   4   finished
+191   19   finished
+120   12   finished
+170   17   finished
+210   21   finished
+451   45   finished
+200   20   finished
+230   23   finished
+482   48   finished
+172   17   finished
+360   36   finished
+430   43   finished
+331   33   finished
+171   17   finished
+271   27   finished
+330   33   finished
+150   15   finished
+431   43   finished
+361   36   finished
+453   45   finished
+483   48   finished
+454   45   finished
+481   48   finished
+
+PRINT INVOICES TABLE
+'ID (PK)' 'ORDER_ID (FK)' 'STATE'
+480   480   sent
+450   450   sent
+230   230   sent
+210   210   sent
+190   190   sent
+170   170   sent
+410   410   sent
+200   200   sent
+360   360   sent
+40   40   sent
+451   451   sent
+100   100   sent
+330   330   sent
+120   120   sent
+150   150   sent
+430   430   sent
+171   171   sent
+270   270   sent
+481   481   sent
+172   172   sent
+191   191   sent
+331   331   sent
+431   431   sent
+453   453   sent
+271   271   sent
+361   361   sent
+452   452   sent
+482   482   sent
+483   483   sent
+454   454   sent
+

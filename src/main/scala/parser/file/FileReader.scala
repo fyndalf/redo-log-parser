@@ -1,4 +1,4 @@
-package parser
+package parser.file
 
 import java.nio.file.Path
 
@@ -7,11 +7,10 @@ import scala.io.Source
 object FileReader {
 
   /**
-   * Read a logfile from disk given by a path and properly close the file handle.
-   *
-   * @param path
-   * @return
-   */
+    * Read a logfile from disk given by a path and properly close the file handle.
+    *
+    * @param path The file to the path
+    */
   def readLogFile(path: Path): Seq[String] = {
     val bufferedSource = Source.fromFile(path.toFile)
     val fileContents = bufferedSource.getLines().toList

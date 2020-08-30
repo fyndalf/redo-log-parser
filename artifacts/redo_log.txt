@@ -1,0 +1,1299 @@
+insert into "SYSTEM"."USERS"("ID","NAME") values ('0','Liam');                  
+AAATlNAABAAAME5AAA 21-JUL-2020 16:29:41                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('1','Emma');
+AAATlNAABAAAME5AAB 21-JUL-2020 16:29:41                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('2','Noah');                  
+AAATlNAABAAAME5AAC 21-JUL-2020 16:29:41                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('3','Olivia');                
+AAATlNAABAAAME5AAD 21-JUL-2020 16:29:41                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('4','William');               
+AAATlNAABAAAME5AAE 21-JUL-2020 16:29:41                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('5','Ava');                   
+AAATlNAABAAAME5AAF 21-JUL-2020 16:29:41                                         
+                                          
+insert into "SYSTEM"."USERS"("ID","NAME") values ('6','James');                 
+AAATlNAABAAAME5AAG 21-JUL-2020 16:29:41                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('7','Isabella');              
+AAATlNAABAAAME5AAH 21-JUL-2020 16:29:41                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('8','Oliver');                
+AAATlNAABAAAME5AAI 21-JUL-2020 16:29:41                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('9','Liam');                  
+AAATlNAABAAAME5AAJ 21-JUL-2020 16:29:41  
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('10','Emma');                 
+AAATlNAABAAAME5AAK 21-JUL-2020 16:29:41                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('11','Noah');                 
+AAATlNAABAAAME5AAL 21-JUL-2020 16:29:41                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('12','Olivia');               
+AAATlNAABAAAME5AAM 21-JUL-2020 16:29:41                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('13','William');              
+AAATlNAABAAAME5AAN 21-JUL-2020 16:29:41                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('14','Ava');
+AAATlNAABAAAME5AAO 21-JUL-2020 16:29:41                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('15','James');                
+AAATlNAABAAAME5AAP 21-JUL-2020 16:29:41                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('16','Isabella');             
+AAATlNAABAAAME5AAQ 21-JUL-2020 16:29:41                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('17','Oliver');               
+AAATlNAABAAAME5AAR 21-JUL-2020 16:29:41                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('18','Liam');                 
+AAATlNAABAAAME5AAS 21-JUL-2020 16:29:41  
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('19','Emma');                 
+AAATlNAABAAAME5AAT 21-JUL-2020 16:29:41                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('20','Noah');                 
+AAATlNAABAAAME5AAU 21-JUL-2020 16:29:41                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('21','Olivia');               
+AAATlNAABAAAME5AAV 21-JUL-2020 16:29:41                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('22','William');              
+AAATlNAABAAAME5AAW 21-JUL-2020 16:29:41  
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('23','Ava');                  
+AAATlNAABAAAME5AAX 21-JUL-2020 16:29:41                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('24','James');                
+AAATlNAABAAAME5AAY 21-JUL-2020 16:29:41                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('25','Isabella');             
+AAATlNAABAAAME5AAZ 21-JUL-2020 16:29:41                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('26','Oliver');               
+AAATlNAABAAAME5AAa 21-JUL-2020 16:29:41                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('27','Liam');
+AAATlNAABAAAME5AAb 21-JUL-2020 16:29:41                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('28','Emma');                 
+AAATlNAABAAAME5AAc 21-JUL-2020 16:29:41                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('29','Noah');                 
+AAATlNAABAAAME5AAd 21-JUL-2020 16:29:42                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('30','Olivia');               
+AAATlNAABAAAME5AAe 21-JUL-2020 16:29:42                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('31','William');              
+AAATlNAABAAAME5AAf 21-JUL-2020 16:29:42  
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('32','Ava');                  
+AAATlNAABAAAME5AAg 21-JUL-2020 16:29:42                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('33','James');                
+AAATlNAABAAAME5AAh 21-JUL-2020 16:29:42                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('34','Isabella');             
+AAATlNAABAAAME5AAi 21-JUL-2020 16:29:42                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('35','Oliver');               
+AAATlNAABAAAME5AAj 21-JUL-2020 16:29:42  
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('36','Liam');                 
+AAATlNAABAAAME5AAk 21-JUL-2020 16:29:42                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('37','Emma');                 
+AAATlNAABAAAME5AAl 21-JUL-2020 16:29:42                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('38','Noah');                 
+AAATlNAABAAAME5AAm 21-JUL-2020 16:29:42                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('39','Olivia');               
+AAATlNAABAAAME5AAn 21-JUL-2020 16:29:42                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('40','William');              
+AAATlNAABAAAME5AAo 21-JUL-2020 16:29:42                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('41','Ava');                  
+AAATlNAABAAAME5AAp 21-JUL-2020 16:29:42                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('42','James');                
+AAATlNAABAAAME5AAq 21-JUL-2020 16:29:42                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('43','Isabella');             
+AAATlNAABAAAME5AAr 21-JUL-2020 16:29:42                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('44','Oliver');               
+AAATlNAABAAAME5AAs 21-JUL-2020 16:29:42  
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('45','Liam');                 
+AAATlNAABAAAME5AAt 21-JUL-2020 16:29:42                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('46','Emma');                 
+AAATlNAABAAAME5AAu 21-JUL-2020 16:29:42                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('47','Noah');                 
+AAATlNAABAAAME5AAv 21-JUL-2020 16:29:42                                         
+
+insert into "SYSTEM"."USERS"("ID","NAME") values ('48','Olivia');               
+AAATlNAABAAAME5AAw 21-JUL-2020 16:29:42  
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('480','48','created');                                                                            
+AAATlPAABAAAMFJAAA 21-JUL-2020 16:29:51                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('470','47','created');                                                                            
+AAATlPAABAAAMFJAAB 21-JUL-2020 16:30:01                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('60','6','created');                                                                              
+AAATlPAABAAAMFJAAC 21-JUL-2020 16:30:02                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAA';                                                   
+AAATlPAABAAAMFJAAA 21-JUL-2020 16:30:06                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAA';                                                 
+AAATlPAABAAAMFJAAA 21-JUL-2020 16:30:08                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('480','480','created');                                                                        
+AAATlRAABAAAMFZAAA 21-JUL-2020 16:30:08                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('140','14','created');                                                                            
+AAATlPAABAAAMFJAAD 21-JUL-2020 16:30:10                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAC';                                                   
+AAATlPAABAAAMFJAAC 21-JUL-2020 16:30:23                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAD';                                                   
+AAATlPAABAAAMFJAAD 21-JUL-2020 16:30:26                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAA';                                                     
+AAATlRAABAAAMFZAAA 21-JUL-2020 16:30:29  
+
+update "SYSTEM"."ORDERS" set "STATE" = 'paid' where "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAA';                                                     
+AAATlPAABAAAMFJAAA 21-JUL-2020 16:30:29                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAB';                                                   
+AAATlPAABAAAMFJAAB 21-JUL-2020 16:30:30                                         
+
+delete from "SYSTEM"."ORDERS" where "ID" = '60' and "USER_ID" = '6' and "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAC';                                  
+AAATlPAABAAAMFJAAC 21-JUL-2020 16:30:36  
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAD';                                                 
+AAATlPAABAAAMFJAAD 21-JUL-2020 16:30:36                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('140','140','created');                                                                        
+AAATlRAABAAAMFZAAB 21-JUL-2020 16:30:36                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('280','28','created');                                                                            
+AAATlPAABAAAMFJAAE 21-JUL-2020 16:30:44                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('440','44','created');                                                                            
+AAATlPAABAAAMFJAAC 21-JUL-2020 16:30:46                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAC';                                                   
+AAATlPAABAAAMFJAAC 21-JUL-2020 16:30:47                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('450','45','created');                                                                            
+AAATlPAABAAAMFJAAF 21-JUL-2020 16:30:56                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAE';                                                   
+AAATlPAABAAAMFJAAE 21-JUL-2020 16:30:58                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAF';                                                   
+AAATlPAABAAAMFJAAF 21-JUL-2020 16:31:14                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAB';                                                     
+AAATlRAABAAAMFZAAB 21-JUL-2020 16:31:16                                         
+
+delete from "SYSTEM"."INVOICES" where "ID" = '140' and "ORDER_ID" = '140' and "STATE" = 'sent' and ROWID = 'AAATlRAABAAAMFZAAB';                                
+AAATlRAABAAAMFZAAB 21-JUL-2020 16:31:16  
+
+delete from "SYSTEM"."ORDERS" where "ID" = '140' and "USER_ID" = '14' and "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAD';                               
+AAATlPAABAAAMFJAAD 21-JUL-2020 16:31:16                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('190','19','created');                                                                            
+AAATlPAABAAAMFJAAG 21-JUL-2020 16:31:24                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('390','39','created');                                                                            
+AAATlPAABAAAMFJAAH 21-JUL-2020 16:31:25  
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAC';                                                 
+AAATlPAABAAAMFJAAC 21-JUL-2020 16:31:32                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('440','440','created');                                                                        
+AAATlRAABAAAMFZAAC 21-JUL-2020 16:31:32                                         
+
+delete from "SYSTEM"."ORDERS" where "ID" = '470' and "USER_ID" = '47' and "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAB';                                
+AAATlPAABAAAMFJAAB 21-JUL-2020 16:31:39                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAE';                                                 
+AAATlPAABAAAMFJAAE 21-JUL-2020 16:31:39                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('280','280','created');                                                                        
+AAATlRAABAAAMFZAAD 21-JUL-2020 16:31:39                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAH';                                                   
+AAATlPAABAAAMFJAAH 21-JUL-2020 16:31:40                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('410','41','created');                                                                            
+AAATlPAABAAAMFJAAB 21-JUL-2020 16:31:42                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAF';                                                 
+AAATlPAABAAAMFJAAF 21-JUL-2020 16:31:42                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('450','450','created');                                                                        
+AAATlRAABAAAMFZAAB 21-JUL-2020 16:31:42                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAG';                                                   
+AAATlPAABAAAMFJAAG 21-JUL-2020 16:31:45  
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('30','3','created');                                                                              
+AAATlPAABAAAMFJAAD 21-JUL-2020 16:31:47                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('10','1','created');                                                                              
+AAATlPAABAAAMFJAAI 21-JUL-2020 16:31:55                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('120','12','created');                                                                            
+AAATlPAABAAAMFJAAJ 21-JUL-2020 16:31:56  
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAG';                                                 
+AAATlPAABAAAMFJAAG 21-JUL-2020 16:31:58                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('190','190','created');                                                                        
+AAATlRAABAAAMFZAAE 21-JUL-2020 16:31:58                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAJ';                                                   
+AAATlPAABAAAMFJAAJ 21-JUL-2020 16:31:59                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAC';                                                     
+AAATlRAABAAAMFZAAC 21-JUL-2020 16:32:00                                         
+
+delete from "SYSTEM"."INVOICES" where "ID" = '440' and "ORDER_ID" = '440' and "STATE" = 'sent' and ROWID = 'AAATlRAABAAAMFZAAC';                                
+AAATlRAABAAAMFZAAC 21-JUL-2020 16:32:00                                         
+
+delete from "SYSTEM"."ORDERS" where "ID" = '440' and "USER_ID" = '44' and "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAC';                               
+AAATlPAABAAAMFJAAC 21-JUL-2020 16:32:00                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAB';                                                   
+AAATlPAABAAAMFJAAB 21-JUL-2020 16:32:01                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAI';                                                   
+AAATlPAABAAAMFJAAI 21-JUL-2020 16:32:03                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('100','10','created');                                                                            
+AAATlPAABAAAMFJAAC 21-JUL-2020 16:32:06                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAC';                                                   
+AAATlPAABAAAMFJAAC 21-JUL-2020 16:32:06  
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('170','17','created');                                                                            
+AAATlPAABAAAMFJAAK 21-JUL-2020 16:32:07                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAD';                                                     
+AAATlRAABAAAMFZAAD 21-JUL-2020 16:32:08                                         
+
+delete from "SYSTEM"."INVOICES" where "ID" = '280' and "ORDER_ID" = '280' and "STATE" = 'sent' and ROWID = 'AAATlRAABAAAMFZAAD';                                
+AAATlRAABAAAMFZAAD 21-JUL-2020 16:32:08  
+
+delete from "SYSTEM"."ORDERS" where "ID" = '280' and "USER_ID" = '28' and "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAE';                               
+AAATlPAABAAAMFJAAE 21-JUL-2020 16:32:08                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('210','21','created');                                                                            
+AAATlPAABAAAMFJAAL 21-JUL-2020 16:32:08                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('250','25','created');                                                                            
+AAATlPAABAAAMFJAAM 21-JUL-2020 16:32:09                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAD';                                                   
+AAATlPAABAAAMFJAAD 21-JUL-2020 16:32:09                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('320','32','created');                                                                            
+AAATlPAABAAAMFJAAE 21-JUL-2020 16:32:11                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAM';                                                   
+AAATlPAABAAAMFJAAM 21-JUL-2020 16:32:15                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('200','20','created');                                                                            
+AAATlPAABAAAMFJAAN 21-JUL-2020 16:32:21                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('230','23','created');                                                                            
+AAATlPAABAAAMFJAAO 21-JUL-2020 16:32:22                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAH';                                                 
+AAATlPAABAAAMFJAAH 21-JUL-2020 16:32:23                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('390','390','created');                                                                        
+AAATlRAABAAAMFZAAC 21-JUL-2020 16:32:23  
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAL';                                                   
+AAATlPAABAAAMFJAAL 21-JUL-2020 16:32:25                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAE';                                                     
+AAATlRAABAAAMFZAAE 21-JUL-2020 16:32:26                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'paid' where "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAG';                                                     
+AAATlPAABAAAMFJAAG 21-JUL-2020 16:32:26  
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAE';                                                   
+AAATlPAABAAAMFJAAE 21-JUL-2020 16:32:26                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAK';                                                   
+AAATlPAABAAAMFJAAK 21-JUL-2020 16:32:27                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAO';                                                   
+AAATlPAABAAAMFJAAO 21-JUL-2020 16:32:31                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAC';                                                     
+AAATlRAABAAAMFZAAC 21-JUL-2020 16:32:31                                         
+
+delete from "SYSTEM"."INVOICES" where "ID" = '390' and "ORDER_ID" = '390' and "STATE" = 'sent' and ROWID = 'AAATlRAABAAAMFZAAC';                                
+AAATlRAABAAAMFZAAC 21-JUL-2020 16:32:31                                         
+
+delete from "SYSTEM"."ORDERS" where "ID" = '390' and "USER_ID" = '39' and "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAH';                               
+AAATlPAABAAAMFJAAH 21-JUL-2020 16:32:31                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAB';                                                     
+AAATlRAABAAAMFZAAB 21-JUL-2020 16:32:33                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'paid' where "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAF';                                                     
+AAATlPAABAAAMFJAAF 21-JUL-2020 16:32:33                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAN';                                                   
+AAATlPAABAAAMFJAAN 21-JUL-2020 16:32:39                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('40','4','created');                                                                              
+AAATlPAABAAAMFJAAH 21-JUL-2020 16:32:40  
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAL';                                                 
+AAATlPAABAAAMFJAAL 21-JUL-2020 16:32:45                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('210','210','created');                                                                        
+AAATlRAABAAAMFZAAD 21-JUL-2020 16:32:45                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAO';                                                 
+AAATlPAABAAAMFJAAO 21-JUL-2020 16:32:47  
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('230','230','created');                                                                        
+AAATlRAABAAAMFZAAC 21-JUL-2020 16:32:47                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAK';                                                 
+AAATlPAABAAAMFJAAK 21-JUL-2020 16:32:51                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('170','170','created');                                                                        
+AAATlRAABAAAMFZAAF 21-JUL-2020 16:32:51                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('110','11','created');                                                                            
+AAATlPAABAAAMFJAAP 21-JUL-2020 16:32:51                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('240','24','created');                                                                            
+AAATlPAABAAAMFJAAQ 21-JUL-2020 16:32:56                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAH';                                                   
+AAATlPAABAAAMFJAAH 21-JUL-2020 16:32:59                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAB';                                                 
+AAATlPAABAAAMFJAAB 21-JUL-2020 16:33:02                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('410','410','created');                                                                        
+AAATlRAABAAAMFZAAG 21-JUL-2020 16:33:02                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAP';                                                   
+AAATlPAABAAAMFJAAP 21-JUL-2020 16:33:02                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'finished' where "STATE" = 'paid' and ROWID = 'AAATlPAABAAAMFJAAF';                                                      
+AAATlPAABAAAMFJAAF 21-JUL-2020 16:33:02  
+
+update "SYSTEM"."ORDERS" set "STATE" = 'finished' where "STATE" = 'paid' and ROWID = 'AAATlPAABAAAMFJAAA';                                                      
+AAATlPAABAAAMFJAAA 21-JUL-2020 16:33:03                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('290','29','created');                                                                            
+AAATlPAABAAAMFJAAR 21-JUL-2020 16:33:03                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAQ';                                                   
+AAATlPAABAAAMFJAAQ 21-JUL-2020 16:33:04  
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAN';                                                 
+AAATlPAABAAAMFJAAN 21-JUL-2020 16:33:04                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('200','200','created');                                                                        
+AAATlRAABAAAMFZAAH 21-JUL-2020 16:33:04                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAD';                                                     
+AAATlRAABAAAMFZAAD 21-JUL-2020 16:33:04                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'paid' where "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAL';                                                     
+AAATlPAABAAAMFJAAL 21-JUL-2020 16:33:04                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAR';                                                   
+AAATlPAABAAAMFJAAR 21-JUL-2020 16:33:12                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('430','43','created');                                                                            
+AAATlPAABAAAMFJAAS 21-JUL-2020 16:33:18                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAF';                                                     
+AAATlRAABAAAMFZAAF 21-JUL-2020 16:33:18                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'paid' where "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAK';                                                     
+AAATlPAABAAAMFJAAK 21-JUL-2020 16:33:18                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('420','42','created');                                                                            
+AAATlPAABAAAMFJAAT 21-JUL-2020 16:33:19                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAS';                                                   
+AAATlPAABAAAMFJAAS 21-JUL-2020 16:33:19  
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('130','13','created');                                                                            
+AAATlPAABAAAMFJAAU 21-JUL-2020 16:33:19                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('180','18','created');                                                                            
+AAATlPAABAAAMFJAAV 21-JUL-2020 16:33:20                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAC';                                                     
+AAATlRAABAAAMFZAAC 21-JUL-2020 16:33:21  
+
+update "SYSTEM"."ORDERS" set "STATE" = 'paid' where "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAO';                                                     
+AAATlPAABAAAMFJAAO 21-JUL-2020 16:33:21                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'finished' where "STATE" = 'paid' and ROWID = 'AAATlPAABAAAMFJAAL';                                                      
+AAATlPAABAAAMFJAAL 21-JUL-2020 16:33:22                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAV';                                                   
+AAATlPAABAAAMFJAAV 21-JUL-2020 16:33:22                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('330','33','created');                                                                            
+AAATlPAABAAAMFJAAW 21-JUL-2020 16:33:26                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAG';                                                     
+AAATlRAABAAAMFZAAG 21-JUL-2020 16:33:27                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'paid' where "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAB';                                                     
+AAATlPAABAAAMFJAAB 21-JUL-2020 16:33:27                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAD';                                                 
+AAATlPAABAAAMFJAAD 21-JUL-2020 16:33:29                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('30','30','created');                                                                          
+AAATlRAABAAAMFZAAI 21-JUL-2020 16:33:29                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('150','15','created');                                                                            
+AAATlPAABAAAMFJAAX 21-JUL-2020 16:33:30                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAU';                                                   
+AAATlPAABAAAMFJAAU 21-JUL-2020 16:33:31  
+
+delete from "SYSTEM"."ORDERS" where "ID" = '240' and "USER_ID" = '24' and "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAQ';                                
+AAATlPAABAAAMFJAAQ 21-JUL-2020 16:33:34                                         
+
+delete from "SYSTEM"."ORDERS" where "ID" = '320' and "USER_ID" = '32' and "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAE';                                
+AAATlPAABAAAMFJAAE 21-JUL-2020 16:33:36                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'finished' where "STATE" = 'paid' and ROWID = 'AAATlPAABAAAMFJAAK';                                                      
+AAATlPAABAAAMFJAAK 21-JUL-2020 16:33:36  
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAH';                                                 
+AAATlPAABAAAMFJAAH 21-JUL-2020 16:33:37                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('40','40','created');                                                                          
+AAATlRAABAAAMFZAAJ 21-JUL-2020 16:33:37                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('270','27','created');                                                                            
+AAATlPAABAAAMFJAAE 21-JUL-2020 16:33:38                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('160','16','created');                                                                            
+AAATlPAABAAAMFJAAQ 21-JUL-2020 16:33:39                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAM';                                                 
+AAATlPAABAAAMFJAAM 21-JUL-2020 16:33:39                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('250','250','created');                                                                        
+AAATlRAABAAAMFZAAK 21-JUL-2020 16:33:39                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAW';                                                   
+AAATlPAABAAAMFJAAW 21-JUL-2020 16:33:39                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAC';                                                 
+AAATlPAABAAAMFJAAC 21-JUL-2020 16:33:40                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('100','100','created');                                                                        
+AAATlRAABAAAMFZAAL 21-JUL-2020 16:33:40                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('220','22','created');                                                                            
+AAATlPAABAAAMFJAAY 21-JUL-2020 16:33:40  
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAH';                                                     
+AAATlRAABAAAMFZAAH 21-JUL-2020 16:33:40                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'paid' where "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAN';                                                     
+AAATlPAABAAAMFJAAN 21-JUL-2020 16:33:40                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('20','2','created');                                                                              
+AAATlPAABAAAMFJAAZ 21-JUL-2020 16:33:43  
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAT';                                                   
+AAATlPAABAAAMFJAAT 21-JUL-2020 16:33:46                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('340','34','created');                                                                            
+AAATlPAABAAAMFJAAa 21-JUL-2020 16:33:47                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAW';                                                 
+AAATlPAABAAAMFJAAW 21-JUL-2020 16:33:49                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('330','330','created');                                                                        
+AAATlRAABAAAMFZAAM 21-JUL-2020 16:33:49                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAX';                                                   
+AAATlPAABAAAMFJAAX 21-JUL-2020 16:33:49                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAE';                                                   
+AAATlPAABAAAMFJAAE 21-JUL-2020 16:33:49                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAJ';                                                 
+AAATlPAABAAAMFJAAJ 21-JUL-2020 16:33:51                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('120','120','created');                                                                        
+AAATlRAABAAAMFZAAN 21-JUL-2020 16:33:51                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAY';                                                   
+AAATlPAABAAAMFJAAY 21-JUL-2020 16:33:52                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAK';                                                     
+AAATlRAABAAAMFZAAK 21-JUL-2020 16:33:52  
+
+delete from "SYSTEM"."INVOICES" where "ID" = '250' and "ORDER_ID" = '250' and "STATE" = 'sent' and ROWID = 'AAATlRAABAAAMFZAAK';                                
+AAATlRAABAAAMFZAAK 21-JUL-2020 16:33:52                                         
+
+delete from "SYSTEM"."ORDERS" where "ID" = '250' and "USER_ID" = '25' and "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAM';                               
+AAATlPAABAAAMFJAAM 21-JUL-2020 16:33:52                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('310','31','created');                                                                            
+AAATlPAABAAAMFJAAb 21-JUL-2020 16:33:55  
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAb';                                                   
+AAATlPAABAAAMFJAAb 21-JUL-2020 16:33:57                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('350','35','created');                                                                            
+AAATlPAABAAAMFJAAM 21-JUL-2020 16:33:58                                         
+
+delete from "SYSTEM"."ORDERS" where "ID" = '10' and "USER_ID" = '1' and "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAI';                                  
+AAATlPAABAAAMFJAAI 21-JUL-2020 16:33:58                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAa';                                                   
+AAATlPAABAAAMFJAAa 21-JUL-2020 16:34:02                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAQ';                                                   
+AAATlPAABAAAMFJAAQ 21-JUL-2020 16:34:04                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAJ';                                                     
+AAATlRAABAAAMFZAAJ 21-JUL-2020 16:34:05                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'paid' where "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAH';                                                     
+AAATlPAABAAAMFJAAH 21-JUL-2020 16:34:05                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('50','5','created');                                                                              
+AAATlPAABAAAMFJAAI 21-JUL-2020 16:34:06                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('70','7','created');                                                                              
+AAATlPAABAAAMFJAAc 21-JUL-2020 16:34:06                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAR';                                                 
+AAATlPAABAAAMFJAAR 21-JUL-2020 16:34:07  
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('290','290','created');                                                                        
+AAATlRAABAAAMFZAAO 21-JUL-2020 16:34:08                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAP';                                                 
+AAATlPAABAAAMFJAAP 21-JUL-2020 16:34:08                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('110','110','created');                                                                        
+AAATlRAABAAAMFZAAK 21-JUL-2020 16:34:08  
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('481','48','created');                                                                            
+AAATlPAABAAAMFJAAd 21-JUL-2020 16:34:08                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAM';                                                   
+AAATlPAABAAAMFJAAM 21-JUL-2020 16:34:09                                         
+
+delete from "SYSTEM"."ORDERS" where "ID" = '130' and "USER_ID" = '13' and "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAU';                                
+AAATlPAABAAAMFJAAU 21-JUL-2020 16:34:09                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAZ';                                                   
+AAATlPAABAAAMFJAAZ 21-JUL-2020 16:34:09                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAL';                                                     
+AAATlRAABAAAMFZAAL 21-JUL-2020 16:34:12                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'paid' where "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAC';                                                     
+AAATlPAABAAAMFJAAC 21-JUL-2020 16:34:12                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('171','17','created');                                                                            
+AAATlPAABAAAMFJAAU 21-JUL-2020 16:34:13                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAN';                                                     
+AAATlRAABAAAMFZAAN 21-JUL-2020 16:34:21                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'paid' where "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAJ';                                                     
+AAATlPAABAAAMFJAAJ 21-JUL-2020 16:34:21                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAO';                                                     
+AAATlRAABAAAMFZAAO 21-JUL-2020 16:34:23  
+
+delete from "SYSTEM"."INVOICES" where "ID" = '290' and "ORDER_ID" = '290' and "STATE" = 'sent' and ROWID = 'AAATlRAABAAAMFZAAO';                                
+AAATlRAABAAAMFZAAO 21-JUL-2020 16:34:23                                         
+
+delete from "SYSTEM"."ORDERS" where "ID" = '290' and "USER_ID" = '29' and "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAR';                               
+AAATlPAABAAAMFJAAR 21-JUL-2020 16:34:23                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('370','37','created');                                                                            
+AAATlPAABAAAMFJAAe 21-JUL-2020 16:34:25  
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('360','36','created');                                                                            
+AAATlPAABAAAMFJAAR 21-JUL-2020 16:34:26                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAe';                                                   
+AAATlPAABAAAMFJAAe 21-JUL-2020 16:34:26                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAI';                                                     
+AAATlRAABAAAMFZAAI 21-JUL-2020 16:34:27                                         
+
+delete from "SYSTEM"."INVOICES" where "ID" = '30' and "ORDER_ID" = '30' and "STATE" = 'sent' and ROWID = 'AAATlRAABAAAMFZAAI';                                  
+AAATlRAABAAAMFZAAI 21-JUL-2020 16:34:27                                         
+
+delete from "SYSTEM"."ORDERS" where "ID" = '30' and "USER_ID" = '3' and "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAD';                                 
+AAATlPAABAAAMFJAAD 21-JUL-2020 16:34:27                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAc';                                                   
+AAATlPAABAAAMFJAAc 21-JUL-2020 16:34:29                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAb';                                                 
+AAATlPAABAAAMFJAAb 21-JUL-2020 16:34:32                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('310','310','created');                                                                        
+AAATlRAABAAAMFZAAO 21-JUL-2020 16:34:32                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAd';                                                   
+AAATlPAABAAAMFJAAd 21-JUL-2020 16:34:32                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAI';                                                   
+AAATlPAABAAAMFJAAI 21-JUL-2020 16:34:33  
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAU';                                                   
+AAATlPAABAAAMFJAAU 21-JUL-2020 16:34:35                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAS';                                                 
+AAATlPAABAAAMFJAAS 21-JUL-2020 16:34:38                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('430','430','created');                                                                        
+AAATlRAABAAAMFZAAP 21-JUL-2020 16:34:38  
+
+update "SYSTEM"."ORDERS" set "STATE" = 'finished' where "STATE" = 'paid' and ROWID = 'AAATlPAABAAAMFJAAB';                                                      
+AAATlPAABAAAMFJAAB 21-JUL-2020 16:34:39                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('80','8','created');                                                                              
+AAATlPAABAAAMFJAAD 21-JUL-2020 16:34:40                                         
+
+delete from "SYSTEM"."ORDERS" where "ID" = '350' and "USER_ID" = '35' and "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAM';                                
+AAATlPAABAAAMFJAAM 21-JUL-2020 16:34:42                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAR';                                                   
+AAATlPAABAAAMFJAAR 21-JUL-2020 16:34:43                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAc';                                                 
+AAATlPAABAAAMFJAAc 21-JUL-2020 16:34:44                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('70','70','created');                                                                          
+AAATlRAABAAAMFZAAI 21-JUL-2020 16:34:44                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAV';                                                 
+AAATlPAABAAAMFJAAV 21-JUL-2020 16:34:45                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('180','180','created');                                                                        
+AAATlRAABAAAMFZAAQ 21-JUL-2020 16:34:45                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAO';                                                     
+AAATlRAABAAAMFZAAO 21-JUL-2020 16:34:46                                         
+
+delete from "SYSTEM"."INVOICES" where "ID" = '310' and "ORDER_ID" = '310' and "STATE" = 'sent' and ROWID = 'AAATlRAABAAAMFZAAO';                                
+AAATlRAABAAAMFZAAO 21-JUL-2020 16:34:46  
+
+delete from "SYSTEM"."ORDERS" where "ID" = '310' and "USER_ID" = '31' and "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAb';                               
+AAATlPAABAAAMFJAAb 21-JUL-2020 16:34:46                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAM';                                                     
+AAATlRAABAAAMFZAAM 21-JUL-2020 16:34:48                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'paid' where "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAW';                                                     
+AAATlPAABAAAMFJAAW 21-JUL-2020 16:34:48  
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAE';                                                 
+AAATlPAABAAAMFJAAE 21-JUL-2020 16:34:51                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('270','270','created');                                                                        
+AAATlRAABAAAMFZAAR 21-JUL-2020 16:34:51                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAD';                                                   
+AAATlPAABAAAMFJAAD 21-JUL-2020 16:34:57                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAI';                                                     
+AAATlRAABAAAMFZAAI 21-JUL-2020 16:34:57                                         
+
+delete from "SYSTEM"."INVOICES" where "ID" = '70' and "ORDER_ID" = '70' and "STATE" = 'sent' and ROWID = 'AAATlRAABAAAMFZAAI';                                  
+AAATlRAABAAAMFZAAI 21-JUL-2020 16:34:57                                         
+
+delete from "SYSTEM"."ORDERS" where "ID" = '70' and "USER_ID" = '7' and "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAc';                                 
+AAATlPAABAAAMFJAAc 21-JUL-2020 16:34:58                                         
+
+delete from "SYSTEM"."ORDERS" where "ID" = '420' and "USER_ID" = '42' and "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAT';                                
+AAATlPAABAAAMFJAAT 21-JUL-2020 16:34:58                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAK';                                                     
+AAATlRAABAAAMFZAAK 21-JUL-2020 16:35:00                                         
+
+delete from "SYSTEM"."INVOICES" where "ID" = '110' and "ORDER_ID" = '110' and "STATE" = 'sent' and ROWID = 'AAATlRAABAAAMFZAAK';                                
+AAATlRAABAAAMFZAAK 21-JUL-2020 16:35:00                                         
+
+delete from "SYSTEM"."ORDERS" where "ID" = '110' and "USER_ID" = '11' and "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAP';                               
+AAATlPAABAAAMFJAAP 21-JUL-2020 16:35:00  
+
+update "SYSTEM"."ORDERS" set "STATE" = 'finished' where "STATE" = 'paid' and ROWID = 'AAATlPAABAAAMFJAAG';                                                      
+AAATlPAABAAAMFJAAG 21-JUL-2020 16:35:01                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAa';                                                 
+AAATlPAABAAAMFJAAa 21-JUL-2020 16:35:02                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('340','340','created');                                                                        
+AAATlRAABAAAMFZAAI 21-JUL-2020 16:35:02  
+
+delete from "SYSTEM"."ORDERS" where "ID" = '20' and "USER_ID" = '2' and "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAZ';                                  
+AAATlPAABAAAMFJAAZ 21-JUL-2020 16:35:05                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'finished' where "STATE" = 'paid' and ROWID = 'AAATlPAABAAAMFJAAN';                                                      
+AAATlPAABAAAMFJAAN 21-JUL-2020 16:35:06                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAI';                                                     
+AAATlRAABAAAMFZAAI 21-JUL-2020 16:35:09                                         
+
+delete from "SYSTEM"."INVOICES" where "ID" = '340' and "ORDER_ID" = '340' and "STATE" = 'sent' and ROWID = 'AAATlRAABAAAMFZAAI';                                
+AAATlRAABAAAMFZAAI 21-JUL-2020 16:35:09                                         
+
+delete from "SYSTEM"."ORDERS" where "ID" = '340' and "USER_ID" = '34' and "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAa';                               
+AAATlPAABAAAMFJAAa 21-JUL-2020 16:35:09                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'finished' where "STATE" = 'paid' and ROWID = 'AAATlPAABAAAMFJAAH';                                                      
+AAATlPAABAAAMFJAAH 21-JUL-2020 16:35:10                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAP';                                                     
+AAATlRAABAAAMFZAAP 21-JUL-2020 16:35:19                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'paid' where "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAS';                                                     
+AAATlPAABAAAMFJAAS 21-JUL-2020 16:35:19                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'finished' where "STATE" = 'paid' and ROWID = 'AAATlPAABAAAMFJAAO';                                                      
+AAATlPAABAAAMFJAAO 21-JUL-2020 16:35:19                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAQ';                                                     
+AAATlRAABAAAMFZAAQ 21-JUL-2020 16:35:20  
+
+delete from "SYSTEM"."INVOICES" where "ID" = '180' and "ORDER_ID" = '180' and "STATE" = 'sent' and ROWID = 'AAATlRAABAAAMFZAAQ';                                
+AAATlRAABAAAMFZAAQ 21-JUL-2020 16:35:20                                         
+
+delete from "SYSTEM"."ORDERS" where "ID" = '180' and "USER_ID" = '18' and "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAV';                               
+AAATlPAABAAAMFJAAV 21-JUL-2020 16:35:20                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('451','45','created');                                                                            
+AAATlPAABAAAMFJAAM 21-JUL-2020 16:35:24  
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAI';                                                 
+AAATlPAABAAAMFJAAI 21-JUL-2020 16:35:28                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('50','50','created');                                                                          
+AAATlRAABAAAMFZAAI 21-JUL-2020 16:35:28                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAY';                                                 
+AAATlPAABAAAMFJAAY 21-JUL-2020 16:35:31                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('220','220','created');                                                                        
+AAATlRAABAAAMFZAAK 21-JUL-2020 16:35:31                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAX';                                                 
+AAATlPAABAAAMFJAAX 21-JUL-2020 16:35:37                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('150','150','created');                                                                        
+AAATlRAABAAAMFZAAO 21-JUL-2020 16:35:37                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAU';                                                 
+AAATlPAABAAAMFJAAU 21-JUL-2020 16:35:39                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('171','171','created');                                                                        
+AAATlRAABAAAMFZAAQ 21-JUL-2020 16:35:39                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAR';                                                     
+AAATlRAABAAAMFZAAR 21-JUL-2020 16:35:40                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'paid' where "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAE';                                                     
+AAATlPAABAAAMFJAAE 21-JUL-2020 16:35:40  
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('231','23','created');                                                                            
+AAATlPAABAAAMFJAAP 21-JUL-2020 16:35:45                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAd';                                                 
+AAATlPAABAAAMFJAAd 21-JUL-2020 16:35:45                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('481','481','created');                                                                        
+AAATlRAABAAAMFZAAS 21-JUL-2020 16:35:45  
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAI';                                                     
+AAATlRAABAAAMFZAAI 21-JUL-2020 16:35:49                                         
+
+delete from "SYSTEM"."INVOICES" where "ID" = '50' and "ORDER_ID" = '50' and "STATE" = 'sent' and ROWID = 'AAATlRAABAAAMFZAAI';                                  
+AAATlRAABAAAMFZAAI 21-JUL-2020 16:35:49                                         
+
+delete from "SYSTEM"."ORDERS" where "ID" = '50' and "USER_ID" = '5' and "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAI';                                 
+AAATlPAABAAAMFJAAI 21-JUL-2020 16:35:49                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAM';                                                   
+AAATlPAABAAAMFJAAM 21-JUL-2020 16:35:49                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAP';                                                   
+AAATlPAABAAAMFJAAP 21-JUL-2020 16:35:51                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'finished' where "STATE" = 'paid' and ROWID = 'AAATlPAABAAAMFJAAW';                                                      
+AAATlPAABAAAMFJAAW 21-JUL-2020 16:35:57                                         
+
+delete from "SYSTEM"."ORDERS" where "ID" = '160' and "USER_ID" = '16' and "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAQ';                                
+AAATlPAABAAAMFJAAQ 21-JUL-2020 16:35:58                                         
+
+delete from "SYSTEM"."ORDERS" where "ID" = '370' and "USER_ID" = '37' and "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAe';                                
+AAATlPAABAAAMFJAAe 21-JUL-2020 16:36:00                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAP';                                                 
+AAATlPAABAAAMFJAAP 21-JUL-2020 16:36:01                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('231','231','created');                                                                        
+AAATlRAABAAAMFZAAT 21-JUL-2020 16:36:01  
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAQ';                                                     
+AAATlRAABAAAMFZAAQ 21-JUL-2020 16:36:06                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'paid' where "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAU';                                                     
+AAATlPAABAAAMFJAAU 21-JUL-2020 16:36:06                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAK';                                                     
+AAATlRAABAAAMFZAAK 21-JUL-2020 16:36:06  
+
+delete from "SYSTEM"."INVOICES" where "ID" = '220' and "ORDER_ID" = '220' and "STATE" = 'sent' and ROWID = 'AAATlRAABAAAMFZAAK';                                
+AAATlRAABAAAMFZAAK 21-JUL-2020 16:36:07                                         
+
+delete from "SYSTEM"."ORDERS" where "ID" = '220' and "USER_ID" = '22' and "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAY';                               
+AAATlPAABAAAMFJAAY 21-JUL-2020 16:36:07                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAO';                                                     
+AAATlRAABAAAMFZAAO 21-JUL-2020 16:36:12                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'paid' where "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAX';                                                     
+AAATlPAABAAAMFJAAX 21-JUL-2020 16:36:12                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAT';                                                     
+AAATlRAABAAAMFZAAT 21-JUL-2020 16:36:14                                         
+
+delete from "SYSTEM"."INVOICES" where "ID" = '231' and "ORDER_ID" = '231' and "STATE" = 'sent' and ROWID = 'AAATlRAABAAAMFZAAT';                                
+AAATlRAABAAAMFZAAT 21-JUL-2020 16:36:14                                         
+
+delete from "SYSTEM"."ORDERS" where "ID" = '231' and "USER_ID" = '23' and "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAP';                               
+AAATlPAABAAAMFJAAP 21-JUL-2020 16:36:14                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'finished' where "STATE" = 'paid' and ROWID = 'AAATlPAABAAAMFJAAC';                                                      
+AAATlPAABAAAMFJAAC 21-JUL-2020 16:36:17                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'finished' where "STATE" = 'paid' and ROWID = 'AAATlPAABAAAMFJAAU';                                                      
+AAATlPAABAAAMFJAAU 21-JUL-2020 16:36:22                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAS';                                                     
+AAATlRAABAAAMFZAAS 21-JUL-2020 16:36:26  
+
+update "SYSTEM"."ORDERS" set "STATE" = 'paid' where "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAd';                                                     
+AAATlPAABAAAMFJAAd 21-JUL-2020 16:36:26                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAR';                                                 
+AAATlPAABAAAMFJAAR 21-JUL-2020 16:36:35                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('360','360','created');                                                                        
+AAATlRAABAAAMFZAAI 21-JUL-2020 16:36:35  
+
+update "SYSTEM"."ORDERS" set "STATE" = 'finished' where "STATE" = 'paid' and ROWID = 'AAATlPAABAAAMFJAAS';                                                      
+AAATlPAABAAAMFJAAS 21-JUL-2020 16:36:47                                         
+
+delete from "SYSTEM"."ORDERS" where "ID" = '80' and "USER_ID" = '8' and "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAD';                                  
+AAATlPAABAAAMFJAAD 21-JUL-2020 16:36:48                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAI';                                                     
+AAATlRAABAAAMFZAAI 21-JUL-2020 16:36:54                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'paid' where "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAR';                                                     
+AAATlPAABAAAMFJAAR 21-JUL-2020 16:36:54                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('191','19','created');                                                                            
+AAATlPAABAAAMFJAAI 21-JUL-2020 16:36:55                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'finished' where "STATE" = 'paid' and ROWID = 'AAATlPAABAAAMFJAAE';                                                      
+AAATlPAABAAAMFJAAE 21-JUL-2020 16:36:59                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAI';                                                   
+AAATlPAABAAAMFJAAI 21-JUL-2020 16:37:23                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAM';                                                 
+AAATlPAABAAAMFJAAM 21-JUL-2020 16:37:28                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('451','451','created');                                                                        
+AAATlRAABAAAMFZAAK 21-JUL-2020 16:37:28                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'finished' where "STATE" = 'paid' and ROWID = 'AAATlPAABAAAMFJAAJ';                                                      
+AAATlPAABAAAMFJAAJ 21-JUL-2020 16:37:41  
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('41','4','created');                                                                              
+AAATlPAABAAAMFJAAD 21-JUL-2020 16:37:56                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('101','10','created');                                                                            
+AAATlPAABAAAMFJAAP 21-JUL-2020 16:37:58                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('172','17','created');                                                                            
+AAATlPAABAAAMFJAAQ 21-JUL-2020 16:38:00  
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAD';                                                   
+AAATlPAABAAAMFJAAD 21-JUL-2020 16:38:10                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAQ';                                                   
+AAATlPAABAAAMFJAAQ 21-JUL-2020 16:38:10                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAK';                                                     
+AAATlRAABAAAMFZAAK 21-JUL-2020 16:38:10                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'paid' where "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAM';                                                     
+AAATlPAABAAAMFJAAM 21-JUL-2020 16:38:10                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAP';                                                   
+AAATlPAABAAAMFJAAP 21-JUL-2020 16:38:23                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAQ';                                                 
+AAATlPAABAAAMFJAAQ 21-JUL-2020 16:38:39                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('172','172','created');                                                                        
+AAATlRAABAAAMFZAAT 21-JUL-2020 16:38:39                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'finished' where "STATE" = 'paid' and ROWID = 'AAATlPAABAAAMFJAAX';                                                      
+AAATlPAABAAAMFJAAX 21-JUL-2020 16:38:41                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAT';                                                     
+AAATlRAABAAAMFZAAT 21-JUL-2020 16:38:45                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'paid' where "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAQ';                                                     
+AAATlPAABAAAMFJAAQ 21-JUL-2020 16:38:45  
+
+update "SYSTEM"."ORDERS" set "STATE" = 'finished' where "STATE" = 'paid' and ROWID = 'AAATlPAABAAAMFJAAd';                                                      
+AAATlPAABAAAMFJAAd 21-JUL-2020 16:38:46                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'finished' where "STATE" = 'paid' and ROWID = 'AAATlPAABAAAMFJAAM';                                                      
+AAATlPAABAAAMFJAAM 21-JUL-2020 16:38:49                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('331','33','created');                                                                            
+AAATlPAABAAAMFJAAT 21-JUL-2020 16:39:03  
+
+delete from "SYSTEM"."ORDERS" where "ID" = '41' and "USER_ID" = '4' and "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAD';                                  
+AAATlPAABAAAMFJAAD 21-JUL-2020 16:39:05                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAI';                                                 
+AAATlPAABAAAMFJAAI 21-JUL-2020 16:39:06                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('191','191','created');                                                                        
+AAATlRAABAAAMFZAAU 21-JUL-2020 16:39:06                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'finished' where "STATE" = 'paid' and ROWID = 'AAATlPAABAAAMFJAAR';                                                      
+AAATlPAABAAAMFJAAR 21-JUL-2020 16:39:12                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('201','20','created');                                                                            
+AAATlPAABAAAMFJAAD 21-JUL-2020 16:39:15                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAT';                                                   
+AAATlPAABAAAMFJAAT 21-JUL-2020 16:39:24                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAT';                                                 
+AAATlPAABAAAMFJAAT 21-JUL-2020 16:39:25                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('331','331','created');                                                                        
+AAATlRAABAAAMFZAAV 21-JUL-2020 16:39:25                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAU';                                                     
+AAATlRAABAAAMFZAAU 21-JUL-2020 16:39:31                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'paid' where "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAI';                                                     
+AAATlPAABAAAMFJAAI 21-JUL-2020 16:39:31  
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAD';                                                   
+AAATlPAABAAAMFJAAD 21-JUL-2020 16:39:35                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('271','27','created');                                                                            
+AAATlPAABAAAMFJAAV 21-JUL-2020 16:39:39                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('431','43','created');                                                                            
+AAATlPAABAAAMFJAAY 21-JUL-2020 16:39:47  
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAY';                                                   
+AAATlPAABAAAMFJAAY 21-JUL-2020 16:39:48                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAV';                                                   
+AAATlPAABAAAMFJAAV 21-JUL-2020 16:39:54                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAV';                                                     
+AAATlRAABAAAMFZAAV 21-JUL-2020 16:39:58                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'paid' where "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAT';                                                     
+AAATlPAABAAAMFJAAT 21-JUL-2020 16:39:58                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('361','36','created');                                                                            
+AAATlPAABAAAMFJAAZ 21-JUL-2020 16:40:00                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAZ';                                                   
+AAATlPAABAAAMFJAAZ 21-JUL-2020 16:40:08                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAY';                                                 
+AAATlPAABAAAMFJAAY 21-JUL-2020 16:40:15                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('431','431','created');                                                                        
+AAATlRAABAAAMFZAAW 21-JUL-2020 16:40:15                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'finished' where "STATE" = 'paid' and ROWID = 'AAATlPAABAAAMFJAAT';                                                      
+AAATlPAABAAAMFJAAT 21-JUL-2020 16:40:17                                         
+
+delete from "SYSTEM"."ORDERS" where "ID" = '101' and "USER_ID" = '10' and "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAP';                                
+AAATlPAABAAAMFJAAP 21-JUL-2020 16:40:22  
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('121','12','created');                                                                            
+AAATlPAABAAAMFJAAa 21-JUL-2020 16:40:27                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAD';                                                 
+AAATlPAABAAAMFJAAD 21-JUL-2020 16:40:39                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('201','201','created');                                                                        
+AAATlRAABAAAMFZAAX 21-JUL-2020 16:40:39  
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAV';                                                 
+AAATlPAABAAAMFJAAV 21-JUL-2020 16:40:41                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('271','271','created');                                                                        
+AAATlRAABAAAMFZAAY 21-JUL-2020 16:40:41                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAa';                                                   
+AAATlPAABAAAMFJAAa 21-JUL-2020 16:40:43                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'finished' where "STATE" = 'paid' and ROWID = 'AAATlPAABAAAMFJAAI';                                                      
+AAATlPAABAAAMFJAAI 21-JUL-2020 16:40:47                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('151','15','created');                                                                            
+AAATlPAABAAAMFJAAP 21-JUL-2020 16:40:48                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAZ';                                                 
+AAATlPAABAAAMFJAAZ 21-JUL-2020 16:40:53                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('361','361','created');                                                                        
+AAATlRAABAAAMFZAAZ 21-JUL-2020 16:40:53                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAW';                                                     
+AAATlRAABAAAMFZAAW 21-JUL-2020 16:41:04                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'paid' where "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAY';                                                     
+AAATlPAABAAAMFJAAY 21-JUL-2020 16:41:04                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'finished' where "STATE" = 'paid' and ROWID = 'AAATlPAABAAAMFJAAQ';                                                      
+AAATlPAABAAAMFJAAQ 21-JUL-2020 16:41:09  
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAP';                                                   
+AAATlPAABAAAMFJAAP 21-JUL-2020 16:41:10                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAP';                                                 
+AAATlPAABAAAMFJAAP 21-JUL-2020 16:41:16                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('151','151','created');                                                                        
+AAATlRAABAAAMFZAAa 21-JUL-2020 16:41:16  
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAZ';                                                     
+AAATlRAABAAAMFZAAZ 21-JUL-2020 16:41:24                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'paid' where "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAZ';                                                     
+AAATlPAABAAAMFJAAZ 21-JUL-2020 16:41:24                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAX';                                                     
+AAATlRAABAAAMFZAAX 21-JUL-2020 16:41:25                                         
+
+delete from "SYSTEM"."INVOICES" where "ID" = '201' and "ORDER_ID" = '201' and "STATE" = 'sent' and ROWID = 'AAATlRAABAAAMFZAAX';                                
+AAATlRAABAAAMFZAAX 21-JUL-2020 16:41:25                                         
+
+delete from "SYSTEM"."ORDERS" where "ID" = '201' and "USER_ID" = '20' and "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAD';                               
+AAATlPAABAAAMFJAAD 21-JUL-2020 16:41:25                                         
+
+delete from "SYSTEM"."ORDERS" where "ID" = '121' and "USER_ID" = '12' and "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAa';                                
+AAATlPAABAAAMFJAAa 21-JUL-2020 16:41:30                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAa';                                                     
+AAATlRAABAAAMFZAAa 21-JUL-2020 16:41:32                                         
+
+delete from "SYSTEM"."INVOICES" where "ID" = '151' and "ORDER_ID" = '151' and "STATE" = 'sent' and ROWID = 'AAATlRAABAAAMFZAAa';                                
+AAATlRAABAAAMFZAAa 21-JUL-2020 16:41:32                                         
+
+delete from "SYSTEM"."ORDERS" where "ID" = '151' and "USER_ID" = '15' and "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAP';                               
+AAATlPAABAAAMFJAAP 21-JUL-2020 16:41:32                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('192','19','created');                                                                            
+AAATlPAABAAAMFJAAD 21-JUL-2020 16:41:33  
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAY';                                                     
+AAATlRAABAAAMFZAAY 21-JUL-2020 16:41:34                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'paid' where "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAV';                                                     
+AAATlPAABAAAMFJAAV 21-JUL-2020 16:41:34                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAD';                                                   
+AAATlPAABAAAMFJAAD 21-JUL-2020 16:41:57  
+
+update "SYSTEM"."ORDERS" set "STATE" = 'finished' where "STATE" = 'paid' and ROWID = 'AAATlPAABAAAMFJAAZ';                                                      
+AAATlPAABAAAMFJAAZ 21-JUL-2020 16:42:03                                         
+
+delete from "SYSTEM"."ORDERS" where "ID" = '192' and "USER_ID" = '19' and "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAD';                                
+AAATlPAABAAAMFJAAD 21-JUL-2020 16:42:30                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'finished' where "STATE" = 'paid' and ROWID = 'AAATlPAABAAAMFJAAV';                                                      
+AAATlPAABAAAMFJAAV 21-JUL-2020 16:42:35                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('452','45','created');                                                                            
+AAATlPAABAAAMFJAAD 21-JUL-2020 16:42:56                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAD';                                                   
+AAATlPAABAAAMFJAAD 21-JUL-2020 16:43:03                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('482','48','created');                                                                            
+AAATlPAABAAAMFJAAP 21-JUL-2020 16:43:18                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('272','27','created');                                                                            
+AAATlPAABAAAMFJAAa 21-JUL-2020 16:43:23                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAa';                                                   
+AAATlPAABAAAMFJAAa 21-JUL-2020 16:43:34                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAP';                                                   
+AAATlPAABAAAMFJAAP 21-JUL-2020 16:43:40                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAa';                                                 
+AAATlPAABAAAMFJAAa 21-JUL-2020 16:43:43  
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('272','272','created');                                                                        
+AAATlRAABAAAMFZAAX 21-JUL-2020 16:43:43                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAD';                                                 
+AAATlPAABAAAMFJAAD 21-JUL-2020 16:43:46                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('452','452','created');                                                                        
+AAATlRAABAAAMFZAAa 21-JUL-2020 16:43:46  
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAX';                                                     
+AAATlRAABAAAMFZAAX 21-JUL-2020 16:44:01                                         
+
+delete from "SYSTEM"."INVOICES" where "ID" = '272' and "ORDER_ID" = '272' and "STATE" = 'sent' and ROWID = 'AAATlRAABAAAMFZAAX';                                
+AAATlRAABAAAMFZAAX 21-JUL-2020 16:44:01                                         
+
+delete from "SYSTEM"."ORDERS" where "ID" = '272' and "USER_ID" = '27' and "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAa';                               
+AAATlPAABAAAMFJAAa 21-JUL-2020 16:44:01                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'finished' where "STATE" = 'paid' and ROWID = 'AAATlPAABAAAMFJAAY';                                                      
+AAATlPAABAAAMFJAAY 21-JUL-2020 16:44:05                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAa';                                                     
+AAATlRAABAAAMFZAAa 21-JUL-2020 16:44:08                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'paid' where "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAD';                                                     
+AAATlPAABAAAMFJAAD 21-JUL-2020 16:44:08                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAP';                                                 
+AAATlPAABAAAMFJAAP 21-JUL-2020 16:44:53                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('482','482','created');                                                                        
+AAATlRAABAAAMFZAAb 21-JUL-2020 16:44:53                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAb';                                                     
+AAATlRAABAAAMFZAAb 21-JUL-2020 16:45:52                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'paid' where "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAP';                                                     
+AAATlPAABAAAMFJAAP 21-JUL-2020 16:45:52  
+
+update "SYSTEM"."ORDERS" set "STATE" = 'finished' where "STATE" = 'paid' and ROWID = 'AAATlPAABAAAMFJAAD';                                                      
+AAATlPAABAAAMFJAAD 21-JUL-2020 16:47:21                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'finished' where "STATE" = 'paid' and ROWID = 'AAATlPAABAAAMFJAAP';                                                      
+AAATlPAABAAAMFJAAP 21-JUL-2020 16:48:35                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('453','45','created');                                                                            
+AAATlPAABAAAMFJAAa 21-JUL-2020 16:48:50  
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAa';                                                   
+AAATlPAABAAAMFJAAa 21-JUL-2020 16:49:07                                         
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('483','48','created');                                                                            
+AAATlPAABAAAMFJAAb 21-JUL-2020 16:49:54                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAb';                                                   
+AAATlPAABAAAMFJAAb 21-JUL-2020 16:50:15                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAa';                                                 
+AAATlPAABAAAMFJAAa 21-JUL-2020 16:50:36                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('453','453','created');                                                                        
+AAATlRAABAAAMFZAAX 21-JUL-2020 16:50:36                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAb';                                                 
+AAATlPAABAAAMFJAAb 21-JUL-2020 16:50:50                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('483','483','created');                                                                        
+AAATlRAABAAAMFZAAc 21-JUL-2020 16:50:50                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAX';                                                     
+AAATlRAABAAAMFZAAX 21-JUL-2020 16:51:15                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'paid' where "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAa';                                                     
+AAATlPAABAAAMFJAAa 21-JUL-2020 16:51:15                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAc';                                                     
+AAATlRAABAAAMFZAAc 21-JUL-2020 16:51:23  
+
+update "SYSTEM"."ORDERS" set "STATE" = 'paid' where "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAb';                                                     
+AAATlPAABAAAMFJAAb 21-JUL-2020 16:51:23                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'finished' where "STATE" = 'paid' and ROWID = 'AAATlPAABAAAMFJAAa';                                                      
+AAATlPAABAAAMFJAAa 21-JUL-2020 16:52:06                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'finished' where "STATE" = 'paid' and ROWID = 'AAATlPAABAAAMFJAAb';                                                      
+AAATlPAABAAAMFJAAb 21-JUL-2020 16:53:38  
+
+insert into "SYSTEM"."ORDERS"("ID","USER_ID","STATE") values ('454','45','created');                                                                            
+AAATlPAABAAAMFJAAc 21-JUL-2020 16:53:56                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'checking' where "STATE" = 'created' and ROWID = 'AAATlPAABAAAMFJAAc';                                                   
+AAATlPAABAAAMFJAAc 21-JUL-2020 16:54:11                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'confirmed' where "STATE" = 'checking' and ROWID = 'AAATlPAABAAAMFJAAc';                                                 
+AAATlPAABAAAMFJAAc 21-JUL-2020 16:54:26                                         
+
+insert into "SYSTEM"."INVOICES"("ID","ORDER_ID","STATE") values ('454','454','created');                                                                        
+AAATlRAABAAAMFZAAd 21-JUL-2020 16:54:26                                         
+
+update "SYSTEM"."INVOICES" set "STATE" = 'sent' where "STATE" = 'created' and ROWID = 'AAATlRAABAAAMFZAAd';                                                     
+AAATlRAABAAAMFZAAd 21-JUL-2020 16:54:43                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'paid' where "STATE" = 'confirmed' and ROWID = 'AAATlPAABAAAMFJAAc';                                                     
+AAATlPAABAAAMFJAAc 21-JUL-2020 16:54:43                                         
+
+update "SYSTEM"."ORDERS" set "STATE" = 'finished' where "STATE" = 'paid' and ROWID = 'AAATlPAABAAAMFJAAc';
+AAATlPAABAAAMFJAAc 21-JUL-2020 16:56:40                                         
+                 

@@ -2,15 +2,25 @@ name: Scala CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master, dev ]
   pull_request:
     branches: [ master ]
 
 jobs:
-  build:
-
+  scalafmt-lint:
     runs-on: ubuntu-latest
-
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install scalaftm 2.6.1
+        run: |
+          VERSION=2.6.1
+          INSTALL_LOCATION=/var/tmp/scalafmt-native
+          curl https://raw.githubusercontent.com/scalameta/scalafmt/master/bin/install-scalafmt-native.sh | \
+          bash -s -- $VERSION $INSTALL_LOCATION
+      - name: Check for scalafmt conformance
+        run: /var/tmp/scalafmt-native --list --non-interactive
+  build:
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 11
