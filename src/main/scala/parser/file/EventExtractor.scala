@@ -38,7 +38,6 @@ object EventExtractor {
     })
   }
 
-  // todo: ensure uniqueness across entities
   /**
     * Translates row IDs of log entries to new ones,
     * based on what kind of statements have already been seen for that row

@@ -41,7 +41,6 @@ object SchemaDeriver {
       previousSchema: DatabaseSchema
   ): Unit = {
     if (schema.toList.size > 1) {
-      // TODO: Make this algorithm nice
       schema.toSeq
         .map(_._2)
         .permutations
