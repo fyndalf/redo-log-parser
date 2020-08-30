@@ -11,10 +11,14 @@ object SchemaDeriver {
       table: Table,
       affectedColumnIds: Seq[String]
   ): Unit = {
-    // Add rules
+    // Apply table relation rules
+
+    // Check primary key columns
     affectedColumnIds.foreach(columnId => {
       checkForPrimaryKeyDuplicates(table.columns(columnId))
     })
+
+    // Check foreign key relations
     updateColumnRelations(schema, previousSchema)
   }
 
