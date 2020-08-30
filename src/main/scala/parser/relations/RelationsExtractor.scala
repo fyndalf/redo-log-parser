@@ -212,7 +212,7 @@ object RelationsExtractor {
   }
 
   /**
-    * Extracts all left-side references of a relation
+    * Extracts all right-side references of a relation
     */
   private def extractRightReferencesOfRelation(
       schema: DatabaseSchema,
