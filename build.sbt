@@ -1,5 +1,5 @@
 ThisBuild / scalaVersion := "2.12.11"
-ThisBuild / version := "0.1.0-SNAPSHOT"
+ThisBuild / version := "0.1.0"
 ThisBuild / organization := "de.hpi"
 ThisBuild / organizationName := "bpt"
 
