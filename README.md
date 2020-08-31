@@ -18,7 +18,7 @@ $ sbt run <path to log> --verbose
 for more information in the output.
 
 The redo log file should be a plain text file. 
-The required format is described in the .pdf file provided in this repository.
+The required format is described in the accompanying paper of this tool, which is available upon request.
 
 The tool will ask for a root class, which can be entered using the terminal.
 The root class must be one of the discovered tables. 
