@@ -5,3 +5,6 @@ project/project
 .idea
 .metals/*
 *.xes
+.bloop
+metals.sbt
+.vscode/
