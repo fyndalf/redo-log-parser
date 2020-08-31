@@ -87,8 +87,9 @@ Due to the formatting of sqlplus, line breaks may still have to be removed in th
 A .jar file can be built by calling
 
 ```bash
-$ sbt package
+$ sbt assembly
 ```
 
 The binary will reside inside the `target` folder, and can be used instead of explicitly using SBT.
-For this, only `Java 11` is required.
+For this, only `Java 11` is required. 
+If one were to use `sbt package`, scala dependencies would be missing and scala would be required instead of java only.
