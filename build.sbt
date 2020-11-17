@@ -1,11 +1,13 @@
 ThisBuild / scalaVersion := "2.12.11"
-ThisBuild / version := "0.1.0"
+ThisBuild / version := "0.1.1"
 ThisBuild / organization := "de.hpi"
 ThisBuild / organizationName := "bpt"
 
 lazy val root = (project in file("."))
   .settings(
     name := "redo-log-parser",
+    assemblyJarName in assembly := "redo-log-parser.jar",
+    test in assembly := {},
     libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.5" % Test,
     libraryDependencies += "com.monovore" %% "decline" % "1.0.0",
     libraryDependencies += "org.scala-lang.modules" %% "scala-xml" % "1.3.0"
