@@ -35,9 +35,12 @@ This tool supports some heuristics for determining a good primary key candidate.
 Stricter checking, with use of these heuristics, can be enabled by passing a `--strict`
 flag during execution. Then, it is assured that
 
-- the values of a PK column only ever increase
-- the column contains no duplicate values
+- the values of a PK column only ever increase over time
 - the column name indicates a PK column
+
+in addition to the existing check which ensures that
+
+- the column values are unique over time
 
 This can increase the accuracy of the primary key detection.
 
