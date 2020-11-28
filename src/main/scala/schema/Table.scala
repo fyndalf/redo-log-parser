@@ -16,11 +16,13 @@ class Table(
         columnId,
         columnTable = this,
         columnIsPrimaryKey = true,
+        areColumnValuesIncreasing = true,
         columnIsSubsetOf = Seq(),
         columnValues = mutable.HashMap(rowId -> value)
       ))
     } else {
       columns(columnId).values += (rowId -> value)
+      columns(columnId).verifyIncreasingValuesOnChange()
     }
   }
 

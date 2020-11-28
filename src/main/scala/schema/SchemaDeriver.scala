@@ -28,7 +28,7 @@ object SchemaDeriver {
   private def checkForPrimaryKeyDuplicates(column: Column): Unit = {
     val values = column.values.values.toList
     if (values.size > values.distinct.size) {
-      column.isPrimaryKey = false
+      column.canBePrimaryKey = false
     }
   }
 

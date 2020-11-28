@@ -29,6 +29,18 @@ Afterwards, a new .xes log file will be generated next to the input log file.
 The `artifacts` folder contains an example redo log, as well as a more verbose one, 
 and an overview of the state the example database was in after process execution.
 
+## Strong Primary Key Detection
+
+This tool supports some heuristics for determining a good primary key candidate.
+Stricter checking, with use of these heuristics, can be enabled by passing a `--strict`
+flag during execution. Then, it is assured that
+
+- the values of a PK column only ever increase
+- the column contains no duplicate values
+- the column name indicates a PK column
+
+This can increase the accuracy of the primary key detection.
+
 ## Requirements
 
 In order for the tool to run, a working installation of `Java 11` is required,
