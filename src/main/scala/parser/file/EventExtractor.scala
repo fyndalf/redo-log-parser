@@ -1,6 +1,10 @@
 package parser.file
 
-import parser.ParsedStatement.{DeleteStatement, InsertStatement, UpdateStatement}
+import parser.ParsedStatement.{
+  DeleteStatement,
+  InsertStatement,
+  UpdateStatement
+}
 import parser.{LogEntryWithRedoStatement, ParsedStatement}
 
 import scala.collection.mutable
