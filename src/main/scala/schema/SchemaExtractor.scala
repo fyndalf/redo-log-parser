@@ -79,7 +79,9 @@ object SchemaExtractor {
           mutable.HashMap(rowID -> value)
         ))
       } else {
+        // add new value to column
         table.columns(attribute).values += (rowID -> value)
+        // verify whether values still increase and column is a pk candidate
         table.columns(attribute).verifyIncreasingValuesOnChange()
       }
     })
@@ -103,8 +105,10 @@ object SchemaExtractor {
         mutable.HashMap(rowID -> statement.newAttributeValue)
       ))
     } else {
+      // add new value to column
       table.columns(statement.affectedAttribute).values(rowID) =
         statement.newAttributeValue
+      // verify whether values still increase and column is a pk candidate
       table
         .columns(statement.affectedAttribute)
         .verifyIncreasingValuesOnChange()

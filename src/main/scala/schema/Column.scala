@@ -45,8 +45,11 @@ class Column(
     s"$name$primaryKey $foreignKeyString"
   }
 
-  // determines how a primary key can be determined:
-  // strict or lenient
+  /**
+    * Determines, depending on the required strength of the primary key check,
+    * whether this column is a primary key or a strong primary key candidate.
+    * @return Is this column a primary key candidate, depending on the required strength of the check.
+    */
   def isPrimaryKeyCandidate: Boolean = {
     if (cli.strictPrimaryKeyChecking) {
       isStrongPrimaryKey
@@ -55,11 +58,29 @@ class Column(
     }
   }
 
-  // verify whether up until now all values have been increasing
-  // ==> good indicator for a primary key
+  /**
+    * Checks whether a column contains duplicate values or not.
+    * Duplicate values make it impossible for a column to be a primary key column.
+    */
+  def verifyValueUniqueness(): Unit = {
+    val columnValues = values.values.toList
+    if (columnValues.size > columnValues.distinct.size) {
+      canBePrimaryKey = false
+    }
+  }
+
+  /**
+    * Verifies whether up until now all values of the column have been increasing.
+    * If they have not been monotonous at least once, this check will always return false,
+    * ensuring that even for deletions the history of the column's values is retained in this check.
+    *
+    * This is a good indicator for a primary key column.
+    *
+    * Calling this method on every value change of the column ensures that this property is verified correctly.
+    */
   def verifyIncreasingValuesOnChange(): Unit = {
     // if values have not been increasing before, we don't need to check again
-    if (!areValuesIncreasing) return;
+    if (!areValuesIncreasing) return
 
     val valuesAreMonotonous = values.values.toSeq.sliding(2).forall {
       case x :: y :: _ => x < y
@@ -72,12 +93,19 @@ class Column(
     }
   }
 
-  // indicates whether the values indicate a strong primary key and the values are always increasing
+  /**
+    * Indicates whether the values of the column indicate a strong primary key,
+    * and the values have always been increasing over the time of the redo log.
+    * @return Is this column a strong primary key candidate?
+    */
   private def isStrongPrimaryKey: Boolean = {
     canBePrimaryKey && areValuesIncreasing && isColumnNamePotentiallyPrimaryKey
   }
 
-  // verify whether the name indicates a good primary key candidate
+  /**
+    * Returns whether the column name potentially indicates a good primary key column based on it's name.
+    * Suffixes that are a good fit are -id, -nr, -key, -no, without regard to the actual case.
+    */
   private def isColumnNamePotentiallyPrimaryKey = {
     columnName.matches("(?i:.*id)") ||
     columnName.matches("(?i:.*nr)") ||

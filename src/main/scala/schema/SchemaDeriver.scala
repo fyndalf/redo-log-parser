@@ -11,25 +11,14 @@ object SchemaDeriver {
       table: Table,
       affectedColumnIds: Seq[String]
   ): Unit = {
-    // Apply table relation rules
-
-    // Check primary key columns
+    // For each column:
     affectedColumnIds.foreach(columnId => {
-      checkForPrimaryKeyDuplicates(table.columns(columnId))
+      // Check whether the column's values are unique, and the column can potentially be a primary key
+      table.columns(columnId).verifyValueUniqueness()
     })
 
     // Check foreign key relations
     updateColumnRelations(schema, previousSchema)
-  }
-
-  /**
-    * Checks whether a column contains duplicate values or not, and determines whether it can be a primary key or not
-    */
-  private def checkForPrimaryKeyDuplicates(column: Column): Unit = {
-    val values = column.values.values.toList
-    if (values.size > values.distinct.size) {
-      column.canBePrimaryKey = false
-    }
   }
 
   /**

@@ -5,6 +5,7 @@ import schema.DatabaseSchema
 
 package object cli {
 
+  // Should a strict check be used for determining primary key columns?
   var strictPrimaryKeyChecking: Boolean = false
 
   def printEntries(

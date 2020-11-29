@@ -71,7 +71,7 @@ object Main
               scala.io.StdIn.readLine("\nPlease enter a root class:")
             val rootClass = RootClass(rootClassInput)
 
-            println("Start creating traces from the redo log ...")
+            println("\nStart creating traces from the redo log ...")
 
             val traces = TraceIDParser.createTracesForPattern(
               rootClass,
