@@ -81,7 +81,7 @@ class Column(
   private def isColumnNamePotentiallyPrimaryKey = {
     columnName.matches("(?i:.*id)") ||
     columnName.matches("(?i:.*nr)") ||
-    columnName.matches("(?i:.*name)") ||
+    columnName.matches("(?i:.*key)") ||
     columnName.matches("(?i:.*no)")
 
   }
