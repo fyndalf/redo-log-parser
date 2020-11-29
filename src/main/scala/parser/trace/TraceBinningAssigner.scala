@@ -3,6 +3,10 @@ package parser.trace
 import parser.{RowWithBucketIdentifier, TableEntityRelation}
 import schema.Table
 
+/**
+  * Provides methods for assigning entities of the tables to different buckets,
+  * which will form the trace in the XES event log
+  */
 object TraceBinningAssigner {
 
   /**

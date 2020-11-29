@@ -73,7 +73,7 @@ object SchemaExtractor {
         table.columns += (attribute -> new Column(
           attribute,
           table,
-          columnIsPrimaryKey = true,
+          columnCanBePrimaryKey = true,
           areColumnValuesIncreasing = true,
           Seq(),
           mutable.HashMap(rowID -> value)
@@ -99,7 +99,7 @@ object SchemaExtractor {
       table.columns += (statement.affectedAttribute -> new Column(
         statement.affectedAttribute,
         table,
-        columnIsPrimaryKey = true,
+        columnCanBePrimaryKey = true,
         areColumnValuesIncreasing = true,
         Seq(),
         mutable.HashMap(rowID -> statement.newAttributeValue)
@@ -131,7 +131,7 @@ object SchemaExtractor {
           table.columns += (attribute -> new Column(
             attribute,
             table,
-            columnIsPrimaryKey = true,
+            columnCanBePrimaryKey = true,
             areColumnValuesIncreasing = true,
             Seq(),
             mutable.HashMap[String, String]()

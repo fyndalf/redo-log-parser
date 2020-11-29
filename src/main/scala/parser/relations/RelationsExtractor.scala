@@ -4,6 +4,9 @@ import parser.ParsedStatement.InsertStatement
 import parser._
 import schema.DatabaseSchema
 
+/**
+  * Provides methods for extracting different kinds of relations out of the parsed data.
+  */
 object RelationsExtractor {
 
   /**

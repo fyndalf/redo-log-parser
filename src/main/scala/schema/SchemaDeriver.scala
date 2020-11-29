@@ -1,5 +1,8 @@
 package schema
 
+/**
+  * This object provides methods for determining and updating the database schema while considering all log entries.
+  */
 object SchemaDeriver {
 
   /**

@@ -7,9 +7,14 @@ import parser.{
   RowWithBucketIdentifier
 }
 
+/**
+  * Provides methods for handling the binning of log entries to traces.
+  */
 object TraceIDParserHelper {
 
-  // assign entries to root element buckets
+  /**
+    * For the root class, assign entries to root element buckets
+    */
   def gatherRootLogBuckets(
       rootClass: RootClass,
       logEntriesForEntity: Seq[LogEntriesForTableAndEntity]
@@ -19,6 +24,9 @@ object TraceIDParserHelper {
       .flatMap(_.entriesForEntities.map(_.logEntries))
   }
 
+  /**
+    * Extracts rows and and tables with a bucket identifier from sequences of log entry statements
+    */
   def gatherRowsFromLogBuckets(
       logBuckets: Seq[Seq[LogEntryWithRedoStatement]]
   ): Seq[RowWithBucketIdentifier] = {
@@ -29,6 +37,9 @@ object TraceIDParserHelper {
     })
   }
 
+  /**
+    * Assigns each log entry to the trace buckets it belongs to, based on the the table id and the determined bucket id
+    */
   def assignLogEntriesToBuckets(
       logEntryBuckets: Array[Seq[LogEntryWithRedoStatement]],
       logEntries: Seq[LogEntryWithRedoStatement],
@@ -47,6 +58,9 @@ object TraceIDParserHelper {
     logEntryBuckets.toSeq
   }
 
+  /**
+    * Initializes an array for holding log entry buckets in order to assign them to different traces
+    */
   def initializeLogEntryBucketsForRows(
       rows: Seq[RowWithBucketIdentifier]
   ): Array[Seq[LogEntryWithRedoStatement]] = {

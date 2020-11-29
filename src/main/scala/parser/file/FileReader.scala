@@ -4,6 +4,9 @@ import java.nio.file.Path
 
 import scala.io.Source
 
+/**
+  * An object that provides a method for reading a redo log file rom disk
+  */
 object FileReader {
 
   /**

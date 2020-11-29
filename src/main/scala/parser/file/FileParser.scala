@@ -7,8 +7,11 @@ import parser._
 
 import scala.collection.mutable
 
-// assumes that update statement is single line and blocks are separated by a single empty line
 // todo: take variable separator into account
+/**
+  * An object that provides methods for parsing the corresponding log statements out of a previously read redo log file.
+  * It assumes that update statement occupy two lines and blocks are separated by a single empty line
+  */
 object FileParser {
 
   /**
@@ -16,6 +19,7 @@ object FileParser {
     */
   def getAndParseLogFile(path: Path): Seq[ExtractedLogEntry] = {
     val logFileContents = FileReader.readLogFile(path)
+    // group the log based on empty lines, and group each two lines of a redo log statement together
     val splitLogFile = logFileContents.filterNot(_.isBlank).grouped(2).toSeq
     parseLogFileChunks(splitLogFile)
   }

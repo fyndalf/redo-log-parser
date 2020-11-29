@@ -22,9 +22,13 @@ import schema.DatabaseSchema
 
 import scala.xml.{Elem, XML}
 
+/**
+  * Provides functionality for generating log entry traces for the chosen root class,
+  * and for generating and serializing an XML XES log. Generally, it is assumed that
+  * primary keys and foreign keys are not updated.
+  */
 object TraceIDParser {
 
-  // assumes: primary keys and foreign keys are not updated
   /**
     * Generates a sequence of sequences, where each sequence holds redo log entries for a trace
     * based on the selected root class and schema

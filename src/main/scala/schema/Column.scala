@@ -2,17 +2,28 @@ package schema
 
 import scala.collection.mutable
 
+/**
+  * Represents a column of a table, and provides various methods for determining whether
+  * this column is a good primary key as observed over the time of the log. The value verification needs to
+  * be done every time values are inserted or updated for ensuring a correct strong primary key check.
+  * @param columnName The name of the column
+  * @param columnTable The table this column belongs to
+  * @param columnCanBePrimaryKey Indicates whether up until now, this column can be a primary key based on it's values
+  * @param areColumnValuesIncreasing Indicates whether all values inserted or updated have been increasing over time
+  * @param columnIsSubsetOf Provides a list of columns which this column appears to be a subset of
+  * @param columnValues Contains a map of Row IDs to values, storing the current values of the column
+  */
 class Column(
     columnName: String,
     columnTable: Table,
-    columnIsPrimaryKey: Boolean,
+    columnCanBePrimaryKey: Boolean,
     areColumnValuesIncreasing: Boolean,
     columnIsSubsetOf: Seq[Column],
-    columnValues: mutable.HashMap[String, String] // ROWID -> VALUE
+    columnValues: mutable.HashMap[String, String]
 ) {
   val name: String = columnName
   val table: Table = columnTable
-  var canBePrimaryKey: Boolean = columnIsPrimaryKey
+  var canBePrimaryKey: Boolean = columnCanBePrimaryKey
   var areValuesIncreasing: Boolean = areColumnValuesIncreasing
 
   var isSubsetOf: Seq[Column] = columnIsSubsetOf
