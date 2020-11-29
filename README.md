@@ -29,6 +29,21 @@ Afterwards, a new .xes log file will be generated next to the input log file.
 The `artifacts` folder contains an example redo log, as well as a more verbose one, 
 and an overview of the state the example database was in after process execution.
 
+## Strong Primary Key Detection
+
+This tool supports some heuristics for determining a good primary key candidate.
+Stricter checking, with use of these heuristics, can be enabled by passing a `--strict`
+flag during execution. Then, it is assured that
+
+- the values of a PK column only ever increase over time
+- the column name indicates a PK column
+
+in addition to the existing check which ensures that
+
+- the column values are unique over time
+
+This can increase the accuracy of the primary key detection.
+
 ## Requirements
 
 In order for the tool to run, a working installation of `Java 11` is required,
@@ -41,7 +56,7 @@ For development, we recommend using `IntelliJ IDEA 2020.2` or newer.
 
 The data for evaluating this implementation was generated via 
 [this](https://github.com/tom-lichtenstein/process-simulator) tool. It is designed to work with
-a running Oracle DB 19c EE, which can be dowloaded [here](https://www.oracle.com/database/technologies/oracle-database-software-downloads.html#19c).
+a running Oracle DB 19c EE, which can be downloaded [here](https://www.oracle.com/database/technologies/oracle-database-software-downloads.html#19c).
 
 [This article](https://docs.oracle.com/en/database/oracle/oracle-database/18/sutil/oracle-logminer-utility.html#GUID-3417B738-374C-4EE3-B15C-3A66E01AE2B5)
 provides information on how to extract the REDO log file. The database should be configured to archive the redo log prior to the process simulation. The output should be stored as a plain text file next to the cli tool.

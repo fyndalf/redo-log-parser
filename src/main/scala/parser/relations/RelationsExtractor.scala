@@ -200,7 +200,7 @@ object RelationsExtractor {
       .flatMap(col => {
         col.isSubsetOf = col.isSubsetOf
           .filter(_.table.name.equalsIgnoreCase(relation.leftTable.name))
-          .filter(_.isPrimaryKey)
+          .filter(_.isPrimaryKeyCandidate)
         val columnPairs =
           col.isSubsetOf.map(referencedColumn =>
             ColumnRelation(referencedColumn, col)
@@ -222,7 +222,7 @@ object RelationsExtractor {
       .flatMap(col => {
         col.isSubsetOf = col.isSubsetOf
           .filter(_.table.name.equalsIgnoreCase(relation.rightTable.name))
-          .filter(_.isPrimaryKey)
+          .filter(_.isPrimaryKeyCandidate)
         val columnPairs =
           col.isSubsetOf.map(referencedColumn =>
             ColumnRelation(col, referencedColumn)

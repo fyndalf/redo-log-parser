@@ -74,11 +74,13 @@ object SchemaExtractor {
           attribute,
           table,
           columnIsPrimaryKey = true,
+          areColumnValuesIncreasing = true,
           Seq(),
           mutable.HashMap(rowID -> value)
         ))
       } else {
         table.columns(attribute).values += (rowID -> value)
+        table.columns(attribute).verifyIncreasingValuesOnChange()
       }
     })
   }
@@ -96,12 +98,16 @@ object SchemaExtractor {
         statement.affectedAttribute,
         table,
         columnIsPrimaryKey = true,
+        areColumnValuesIncreasing = true,
         Seq(),
         mutable.HashMap(rowID -> statement.newAttributeValue)
       ))
     } else {
       table.columns(statement.affectedAttribute).values(rowID) =
         statement.newAttributeValue
+      table
+        .columns(statement.affectedAttribute)
+        .verifyIncreasingValuesOnChange()
     }
   }
 
@@ -122,6 +128,7 @@ object SchemaExtractor {
             attribute,
             table,
             columnIsPrimaryKey = true,
+            areColumnValuesIncreasing = true,
             Seq(),
             mutable.HashMap[String, String]()
           ))

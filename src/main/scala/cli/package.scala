@@ -4,6 +4,9 @@ import parser.{ExtractedLogEntry, LogEntryWithRedoStatement}
 import schema.DatabaseSchema
 
 package object cli {
+
+  var strictPrimaryKeyChecking: Boolean = false
+
   def printEntries(
       logEntries: Seq[ExtractedLogEntry]
   )(implicit path: Path, verbose: Boolean): Unit = {

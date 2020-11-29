@@ -4,9 +4,9 @@ import java.nio.file.Path
 
 import cats.implicits._
 import com.monovore.decline._
+import parser.RootClass
 import parser.file.{EventExtractor, FileParser}
 import parser.trace.TraceIDParser
-import parser.RootClass
 import parser.trace.TraceIDParser.generateXMLLog
 import schema.SchemaExtractor
 
@@ -25,10 +25,24 @@ object Main
           .flag("verbose", help = "Print detailed information the console.")
           .orFalse
 
-        (filePath, verboseOpt).mapN {
-          (pathParam, verboseParam) =>
+        val strongPKOpt = Opts
+          .flag(
+            "strict",
+            help =
+              "Only allow strong Primary Key candidates by checking whether " +
+                "the column names indicate a primary key and the values only ever increase "
+          )
+          .orFalse
+
+        (filePath, verboseOpt, strongPKOpt).mapN {
+          (pathParam, verboseParam, strongPKParam) =>
             implicit val verbose: Boolean = verboseParam
             implicit val path: Path = pathParam
+
+            // determine strictness of PK checking
+            cli.strictPrimaryKeyChecking = strongPKParam
+            if (verbose && strongPKParam)
+              println("Strong PK Checking has been enabled!")
 
             printPath()
             // todo: make block separator a parameter
