@@ -41,11 +41,14 @@ class Column(
   }
 
   override def toString: String = {
-    val primaryKey = if (isPrimaryKeyCandidate) {
-      " (PRIMARY KEY)"
-    } else {
-      ""
-    }
+    val primaryKey =
+      if (isPrimaryKeyCandidate && cli.strictPrimaryKeyChecking) {
+        " (STRONG PRIMARY KEY)"
+      } else if (isPrimaryKeyCandidate) {
+        " (PRIMARY KEY)"
+      } else {
+        ""
+      }
     val foreignKeyTargets = isSubsetOf.map(column => {
       column.table.name + "." + column.name
     })
