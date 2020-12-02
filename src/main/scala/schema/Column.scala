@@ -96,10 +96,32 @@ class Column(
     // if values have not been increasing before, we don't need to check again
     if (!areValuesIncreasing) return
 
-    val valuesAreMonotonous = values.values.toSeq.sliding(2).forall {
-      case x :: y :: _ => x < y
-      case _           => true
+    var valuesAreMonotonous = false
+
+    // try to interpret column values as doubles and assert that they only ever increase
+    // if this fails, we can still interpret them as strings and assert a certain ordering,
+    // which can't deal with numbers-only strings all to well, but works for any other string.
+    try {
+      valuesAreMonotonous = values
+        .map(v => (v._1.toDouble, v._2.toDouble))
+        .values
+        .toSeq
+        .sliding(2)
+        .forall {
+          case x :: y :: _ => x < y
+          case _           => true
+        }
+    } catch {
+      case _: NumberFormatException =>
+        // compare strings with comparator, and require x to be before y
+        valuesAreMonotonous = values.values.toSeq
+          .sliding(2)
+          .forall {
+            case x :: y :: _ => x.compareToIgnoreCase(y) < 0
+            case _           => true
+          }
     }
+
     if (valuesAreMonotonous && areValuesIncreasing) {
       areValuesIncreasing = true
     } else {
