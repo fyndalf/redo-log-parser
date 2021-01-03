@@ -205,9 +205,7 @@ object RelationsExtractor {
           .filter(_.table.name.equalsIgnoreCase(relation.leftTable.name))
           .filter(_.isPrimaryKeyCandidate)
         val columnPairs =
-          subset.map(referencedColumn =>
-            ColumnRelation(referencedColumn, col)
-          )
+          subset.map(referencedColumn => ColumnRelation(referencedColumn, col))
         columnPairs
       })
       .toSet
@@ -227,9 +225,7 @@ object RelationsExtractor {
           .filter(_.table.name.equalsIgnoreCase(relation.rightTable.name))
           .filter(_.isPrimaryKeyCandidate)
         val columnPairs =
-          subset.map(referencedColumn =>
-            ColumnRelation(col, referencedColumn)
-          )
+          subset.map(referencedColumn => ColumnRelation(col, referencedColumn))
         columnPairs
       })
       .toSet
