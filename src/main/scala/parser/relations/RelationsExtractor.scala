@@ -201,11 +201,11 @@ object RelationsExtractor {
   ): Set[ColumnRelation] = {
     val leftReferences = schema(relation.rightTable.name).columns.values
       .flatMap(col => {
-        col.isSubsetOf = col.isSubsetOf
+        val subset = col.isSubsetOf
           .filter(_.table.name.equalsIgnoreCase(relation.leftTable.name))
           .filter(_.isPrimaryKeyCandidate)
         val columnPairs =
-          col.isSubsetOf.map(referencedColumn =>
+          subset.map(referencedColumn =>
             ColumnRelation(referencedColumn, col)
           )
         columnPairs
@@ -223,11 +223,11 @@ object RelationsExtractor {
   ): Set[ColumnRelation] = {
     val rightReferences = schema(relation.leftTable.name).columns.values
       .flatMap(col => {
-        col.isSubsetOf = col.isSubsetOf
+        val subset = col.isSubsetOf
           .filter(_.table.name.equalsIgnoreCase(relation.rightTable.name))
           .filter(_.isPrimaryKeyCandidate)
         val columnPairs =
-          col.isSubsetOf.map(referencedColumn =>
+          subset.map(referencedColumn =>
             ColumnRelation(col, referencedColumn)
           )
         columnPairs
