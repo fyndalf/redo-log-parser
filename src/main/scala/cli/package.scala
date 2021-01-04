@@ -11,6 +11,7 @@ package object cli {
 
   // Should a strict check be used for determining primary key columns?
   var strictPrimaryKeyChecking: Boolean = false
+  var includeUpdateValues: Boolean = false
 
   def printEntries(
       logEntries: Seq[ExtractedLogEntry]

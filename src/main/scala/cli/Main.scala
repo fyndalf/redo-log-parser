@@ -25,6 +25,14 @@ object Main
           .flag("verbose", help = "Print detailed information the console.")
           .orFalse
 
+        val includeUpdateValuesOpt = Opts
+          .flag(
+            "includeUpdateValues",
+            help =
+              "Generate events from update statements that contain the updated values in the event name."
+          )
+          .orFalse
+
         val strongPKOpt = Opts
           .flag(
             "strict",
@@ -34,13 +42,17 @@ object Main
           )
           .orFalse
 
-        (filePath, verboseOpt, strongPKOpt).mapN {
-          (pathParam, verboseParam, strongPKParam) =>
+        (filePath, verboseOpt, includeUpdateValuesOpt, strongPKOpt).mapN {
+          (pathParam, verboseParam, includeUpdateValuesParam, strongPKParam) =>
             implicit val verbose: Boolean = verboseParam
             implicit val path: Path = pathParam
 
             // determine strictness of PK checking
             cli.strictPrimaryKeyChecking = strongPKParam
+
+            // determine whether updated values should be included
+            cli.includeUpdateValues = includeUpdateValuesParam
+
             if (verbose && strongPKParam)
               println("Strong PK Checking has been enabled!")
 

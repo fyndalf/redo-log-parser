@@ -5,6 +5,7 @@
 Extracts .xes event logs out of database redo logs.
 
 Run by calling
+
 ```bash
 $ sbt run <path to log>
 ```
@@ -17,22 +18,27 @@ $ sbt run <path to log> --verbose
 
 for more information in the output.
 
-The redo log file should be a plain text file. 
-The required format is described in the accompanying paper of this tool, which is available upon request.
+Strong primary key detection and events that include the values of the update statements can be achieved with
 
-The tool will ask for a root class, which can be entered using the terminal.
-The root class must be one of the discovered tables. 
-For this purpose the discovered schema is displayed in the terminal.
+```bash
+$ sbt run <path to log> --strict --includeUpdateValues
+```
+
+The redo log file should be a plain text file. The required format is described in the accompanying paper of this tool,
+which is available upon request.
+
+The tool will ask for a root class, which can be entered using the terminal. The root class must be one of the
+discovered tables. For this purpose the discovered schema is displayed in the terminal.
 
 Afterwards, a new .xes log file will be generated next to the input log file.
 
-The `artifacts` folder contains an example redo log, as well as a more verbose one, 
-and an overview of the state the example database was in after process execution.
+The `artifacts` folder contains an example redo log, as well as a more verbose one, and an overview of the state the
+example database was in after process execution.
 
 ## Strong Primary Key Detection
 
-This tool supports some heuristics for determining a good primary key candidate.
-Stricter checking, with use of these heuristics, can be enabled by passing a `--strict`
+This tool supports some heuristics for determining a good primary key candidate. Stricter checking, with use of these
+heuristics, can be enabled by passing a `--strict`
 flag during execution. Then, it is assured that
 
 - the values of a PK column only ever increase over time
@@ -44,22 +50,29 @@ in addition to the existing check which ensures that
 
 This can increase the accuracy of the primary key detection.
 
+## Inclusion of Update Values in Event Names
+
+Sometimes, especially when many values in updates are not unique but rather represent a finite amount of states, it can
+be of interest to see the actual state represented in the event. For this, a `--includeUpdateValues` flag can be passed,
+which enables the generation of more detailed event names from update statements.
+
 ## Requirements
 
-In order for the tool to run, a working installation of `Java 11` is required,
-as well as `SBT 1.3.8` (or later) and `Scala 2.12.11`. SBT should be able to pick up the required
-Scala version automatically.
+In order for the tool to run, a working installation of `Java 11` is required, as well as `SBT 1.3.8` (or later)
+and `Scala 2.12.11`. SBT should be able to pick up the required Scala version automatically.
 
 For development, we recommend using `IntelliJ IDEA 2020.2` or newer.
 
 ## Data Generation
 
-The data for evaluating this implementation was generated via 
-[this](https://github.com/tom-lichtenstein/process-simulator) tool. It is designed to work with
-a running Oracle DB 19c EE, which can be downloaded [here](https://www.oracle.com/database/technologies/oracle-database-software-downloads.html#19c).
+The data for evaluating this implementation was generated via
+[this](https://github.com/tom-lichtenstein/process-simulator) tool. It is designed to work with a running Oracle DB 19c
+EE, which can be
+downloaded [here](https://www.oracle.com/database/technologies/oracle-database-software-downloads.html#19c).
 
 [This article](https://docs.oracle.com/en/database/oracle/oracle-database/18/sutil/oracle-logminer-utility.html#GUID-3417B738-374C-4EE3-B15C-3A66E01AE2B5)
-provides information on how to extract the REDO log file. The database should be configured to archive the redo log prior to the process simulation. The output should be stored as a plain text file next to the cli tool.
+provides information on how to extract the REDO log file. The database should be configured to archive the redo log
+prior to the process simulation. The output should be stored as a plain text file next to the cli tool.
 
 To export the redo log in the correct format using sqlplus, the following formatting options must be set first:
 
@@ -105,6 +118,10 @@ A .jar file can be built by calling
 $ sbt assembly
 ```
 
-The binary will reside inside the `target` folder, and can be used instead of explicitly using SBT.
-For this, only `Java 11` is required. 
-If one were to use `sbt package`, scala dependencies would be missing and scala would be required instead of java only.
+The binary will reside inside the `target` folder, and can be used instead of explicitly using SBT. For this,
+only `Java 11` is required. If one were to use `sbt package`, scala dependencies would be missing and scala would be
+required instead of java only. Then, the binary can be called with
+
+```bash
+$ java -jar redo-log-parser.jar <path to log> --<flags>
+```
