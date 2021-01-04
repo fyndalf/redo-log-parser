@@ -4,9 +4,9 @@ import java.nio.file.Path
 
 import cats.implicits._
 import com.monovore.decline._
+import parser.RootClass
 import parser.file.{EventExtractor, FileParser}
 import parser.trace.TraceIDParser
-import parser.RootClass
 import parser.trace.TraceIDParser.generateXMLLog
 import schema.SchemaExtractor
 
@@ -25,10 +25,36 @@ object Main
           .flag("verbose", help = "Print detailed information the console.")
           .orFalse
 
-        (filePath, verboseOpt).mapN {
-          (pathParam, verboseParam) =>
+        val includeUpdateValuesOpt = Opts
+          .flag(
+            "includeUpdateValues",
+            help =
+              "Generate events from update statements that contain the updated values in the event name."
+          )
+          .orFalse
+
+        val strongPKOpt = Opts
+          .flag(
+            "strict",
+            help =
+              "Only allow strong Primary Key candidates by checking whether " +
+                "the column names indicate a primary key and the values only ever increase "
+          )
+          .orFalse
+
+        (filePath, verboseOpt, includeUpdateValuesOpt, strongPKOpt).mapN {
+          (pathParam, verboseParam, includeUpdateValuesParam, strongPKParam) =>
             implicit val verbose: Boolean = verboseParam
             implicit val path: Path = pathParam
+
+            // determine strictness of PK checking
+            cli.strictPrimaryKeyChecking = strongPKParam
+
+            // determine whether updated values should be included
+            cli.includeUpdateValues = includeUpdateValuesParam
+
+            if (verbose && strongPKParam)
+              println("Strong PK Checking has been enabled!")
 
             printPath()
             // todo: make block separator a parameter
@@ -57,7 +83,7 @@ object Main
               scala.io.StdIn.readLine("\nPlease enter a root class:")
             val rootClass = RootClass(rootClassInput)
 
-            println("Start creating traces from the redo log ...")
+            println("\nStart creating traces from the redo log ...")
 
             val traces = TraceIDParser.createTracesForPattern(
               rootClass,

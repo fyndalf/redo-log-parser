@@ -3,7 +3,16 @@ import java.nio.file.Path
 import parser.{ExtractedLogEntry, LogEntryWithRedoStatement}
 import schema.DatabaseSchema
 
+/**
+  * A companion object holding additional print methods for the CLI tool,
+  * and storing how strict the primary key check should be
+  */
 package object cli {
+
+  // Should a strict check be used for determining primary key columns?
+  var strictPrimaryKeyChecking: Boolean = false
+  var includeUpdateValues: Boolean = false
+
   def printEntries(
       logEntries: Seq[ExtractedLogEntry]
   )(implicit path: Path, verbose: Boolean): Unit = {

@@ -10,10 +10,13 @@ import parser.{LogEntryWithRedoStatement, ParsedStatement}
 import scala.collection.mutable
 import scala.util.Random
 
+/**
+  * An object holding methods for transforming parsed log entries so that row ids are unique across entities.
+  */
 object EventExtractor {
 
   /**
-    * Transforms all log entries to ensure that now row id is reused across records
+    * Transforms all log entries to ensure that no row id is reused across records
     */
   def transformRowIdentifiers(
       logEntries: Seq[LogEntryWithRedoStatement]

@@ -73,12 +73,16 @@ object SchemaExtractor {
         table.columns += (attribute -> new Column(
           attribute,
           table,
-          columnIsPrimaryKey = true,
+          columnCanBePrimaryKey = true,
+          areColumnValuesIncreasing = true,
           Seq(),
           mutable.HashMap(rowID -> value)
         ))
       } else {
+        // add new value to column
         table.columns(attribute).values += (rowID -> value)
+        // verify whether values still increase and column is a pk candidate
+        table.columns(attribute).verifyIncreasingValuesOnChange()
       }
     })
   }
@@ -95,13 +99,19 @@ object SchemaExtractor {
       table.columns += (statement.affectedAttribute -> new Column(
         statement.affectedAttribute,
         table,
-        columnIsPrimaryKey = true,
+        columnCanBePrimaryKey = true,
+        areColumnValuesIncreasing = true,
         Seq(),
         mutable.HashMap(rowID -> statement.newAttributeValue)
       ))
     } else {
+      // add new value to column
       table.columns(statement.affectedAttribute).values(rowID) =
         statement.newAttributeValue
+      // verify whether values still increase and column is a pk candidate
+      table
+        .columns(statement.affectedAttribute)
+        .verifyIncreasingValuesOnChange()
     }
   }
 
@@ -121,7 +131,8 @@ object SchemaExtractor {
           table.columns += (attribute -> new Column(
             attribute,
             table,
-            columnIsPrimaryKey = true,
+            columnCanBePrimaryKey = true,
+            areColumnValuesIncreasing = true,
             Seq(),
             mutable.HashMap[String, String]()
           ))

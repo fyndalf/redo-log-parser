@@ -22,9 +22,13 @@ import schema.DatabaseSchema
 
 import scala.xml.{Elem, XML}
 
+/**
+  * Provides functionality for generating log entry traces for the chosen root class,
+  * and for generating and serializing an XML XES log. Generally, it is assumed that
+  * primary keys and foreign keys are not updated.
+  */
 object TraceIDParser {
 
-  // assumes: primary keys and foreign keys are not updated
   /**
     * Generates a sequence of sequences, where each sequence holds redo log entries for a trace
     * based on the selected root class and schema
@@ -114,14 +118,17 @@ object TraceIDParser {
     */
   private def parseTraceEventsToXML(events: LogEntriesForTrace): Seq[Elem] = {
     val eventNodes = events.map(event => {
+
       val eventName = event.statement match {
         case _: InsertStatement => s"Add ${event.tableID} entity"
-        case update: UpdateStatement =>
+        case update: UpdateStatement if cli.includeUpdateValues =>
           s"Update ${update.affectedAttribute} value of ${event.tableID} entity to ${update.newAttributeValue}"
+        case update: UpdateStatement if !cli.includeUpdateValues =>
+          s"Update ${update.affectedAttribute} value of ${event.tableID} entity"
         case _: DeleteStatement => s"Delete entity from ${event.tableID}"
       }
       <string key="concept:name" value={eventName}/>
-        <date key="time:timestamp" value={
+          <date key="time:timestamp" value={
         event.timestamp.toString + ":000+00:00"
       }/>
     })

@@ -2,6 +2,11 @@ package schema
 
 import scala.collection.mutable
 
+/**
+  * Represents a table from the database, holding several columns.
+  * @param tableName The name of the table
+  * @param tableColumns The columns belonging to the table
+  */
 class Table(
     tableName: String,
     tableColumns: TableColumns = mutable.HashMap()
@@ -15,12 +20,14 @@ class Table(
       columns += (columnId -> new Column(
         columnId,
         columnTable = this,
-        columnIsPrimaryKey = true,
+        columnCanBePrimaryKey = true,
+        areColumnValuesIncreasing = true,
         columnIsSubsetOf = Seq(),
         columnValues = mutable.HashMap(rowId -> value)
       ))
     } else {
       columns(columnId).values += (rowId -> value)
+      columns(columnId).verifyIncreasingValuesOnChange()
     }
   }
 
