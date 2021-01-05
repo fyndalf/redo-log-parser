@@ -19,7 +19,7 @@ import parser.trace.TraceIDParserHelper.{
   initializeLogEntryBucketsForRows
 }
 import schema.DatabaseSchema
-
+import scala.util.matching.Regex
 import scala.xml.{Elem, XML}
 
 /**
@@ -127,10 +127,17 @@ object TraceIDParser {
           s"Update ${update.affectedAttribute} value of ${event.tableID} entity"
         case _: DeleteStatement => s"Delete entity from ${event.tableID}"
       }
+
+      val timeFormatRegex = new Regex("^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d$")
+      val timestamp = (
+        if (timeFormatRegex.pattern.matcher(event.timestamp.toString).matches)
+          event.timestamp.toString + ":00"
+        else
+          event.timestamp.toString
+      ) + ".000+00:00"
+
       <string key="concept:name" value={eventName}/>
-          <date key="time:timestamp" value={
-        event.timestamp.toString + ":000+00:00"
-      }/>
+      <date key="time:timestamp" value={timestamp}/>
     })
 
     { eventNodes.map(eventNode => <event>{eventNode}</event>) }
