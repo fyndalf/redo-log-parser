@@ -128,6 +128,8 @@ object TraceIDParser {
         case _: DeleteStatement => s"Delete entity from ${event.tableID}"
       }
 
+      // Format dates according to the xes standard
+      // Handles timestamps with missing seconds and adds milliseconds and time zone offset
       val timeFormatRegex = new Regex("^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d$")
       val timestamp = (
         if (timeFormatRegex.pattern.matcher(event.timestamp.toString).matches)
