@@ -1,7 +1,9 @@
-import java.nio.file.Path
-
-import parser.{ExtractedLogEntry, LogEntryWithRedoStatement}
+import parser.{ExtractedLogEntry, LogEntryWithRedoStatement, RootClass}
 import schema.DatabaseSchema
+
+import java.nio.file.Path
+import scala.annotation.tailrec
+import scala.util.{Success, Try}
 
 /**
   * A companion object holding additional print methods for the CLI tool,
@@ -62,5 +64,20 @@ package object cli {
   def printPath()(implicit path: Path, verbose: Boolean): Unit = {
     if (verbose)
       println(s"\n\nGetting log file from ${path.toAbsolutePath.toString}")
+  }
+
+  @tailrec
+  def getRootClassInput(schema: DatabaseSchema): Try[RootClass] = {
+    val rootClassInput =
+      scala.io.StdIn.readLine("\nPlease enter a root class:")
+    val rootClass = RootClass(rootClassInput)
+    if (schema.keySet.contains(rootClass.tableID)) {
+      Success(rootClass)
+    } else {
+      println(
+        s"\nThe class $rootClassInput you entered does not seem to exist. Please try again!"
+      )
+      getRootClassInput(schema)
+    }
   }
 }

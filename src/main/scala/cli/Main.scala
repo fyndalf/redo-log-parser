@@ -1,14 +1,13 @@
 package cli
 
-import java.nio.file.Path
-
 import cats.implicits._
 import com.monovore.decline._
-import parser.RootClass
 import parser.file.{EventExtractor, FileParser}
 import parser.trace.TraceIDParser
 import parser.trace.TraceIDParser.generateXMLLog
 import schema.SchemaExtractor
+
+import java.nio.file.Path
 
 /**
   * The main object of the CLI tool - it is used to run the tool.
@@ -79,9 +78,7 @@ object Main
 
             printDatabaseSchema(databaseSchema)
 
-            val rootClassInput =
-              scala.io.StdIn.readLine("\nPlease enter a root class:")
-            val rootClass = RootClass(rootClassInput)
+            val rootClass = getRootClassInput(databaseSchema).get
 
             println("\nStart creating traces from the redo log ...")
 
