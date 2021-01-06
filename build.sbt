@@ -3,6 +3,8 @@ ThisBuild / version := "0.2.1"
 ThisBuild / organization := "de.hpi"
 ThisBuild / organizationName := "bpt"
 
+trapExit := false
+
 lazy val root = (project in file("."))
   .settings(
     name := "redo-log-parser",
