@@ -88,7 +88,7 @@ object Main
 
             printDatabaseSchema(databaseSchema)
 
-            val rootClass = getRootClassInput(databaseSchema).get
+            val rootClass = getRootClassInput(databaseSchema)
 
             println("\nStart creating traces from the redo log ...")
 

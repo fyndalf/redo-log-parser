@@ -3,7 +3,6 @@ import schema.DatabaseSchema
 
 import java.nio.file.Path
 import scala.annotation.tailrec
-import scala.util.{Success, Try}
 
 /**
   * A companion object holding additional print methods for the CLI tool,
@@ -67,12 +66,12 @@ package object cli {
   }
 
   @tailrec
-  def getRootClassInput(schema: DatabaseSchema): Try[RootClass] = {
+  def getRootClassInput(schema: DatabaseSchema): RootClass = {
     val rootClassInput =
       scala.io.StdIn.readLine("\nPlease enter a root class:")
     val rootClass = RootClass(rootClassInput)
     if (schema.keySet.contains(rootClass.tableID)) {
-      Success(rootClass)
+      rootClass
     } else {
       println(
         s"\nThe class $rootClassInput you entered does not seem to exist. Please try again!"
