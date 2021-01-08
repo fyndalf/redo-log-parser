@@ -1,14 +1,14 @@
 package cli
 
-import java.nio.file.Path
-
 import cats.implicits._
 import com.monovore.decline._
-import parser.RootClass
 import parser.file.{EventExtractor, FileParser}
 import parser.trace.TraceIDParser
 import parser.trace.TraceIDParser.generateXMLLog
 import schema.SchemaExtractor
+
+import java.io.FileNotFoundException
+import java.nio.file.Path
 
 /**
   * The main object of the CLI tool - it is used to run the tool.
@@ -61,8 +61,17 @@ object Main
             // todo: make date time format a parameter
 
             println("Reading and parsing redo log...")
+            var logEntries: Seq[parser.ExtractedLogEntry] = null
+            try {
+              logEntries = FileParser.getAndParseLogFile(path)
+            } catch {
+              case _: FileNotFoundException =>
+                println(
+                  "The file you provided could not be found. Please ensure that the path to the redo log is correct, and that the log exists."
+                )
+                System.exit(1)
 
-            val logEntries = FileParser.getAndParseLogFile(path)
+            }
             printEntries(logEntries)
             val parsedLogEntries = FileParser.parseLogEntries(logEntries)
             printParsedLogEntries(parsedLogEntries)
@@ -79,9 +88,7 @@ object Main
 
             printDatabaseSchema(databaseSchema)
 
-            val rootClassInput =
-              scala.io.StdIn.readLine("\nPlease enter a root class:")
-            val rootClass = RootClass(rootClassInput)
+            val rootClass = getRootClassInput(databaseSchema)
 
             println("\nStart creating traces from the redo log ...")
 
