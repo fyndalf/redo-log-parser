@@ -21,6 +21,10 @@ object Main
 
         val filePath = Opts.argument[Path](metavar = "file")
 
+        val datePatternStringOpt = Opts
+          .option[String]("timestampPattern", help = "Format of the log's timestamps")
+          .orNone
+
         val verboseOpt = Opts
           .flag("verbose", help = "Print detailed information the console.")
           .orFalse
@@ -42,8 +46,30 @@ object Main
           )
           .orFalse
 
-        (filePath, verboseOpt, includeUpdateValuesOpt, strongPKOpt).mapN {
-          (pathParam, verboseParam, includeUpdateValuesParam, strongPKParam) =>
+        val singleRunOpt = Opts
+          .flag(
+            "singleRun",
+            help =
+              "Run only once and exit immediately after generating an event log."
+          )
+          .orFalse
+
+        (
+          filePath,
+          datePatternStringOpt,
+          verboseOpt,
+          includeUpdateValuesOpt,
+          strongPKOpt,
+          singleRunOpt
+        ).mapN {
+          (
+              pathParam,
+              datePatternString,
+              verboseParam,
+              includeUpdateValuesParam,
+              strongPKParam,
+              singleRun
+          ) =>
             implicit val verbose: Boolean = verboseParam
             implicit val path: Path = pathParam
 
@@ -53,8 +79,19 @@ object Main
             // determine whether updated values should be included
             cli.includeUpdateValues = includeUpdateValuesParam
 
+            // determine the expected date format of the redo log's timestamps. If the value has not been provided, a default will be used
+            cli.dateFormatString = datePatternString match {
+              case Some(pattern) => pattern
+              case None          => cli.dateFormatString
+            }
+
             if (verbose && strongPKParam)
               println("Strong PK Checking has been enabled!")
+
+            if (singleRun)
+              println(
+                "The program will only run once and exit after writing the log."
+              )
 
             printPath()
             // todo: make block separator a parameter
@@ -88,27 +125,38 @@ object Main
 
             printDatabaseSchema(databaseSchema)
 
-            val rootClass = getRootClassInput(databaseSchema)
+            do {
+              val rootClass = getRootClassInput(databaseSchema)
 
-            println("\nStart creating traces from the redo log ...")
+              println("\nStart creating traces from the redo log ...")
 
-            val traces = TraceIDParser.createTracesForPattern(
-              rootClass,
-              databaseSchema,
-              transformedLogEntries
-            )
+              val traces = TraceIDParser.createTracesForPattern(
+                rootClass,
+                databaseSchema,
+                transformedLogEntries
+              )
 
-            println("Done.\nGenerating XES log and serialising it to disk ...")
+              println(
+                "Done.\nGenerating XES log and serialising it to disk ..."
+              )
 
-            val log = generateXMLLog(traces, rootClass)
-            val resultPath = path.toString + s"_${rootClass.tableID}_result.xes"
+              val log = generateXMLLog(traces, rootClass)
+              val resultPath =
+                path.toString + s"_${rootClass.tableID}_result.xes"
 
-            TraceIDParser.serializeLogToDisk(
-              log,
-              resultPath
-            )
+              TraceIDParser.serializeLogToDisk(
+                log,
+                resultPath
+              )
 
-            println(s"Done.\nThe event log is stored in $resultPath ")
+              println(s"Done.\nThe event log is stored in $resultPath ")
+
+              if (!singleRun) {
+                println(
+                  "You can enter another root class and generate another event log, or quit execution using Ctrl+C."
+                )
+              }
+            } while (!singleRun)
         }
       }
     )

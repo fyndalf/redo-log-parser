@@ -12,7 +12,12 @@ package object cli {
 
   // Should a strict check be used for determining primary key columns?
   var strictPrimaryKeyChecking: Boolean = false
+
+  // Should update values generate events with values as a part of their event descriptor?
   var includeUpdateValues: Boolean = false
+
+  // The expected format of the redo log's timestamps
+  var dateFormatString: String = "dd-MMM-yyyy HH:mm:ss"
 
   def printEntries(
       logEntries: Seq[ExtractedLogEntry]
