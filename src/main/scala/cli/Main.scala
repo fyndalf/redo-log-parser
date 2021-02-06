@@ -22,7 +22,10 @@ object Main
         val filePath = Opts.argument[Path](metavar = "file")
 
         val datePatternStringOpt = Opts
-          .option[String]("timestampPattern", help = "Format of the log's timestamps")
+          .option[String](
+            "timestampPattern",
+            help = "Format of the log's timestamps"
+          )
           .orNone
 
         val verboseOpt = Opts
