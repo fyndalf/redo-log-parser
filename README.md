@@ -56,6 +56,19 @@ Sometimes, especially when many values in updates are not unique but rather repr
 be of interest to see the actual state represented in the event. For this, a `--includeUpdateValues` flag can be passed,
 which enables the generation of more detailed event names from update statements.
 
+## Optional Date Format Parameter
+
+When parsing a Redo log, it can be cumbersome to manually change all timestamps to the expected format beforehand. The
+default timestamp format is this: `"dd-MMM-yyyy HH:mm:ss"`. For changing the expected timestamp format,
+a flag can be passed to the tool like so:
+
+```bash
+$ sbt run <path to log> --timestampPattern <timestamp pattern>
+```
+
+For extracting events out of the provided `redo_log.txt`, the default timestamp suffices. For the
+provided `evaluation_log.txt`, use `"yyyy-MM-dd HH:mm:ss"`
+
 ## Requirements
 
 In order for the tool to run, a working installation of `Java 11` is required, as well as `SBT 1.3.8` (or later)

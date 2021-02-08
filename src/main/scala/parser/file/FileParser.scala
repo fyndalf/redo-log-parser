@@ -1,10 +1,9 @@
 package parser.file
 
-import java.nio.file.Path
-import java.time.LocalDateTime
-
 import parser._
 
+import java.nio.file.Path
+import java.time.LocalDateTime
 import scala.collection.mutable
 
 // todo: take variable separator into account
